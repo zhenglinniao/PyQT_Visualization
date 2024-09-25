@@ -23,7 +23,7 @@ from app_modules import *
 from app_modules import *
 from LineStack import *
 from ChartThemes import *
-
+from page_widgets import *
 class MainWindow(QMainWindow):
     def __init__(self):     
 
@@ -63,19 +63,15 @@ class MainWindow(QMainWindow):
         # 设置用户图标
         UIFunctions.userIcon(self, "user", "", True)
        
-        def moveWindow(event):
-           
+        def moveWindow(event):       
             # 如果窗口最大化，则切换为正常状态
             if UIFunctions.returStatus() == 1:
                 UIFunctions.maximize_restore(self)
-
             # 移动窗口
             if event.buttons() == Qt.LeftButton:
                 self.move(self.pos() + event.globalPos() - self.dragPos)
                 self.dragPos = event.globalPos()
                 event.accept()
-
-       
         # 设置可移动的窗口部件
         self.ui.frame_label_top_btns.mouseMoveEvent = moveWindow
    
@@ -116,7 +112,7 @@ class MainWindow(QMainWindow):
         # PAGE NEW USER
         # 新用户
         if btnWidget.objectName() == "btn_new_user":
-            self.ui.stackedWidget.setCurrentWidget(self.ui.page_home)
+            self.ui.stackedWidget.setCurrentWidget(self.ui.page_two_home)
             UIFunctions.resetStyle(self, "btn_new_user")
             UIFunctions.labelPage(self, "New User") 
             # 设置按钮的样式表
@@ -126,15 +122,13 @@ class MainWindow(QMainWindow):
         # 自定义部件
         if btnWidget.objectName() == "btn_widgets":
             # 设置当前页面为page_widgets
-            self.ui.stackedWidget.setCurrentWidget(self.ui.page_widgets)
+            self.ui.stackedWidget.setCurrentWidget(self.ui.page_widget)
             # 重置按钮样式
             UIFunctions.resetStyle(self, "btn_widgets")
             # 设置标签页标题
             UIFunctions.labelPage(self, "Custom Widgets")
             # 设置按钮样式
             btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
-
-
 
 ##########################################################################
 #窗口监控 鼠标监控 键盘监控事件
@@ -166,8 +160,6 @@ class MainWindow(QMainWindow):
 
     def resizeFunction(self):
         print('Height: ' + str(self.height()) + ' | Width: ' + str(self.width()))
-   
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
