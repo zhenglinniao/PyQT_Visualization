@@ -1,22 +1,18 @@
-# 这是制作的一个基于pyside2实现的数据可视化展示平台
-
 <p>
       <a href=""><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" height="19px"  style="border-radius: 5px;" alt="img" ></a>
      <a href=""><img src="https://img.shields.io/badge/NVIDIA-GTX4060-76B900?style=for-the-badge&logo=nvidia&logoColor=white"height="19px" style="border-radius: 5px;"alt="img"></a>
     <a href=""><img src="https://img.shields.io/badge/gmail-%23D14836.svg?&style=plastic&logo=gmail&logoColor=white"height="19px"alt="img"></a>
     <a href=""><img src="https://img.shields.io/badge/Steam-000000?style=for-the-badge&logo=steam&logoColor=white"height="19px" style="border-radius: 5px;"alt="img"></a>
     <a href=""><img src="https://img.shields.io/badge/Microsoft-666666?style=for-the-badge&logo=microsoft&logoColor=white"height="19px" style="border-radius: 5px;"alt="img"></a>
-   <a href=""><img src="https://img.shields.io/badge/Blogger-FF5722?style=for-the-badge&logo=blogger&logoColor=white"height="19px" style="border-radius: 5px;"alt="img"></a>
+   <a href="http://zhenglinniao-tori.cn/"><img src="https://img.shields.io/badge/Blogger-FF5722?style=for-the-badge&logo=blogger&logoColor=white"height="19px" style="border-radius: 5px;"alt="img"></a>
    <a href=""><img src="https://img.shields.io/pypi/pyversions/qt-material"height="19px"  style="border-radius: 5px;"alt="img"></a>
-   <a href=""><img src="https://img.shields.io/badge/pyside2-5.15.2-blue
-" alt="img" height="19px" style="border-radius: 5px;"></a>
-<a href=""><img src="https://img.shields.io/badge/QtChart-5.15.2-blue
-" alt="img" height="19px" style="border-radius: 5px;"></a>
-<a href=""><img src="https://img.shields.io/badge/numpy-1.19.5-blue
-" alt="img" height="19px" style="border-radius: 5px;"></a>
-<a href=""><img src="https://img.shields.io/badge/Pandas-1.1.5-blue
-" alt="img" height="19px" style="border-radius: 5px;"></a>
-   <a href=""><img src="https://img.shields.io/badge/pyqt5-5.15.2-blue" alt="img" height="19px" style="border-radius: 5px;"></a>
+   <a href=""><img src="https://img.shields.io/badge/pyside2-5.15.2-blue" alt="img" height="19px" style="border-radius: 5px;"></a>
+<a href=""><img src="https://img.shields.io/badge/QtChart-5.15.2-blue" alt="img" height="19px" style="border-radius: 5px;"></a>
+<a href=""><img src="https://img.shields.io/badge/numpy-1.19.5-blue" alt="img" height="19px" style="border-radius: 5px;"></a>
+<a href=""><img src="https://img.shields.io/badge/Pandas-1.1.5-blue" alt="img" height="19px" style="border-radius: 5px;"></a>
+ <a href=""><img src="https://img.shields.io/badge/pyqt5-5.15.2-blue" alt="img" height="19px" style="border-radius: 5px;"></a>
+
+# 这是制作的一个基于pyside2实现的数据可视化展示平台
 
 </p>
 
@@ -82,5 +78,5 @@ ChartThemes.py
 
 （预实现窗口拖放实现客制化的可视化面板）
 
-
 frame_center   frame_top_info frame_top_btns  frame_left_menu    frame_toggle(btn_toggle_menu)
+
