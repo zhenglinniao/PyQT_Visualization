@@ -64,7 +64,6 @@ class ThemeWidget(QWidget):
         # 连接信号
         self.connectSignals()
         # 创建内容区域
-        # self.setStyleSheet("background-color: blue;")
         # Create the layout.
 
         self.frame = QFrame(self)
@@ -170,19 +169,19 @@ class ThemeWidget(QWidget):
                 value = QPointF(
                     j + random.random() * self.m_valueMax / f_valueCount,
                     yValue)
-                print(j + random.random() * self.m_valueMax / f_valueCount)
-                print("-------------\n")
-                print(yValue)
+                # print(j + random.random() * self.m_valueMax / f_valueCount)
+                # print("-------------\n")
+                # print(yValue)
                 # 创建一个标签，格式为"Slice i:j"
                 label = "Slice " + str(i) + ":" + str(j)
                 # 将(value, label)添加到dataList中
                 dataList.append((value, label))
-            print("!!!!!!!!!!!!!!!!!!!!!!!!!")
+            # print("!!!!!!!!!!!!!!!!!!!!!!!!!")
             # 将dataList添加到dataTable中
             dataTable.append(dataList)
 
 
-        print(dataTable)
+        # print(dataTable)
         # 返回dataTable
         return dataTable
 
@@ -214,9 +213,13 @@ class ThemeWidget(QWidget):
         legendComboBox = QComboBox()
 
         legendComboBox.addItem("No Legend ", 0)
+# 添加一个选项到legendComboBox中，选项内容为"Legend Top"，选项值设置为Qt.AlignTop
         legendComboBox.addItem("Legend Top", Qt.AlignTop)
+# 添加一个选项到legendComboBox中，选项内容为"Legend Bottom"，选项值设置为Qt.AlignBottom
         legendComboBox.addItem("Legend Bottom", Qt.AlignBottom)
+# 添加一个选项到legendComboBox中，选项内容为"Legend Left"，选项值设置为Qt.AlignLeft
         legendComboBox.addItem("Legend Left", Qt.AlignLeft)
+# 添加一个选项到legendComboBox中，选项内容为"Legend Right"，选项值设置为Qt.AlignRight
         legendComboBox.addItem("Legend Right", Qt.AlignRight)
 
         return legendComboBox
@@ -238,20 +241,20 @@ class ThemeWidget(QWidget):
             for j, (value, _) in enumerate(data_list):
         # 获取y值
                 y = value.y()
-                print("yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy---------:",y)
+                # print("yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy---------:",y)
                 
 
         # 如果lowerSeries为空，则将y值添加到upperSeries中，并将y值添加到y_points中
                 if lowerSeries is None:
                     upperSeries.append(QPointF(j, y))
-                    print("j = %d, y = %f"%(j, y))
+                    # print("j = %d, y = %f"%(j, y))
                     y_points.append(y)
         # 否则，将y值与y_points中的对应值相加，并将结果添加到upperSeries中，并将结果添加到y_points中
                 else:
                     new_y = y_points[i] + y
-                    print("y_points[i] = %f, y = %f"%(y_points[i], y))
+                    # print("y_points[i] = %f, y = %f"%(y_points[i], y))
                     upperSeries.append(QPointF(j, new_y))
-                    print("j = %d, neww_y = %f"%(j, new_y))
+                    # print("j = %d, neww_y = %f"%(j, new_y))
                     y_points[j] += new_y
 
     # 创建一个QAreaSeries对象，用于存储上边界和下边界数据

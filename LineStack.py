@@ -9,8 +9,10 @@ Createon : 2024年9月24日
 @desc: 图表展示
 """
 
-import sys
 
+from PySide2.QtWidgets import QApplication, QWidget, QFrame, QGridLayout, QLabel
+import sys
+from PySide2.QtGui import QColor
 try:
     from PySide2.QtChart import QChartView, QChart, QLineSeries, QLegend, \
         QCategoryAxis
@@ -31,7 +33,7 @@ except ImportError:
     QLegend = QtCharts.QLegend
     QCategoryAxis = QtCharts.QCategoryAxis
 
-
+#当鼠标移动显示的视图
 class ToolTipItem(QWidget):
 
     def __init__(self, color, text, parent=None):
@@ -65,6 +67,7 @@ class ToolTipWidget(QWidget):
         layout.addWidget(self.titleLabel)
 
     def updateUi(self, title, points):
+        print("title:", title)
         self.titleLabel.setText(title)
         for serie, point in points:
             if serie not in self.Cache:
@@ -72,12 +75,14 @@ class ToolTipWidget(QWidget):
                     serie.color(),
                     (serie.name() or "-") + ":" + str(point.y()), self)
                 self.layout().addWidget(item)
+                print("serie:",serie)
                 self.Cache[serie] = item
             else:
                 self.Cache[serie].setText(
                     (serie.name() or "-") + ":" + str(point.y()))
-            self.Cache[serie].setVisible(serie.isVisible())  # 隐藏那些不可用的项
-        self.adjustSize()  # 调整大小
+
+            self.Cache[serie].setVisible(serie.isVisible()) #设置数据可见性 如果数据被隐藏则不会显示该数据的小窗口
+        self.adjustSize()  # 自动随窗口调整大小
 
 
 class GraphicsProxyWidget(QGraphicsProxyWidget):
@@ -288,9 +293,41 @@ class ChartView(QChartView):
         self.setChart(self._chart)
 
 
+class content_charts(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.frame = QFrame(self)
+        self.QV_layout = QVBoxLayout(self.frame)
+        self.QH_layout_1 = QHBoxLayout(self.frame)
+        self.QH_layout_2 = QHBoxLayout(self.frame)
+
+        self.chart1 = ChartView()
+        self.chart2 = ChartView()
+        self.chart3 = ChartView()
+        self.chart4 = ChartView()
+
+        self.QH_layout_1.addWidget(self.chart1)
+        self.QH_layout_1.addWidget(self.chart2)
+        self.QH_layout_2.addWidget(self.chart3)
+        self.QH_layout_2.addWidget(self.chart4)
+
+        self.QV_layout.addLayout(self.QH_layout_1)
+        self.QV_layout.addLayout(self.QH_layout_2)
+
+        # 设置主布局
+        main_layout = QVBoxLayout(self)  # 创建主布局
+        main_layout.addWidget(self.frame)  # 将框架添加到主布局
+
+        # 设置 ContentCharts 的布局
+        self.setLayout(main_layout)
+
+
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    view = ChartView()
+    color = QColor(255, 100, 50)
+    view = content_charts()
+    
     # 显示视图
     view.show()
     sys.exit(app.exec_())

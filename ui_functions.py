@@ -116,6 +116,7 @@ class UIFunctions(MainWindow):
         font.setFamily(u"Segoe UI")
         button = QPushButton(str(count),self)
         button.setObjectName(objName)
+# 创建一个QSizePolicy对象，设置水平和垂直方向的大小策略分别为Expanding和Fixed
         sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
         sizePolicy3.setHorizontalStretch(0)
         sizePolicy3.setVerticalStretch(0)

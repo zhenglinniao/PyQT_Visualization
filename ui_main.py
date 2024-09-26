@@ -165,7 +165,7 @@ class Ui_MainWindow(object):
 "	border: 2px solid rgb(91, 101, 124);\n"
 "}\n"
 "\n"
-"/* SCROLL BARS */\n"
+"/* 水平滚动条的样式 */\n"
 "QScrollBar:horizontal {\n"
 "    border: none;\n"
 "    background: rgb(52, 59, 72);\n"
@@ -244,7 +244,7 @@ class Ui_MainWindow(object):
 "     background: none;\n"
 " }\n"
 "\n"
-"/* CHECKBOX */\n"
+"/* 复选框样式 */\n"
 "QCheckBox::indicator {\n"
 "    border: 3px solid rgb(52, 59, 72);\n"
 "	width: 15px;\n"
@@ -261,7 +261,7 @@ class Ui_MainWindow(object):
 "	background-image: url(:/16x16/icons/16x16/cil-check-alt.png);\n"
 "}\n"
 "\n"
-"/* RADIO BUTTON */\n"
+"/* 单选按钮的样式 */\n"
 "QRadioButton::indicator {\n"
 "    border: 3px solid rgb(52, 59, 72);\n"
 "	width: 15px;\n"
@@ -278,7 +278,7 @@ class Ui_MainWindow(object):
 "	border: 3px solid rgb(52, 59, 72);	\n"
 "}\n"
 "\n"
-"/* COMBOBOX */\n"
+"/* 下拉框的外观 */\n"
 "QComboBox{\n"
 "	background-color: rgb(27, 29, 35);\n"
 "	border-radius: 5px;\n"
@@ -310,7 +310,7 @@ class Ui_MainWindow(object):
 "	selection-background-color: rgb(39, 44, 54);\n"
 "}\n"
 "\n"
-"/* SLIDERS */\n"
+"/* 水平滑块控件 */\n"
 "QSlider::groove:horizontal {\n"
 "    border-radius: 9px;\n"
 "    height: 18px;\n"
@@ -715,7 +715,7 @@ class Ui_MainWindow(object):
         # 设置page_home的ObjectName
         self.page_home.setObjectName(u"page_home")
 
-        self.page_two_home = ChartView()
+        self.page_two_home = content_charts()
         self.page_two_home.setObjectName(u"page_two_home")
         
 
