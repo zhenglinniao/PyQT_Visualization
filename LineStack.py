@@ -56,6 +56,7 @@ class ToolTipWidget(QWidget):
 
     def __init__(self, *args, **kwargs):
         super(ToolTipWidget, self).__init__(*args, **kwargs)
+# 设置窗口的背景样式
         self.setAttribute(Qt.WA_StyledBackground, True)
         self.setStyleSheet(
             "ToolTipWidget{background: rgba(50, 50, 50, 100);}")

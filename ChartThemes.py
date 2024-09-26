@@ -10,7 +10,8 @@ Createon : 2024年9月24日
 """
 
 import random
-
+import sys
+from PySide2.QtWidgets import QApplication, QWidget, QFrame, QGridLayout, QLabel
 try:
     from PySide2.QtChart import (QAreaSeries, QBarSet, QChart, QChartView,
                                QLineSeries, QPieSeries, QScatterSeries, QSplineSeries,
@@ -41,7 +42,6 @@ class ThemeWidget(QWidget):
 
     def __init__(self, parent=None):
         super(ThemeWidget, self).__init__(parent)
-
         # 创建一个空列表，用于存储图表
         self.m_charts = []
         # 设置列表数量为3
@@ -53,8 +53,6 @@ class ThemeWidget(QWidget):
         # 生成随机数据
         self.m_dataTable = self.generateRandomData(self.m_listCount,
                                                    self.m_valueMax, self.m_valueCount)
-       
-        
         # 创建主题下拉框
         self.m_themeComboBox = self.createThemeBox()
         # 创建反锯齿复选框
@@ -63,12 +61,17 @@ class ThemeWidget(QWidget):
         self.m_animatedComboBox = self.createAnimationBox()
         # 创建图例下拉框
         self.m_legendComboBox = self.createLegendBox()
-
         # 连接信号
         self.connectSignals()
-
+        # 创建内容区域
+        # self.setStyleSheet("background-color: blue;")
         # Create the layout.
-        baseLayout = QGridLayout()
+
+        self.frame = QFrame(self)
+        self.frame.setObjectName("mainFrame")
+        self.frame.setStyleSheet("#mainFrame { background-color: #0000; }")
+        baseLayout = QGridLayout(self.frame)
+    
         settingsLayout = QHBoxLayout()
         settingsLayout.addWidget(QLabel("Theme:"))
         settingsLayout.addWidget(self.m_themeComboBox)
@@ -85,22 +88,26 @@ class ThemeWidget(QWidget):
         # Create the charts.
         # 创建一个区域图，并将其添加到布局中
         chartView = QChartView(self.createAreaChart())
+        chartView.setStyleSheet("background: transparent; border: none;")  # 设置无边框和透明背景
         baseLayout.addWidget(chartView, 1, 0)
         self.m_charts.append(chartView)
         print("chartView1111111", chartView.chart().theme())
 
         # 创建一个柱状图，并将其添加到布局中
         chartView = QChartView(self.createBarChart(self.m_valueCount))
+        chartView.setStyleSheet("background: transparent; border: none;")  # 设置无边框和透明背景
         baseLayout.addWidget(chartView, 1, 1)
         self.m_charts.append(chartView)
 
         # 创建一个折线图，并将其添加到布局中
         chartView = QChartView(self.createLineChart())
+        chartView.setStyleSheet("background: transparent; border: none;")  # 设置无边框和透明背景
         baseLayout.addWidget(chartView, 1, 2)
         self.m_charts.append(chartView)
 
         # 创建一个饼图，并将其添加到布局中
         chartView = QChartView(self.createPieChart())
+        chartView.setStyleSheet("background: transparent; border: none;")  # 设置无边框和透明背景
         # 如果饼图的切片标签不适应屏幕，会有奇怪的事情发生...
         # 设置chartView的大小策略为忽略
         chartView.setSizePolicy(QSizePolicy.Ignored, QSizePolicy.Ignored)
@@ -111,17 +118,21 @@ class ThemeWidget(QWidget):
 
         # 创建一个曲线图，并将其添加到布局中
         chartView = QChartView(self.createSplineChart())
+        chartView.setStyleSheet("background: transparent; border: none;")  # 设置无边框和透明背景
         baseLayout.addWidget(chartView, 2, 1)
         self.m_charts.append(chartView)
 
         # 创建一个散点图，并将其添加到布局中
         chartView = QChartView(self.createScatterChart())
+        chartView.setStyleSheet("background: transparent; border: none;")  # 设置无边框和透明背景
         baseLayout.addWidget(chartView, 2, 2)
         self.m_charts.append(chartView)
 
         # 设置布局
-        self.setLayout(baseLayout)
-
+        # self.setLayout(baseLayout)
+        main_layout = QGridLayout(self)  # 创建主窗口的布局
+        main_layout.addWidget(self.frame)  # 将 QFrame 添加到主布局中
+        self.setLayout(main_layout)  # 设置主窗口的布局
         # Set the defaults.
         # 设置默认值
         self.m_antialiasCheckBox.setChecked(True)
@@ -271,7 +282,6 @@ class ThemeWidget(QWidget):
 
         chart.addSeries(series)
         chart.createDefaultAxes()
-
         return chart
 # 创建一个折线图，并将其添加到布局中
     def createLineChart(self):
@@ -359,35 +369,40 @@ class ThemeWidget(QWidget):
 
             # 获取窗口的调色板
             pal = self.window().palette()
-            print("pal:", pal)
-            print("pal.color(QPalette.Window):",QChart.ChartThemeLight)
-            print("pal.color(QPalette.WindowText):",QChart.ChartThemeDark)
-
+    
+        
             if theme == QChart.ChartThemeLight:
                 pal.setColor(QPalette.Window, QColor(0xf0f0f0))
+                self.frame.setStyleSheet("background-color: #f0f0f0")
                 pal.setColor(QPalette.WindowText, QColor(0x404044))
             elif theme == QChart.ChartThemeDark:
                 pal.setColor(QPalette.Window, QColor(0x121218))
+                self.frame.setStyleSheet("background-color: #121218")
                 pal.setColor(QPalette.WindowText, QColor(0xd6d6d6))
             elif theme == QChart.ChartThemeBlueCerulean:
                 pal.setColor(QPalette.Window, QColor(0x40434a))
+                self.frame.setStyleSheet("background-color: #40434a")
                 pal.setColor(QPalette.WindowText, QColor(0xd6d6d6))
             elif theme == QChart.ChartThemeBrownSand:
                 pal.setColor(QPalette.Window, QColor(0x9e8965))
+                self.frame.setStyleSheet("background-color: #9e8965")
                 pal.setColor(QPalette.WindowText, QColor(0x404044))
             elif theme == QChart.ChartThemeBlueNcs:
                 pal.setColor(QPalette.Window, QColor(0x018bba))
+                self.frame.setStyleSheet("background-color: #018bba")
                 pal.setColor(QPalette.WindowText, QColor(0x404044))
             elif theme == QChart.ChartThemeHighContrast:
                 pal.setColor(QPalette.Window, QColor(0xffab03))
+                self.frame.setStyleSheet("background-color: #ffab03")
                 pal.setColor(QPalette.WindowText, QColor(0x181818))
             elif theme == QChart.ChartThemeBlueIcy:
-                pal.setColor(QPalette.Window, QColor(0xcee7f0))
+                pal.setColor(QPalette.Window, QColor(0xcee7f0)) 
+                self.frame.setStyleSheet("background-color: #cee7f0")
                 pal.setColor(QPalette.WindowText, QColor(0x404044))
             else: 
                 pal.setColor(QPalette.Window, QColor(0xf0f0f0))
+                self.frame.setStyleSheet("background-color: #f0f0f0")
                 pal.setColor(QPalette.WindowText, QColor(0x404044))
-
             self.window().setPalette(pal)
 
 # 获取反锯齿复选框的选中状态
@@ -420,12 +435,12 @@ class ThemeWidget(QWidget):
         for chartView in self.m_charts:
     # 获取当前图表的图例
             legend = chartView.chart().legend()
-            print("legend:",legend)
     # 如果图例组合框中当前项的数据为0，则隐藏图例
             if alignment == 0:
                 legend.hide()
     # 否则，设置图例的对齐方式，并显示图例
             else:
+                print("alignment:", alignment)
                 legend.setAlignment(Qt.Alignment(alignment))
                 legend.show()
 
@@ -436,6 +451,7 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
 
     window = QMainWindow()
+    # window.setStyleSheet("QMainWindow{background-color: #ff0}")
     widget = ThemeWidget()
     window.setCentralWidget(widget)
     window.resize(900, 600)

@@ -25,3 +25,7 @@ from ui_functions import *
 
 ## ==> APP FUNCTIONS
 from app_functions import *
+
+from LineStack import *
+from ChartThemes import *
+from page_widgets import *

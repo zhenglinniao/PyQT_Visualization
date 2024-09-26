@@ -193,11 +193,9 @@ class UIFunctions(MainWindow):
     ########################################################################
     def uiDefinitions(self):
         def dobleClickMaximizeRestore(event):
-            # IF DOUBLE CLICK CHANGE STATUS
             if event.type() == QtCore.QEvent.MouseButtonDblClick:
                 QtCore.QTimer.singleShot(250, lambda: UIFunctions.maximize_restore(self))
 
-        ## REMOVE ==> STANDARD TITLE BAR
         if GLOBAL_TITLE_BAR:
             self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
             self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
@@ -209,30 +207,15 @@ class UIFunctions(MainWindow):
             self.ui.frame_icon_top_bar.hide()
             self.ui.frame_btns_right.hide()
             self.ui.frame_size_grip.hide()
-
-
-        ## SHOW ==> DROP SHADOW
         self.shadow = QGraphicsDropShadowEffect(self)
         self.shadow.setBlurRadius(17)
         self.shadow.setXOffset(0)
         self.shadow.setYOffset(0)
         self.shadow.setColor(QColor(0, 0, 0, 150))
         self.ui.frame_main.setGraphicsEffect(self.shadow)
-
-        ## ==> RESIZE WINDOW
         self.sizegrip = QSizeGrip(self.ui.frame_size_grip)
         self.sizegrip.setStyleSheet("width: 20px; height: 20px; margin 0px; padding: 0px;")
-
-        ### ==> MINIMIZE
         self.ui.btn_minimize.clicked.connect(lambda: self.showMinimized())
-
-        ## ==> MAXIMIZE/RESTORE
         self.ui.btn_maximize_restore.clicked.connect(lambda: UIFunctions.maximize_restore(self))
-
-        ## SHOW ==> CLOSE APPLICATION
         self.ui.btn_close.clicked.connect(lambda: self.close())
 
-
-    ########################################################################
-    ## END - GUI DEFINITIONS
-    ########################################################################

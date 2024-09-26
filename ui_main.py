@@ -20,6 +20,9 @@ from PySide2.QtWidgets import *
 import pyqtgraph as pg
 import files_rc
 from page_widgets import *
+from ChartThemes import *
+from LineStack import *
+from pyqtgraph import PlotWidget
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if MainWindow.objectName():
@@ -708,11 +711,11 @@ class Ui_MainWindow(object):
         self.stackedWidget.setObjectName(u"stackedWidget")
         self.stackedWidget.setStyleSheet(u"background: transparent;")
         
-        self.page_home = QWidget()
+        self.page_home = ThemeWidget()
         # 设置page_home的ObjectName
         self.page_home.setObjectName(u"page_home")
 
-        self.page_two_home = QWidget()
+        self.page_two_home = ChartView()
         self.page_two_home.setObjectName(u"page_two_home")
         
 
@@ -840,28 +843,35 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
+        # 设置主窗口的标题
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+        # 设置菜单按钮的文本
         self.btn_toggle_menu.setText("")
+        # 设置顶部标题栏的文本
         self.label_title_bar_top.setText(QCoreApplication.translate("MainWindow", u"Main Window - Base", None))
-#if QT_CONFIG(tooltip)
+        # 设置最小化按钮的提示文本
         self.btn_minimize.setToolTip(QCoreApplication.translate("MainWindow", u"Minimize", None))
-#endif // QT_CONFIG(tooltip)
-        self.btn_minimize.setText("")
-#if QT_CONFIG(tooltip)
+        # 设置最大化/还原按钮的提示文本
         self.btn_maximize_restore.setToolTip(QCoreApplication.translate("MainWindow", u"Maximize", None))
-#endif // QT_CONFIG(tooltip)
-        self.btn_maximize_restore.setText("")
-#if QT_CONFIG(tooltip)
+        # 设置关闭按钮的提示文本
         self.btn_close.setToolTip(QCoreApplication.translate("MainWindow", u"Close", None))
-#endif // QT_CONFIG(tooltip)
-        self.btn_close.setText("")
-        self.label_top_info_1.setText(QCoreApplication.translate("MainWindow", u"C:\\Program Files\\Blender Foundation\\Blender 2.82", None))
+        # 设置顶部信息1的文本
+        self.label_top_info_1.setText(QCoreApplication.translate("MainWindow", u"source", None))
+        # 设置顶部信息2的文本
         self.label_top_info_2.setText(QCoreApplication.translate("MainWindow", u"| HOME", None))
-        self.label_user_icon.setText(QCoreApplication.translate("MainWindow", u"WM", None))
-        # self.label_6.setText(QCoreApplication.translate("MainWindow", u"HOME", None))
-        # self.label.setText(QCoreApplication.translate("MainWindow", u"Empyt Page - By: Wanderson M. Pimenta", None))
-        # self.label_7.setText(QCoreApplication.translate("MainWindow", u"Page Index 0", None))
-       
-        self.label_credits.setText(QCoreApplication.translate("MainWindow", u"Registered by: Wanderson M. Pimenta", None))
+        # 设置用户图标文本
+        self.label_user_icon.setText(QCoreApplication.translate("MainWindow", u"U", None))   
+        # 设置注册信息的文本
+        self.label_credits.setText(QCoreApplication.translate("MainWindow", u"Registered by: admin", None))
+        # 设置版本号的文本
         self.label_version.setText(QCoreApplication.translate("MainWindow", u"v1.0.0", None))
-    # retranslateUi
+
+
+if __name__ == "__main__":
+    import sys
+    app = QApplication(sys.argv)
+    MainWindow = QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())

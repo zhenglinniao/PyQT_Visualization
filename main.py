@@ -17,22 +17,17 @@ from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFo
 from PySide2.QtWidgets import *
 import numpy as np
 import pyqtgraph as pg
-# GUI FILE
+# GUI FILE IMPORTS
 from app_modules import *
-
-from app_modules import *
-from LineStack import *
-from ChartThemes import *
-from page_widgets import *
 class MainWindow(QMainWindow):
     def __init__(self):     
-
+        
         QMainWindow.__init__(self)
         # 创建一个Ui_MainWindow对象
         self.ui = Ui_MainWindow()
         # 设置主窗口的UI
         self.ui.setupUi(self)
-        self.home_layout()    
+        # self.home_layout()    
         print('System: ' + platform.system())
         print('Version: ' +platform.release())
         # 移除标题栏
@@ -77,7 +72,7 @@ class MainWindow(QMainWindow):
    
 
       
-        # 加载定义
+        # 加载定义  透明窗口
         UIFunctions.uiDefinitions(self)
       
         # 设置QTableWidget参数
@@ -86,12 +81,6 @@ class MainWindow(QMainWindow):
         self.show()
         ## ==> END ##
 
-# 初始化随机数据的Qchart图表
-    def home_layout(self):
-        #创建一个垂直布局
-        self.ui.content = QVBoxLayout(self.ui.page_home)
-        chart = ThemeWidget()
-        self.ui.content.addWidget(chart)
         
         
 #QstackedWidget 的堆叠窗口触发事件 显示
