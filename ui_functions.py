@@ -11,6 +11,7 @@
 
 ## ==> GUI FILE
 from main import *
+from ColorChangeWindow import *
 
 ## ==> GLOBALS
 GLOBAL_STATE = 0
@@ -135,16 +136,28 @@ class UIFunctions(MainWindow):
         else:
             self.ui.layout_menu_bottom.addWidget(button)
 
-    ## ==> SELECT/DESELECT MENU
-    ########################################################################
-    ## ==> SELECT
+
+    ## 自定义面板颜色
+    def setPanelColor(self, objName):
+        self.ColorChange = ColorChangeWindow()
+        self.ColorChange.setObjectName(objName)
+        self.ui.ColorChange_Hlayout.addWidget(self.ColorChange)
+        self.ColorChange.color_changed.connect(self.changeColor)
+        
+
+
+
     def selectMenu(getStyle):
+        # 添加边框样式
         select = getStyle + ("QPushButton { border-right: 7px solid rgb(44, 49, 60); }")
+        # print("select:", select)
         return select
 
     ## ==> DESELECT
     def deselectMenu(getStyle):
+        # 移除边框样式
         deselect = getStyle.replace("QPushButton { border-right: 7px solid rgb(44, 49, 60); }", "")
+
         return deselect
 
     ## ==> START SELECTION
@@ -194,29 +207,52 @@ class UIFunctions(MainWindow):
     ########################################################################
     def uiDefinitions(self):
         def dobleClickMaximizeRestore(event):
+            # 如果鼠标双击事件类型为QtCore.QEvent.MouseButtonDblClick
             if event.type() == QtCore.QEvent.MouseButtonDblClick:
+                # 单次定时器，延迟250毫秒后执行UIFunctions.maximize_restore(self)
                 QtCore.QTimer.singleShot(250, lambda: UIFunctions.maximize_restore(self))
 
+        # 如果全局标题栏为真
         if GLOBAL_TITLE_BAR:
+            # 设置窗口标志为无框架窗口
             self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+            # 设置窗口背景透明
             self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
+            # 将鼠标双击事件绑定到dobleClickMaximizeRestore函数
             self.ui.frame_label_top_btns.mouseDoubleClickEvent = dobleClickMaximizeRestore
         else:
+            # 设置水平布局的边距为0
             self.ui.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+            # 设置顶部按钮框架的边距为8,0,0,5
             self.ui.frame_label_top_btns.setContentsMargins(8, 0, 0, 5)
+            # 设置顶部按钮框架的最小高度为42
             self.ui.frame_label_top_btns.setMinimumHeight(42)
+            # 隐藏顶部图标框架
             self.ui.frame_icon_top_bar.hide()
+            # 隐藏右侧按钮框架
             self.ui.frame_btns_right.hide()
+            # 隐藏大小调整框架
             self.ui.frame_size_grip.hide()
+        # 设置阴影效果
         self.shadow = QGraphicsDropShadowEffect(self)
+        # 设置阴影模糊半径为17
         self.shadow.setBlurRadius(17)
+        # 设置阴影X轴偏移量为0
         self.shadow.setXOffset(0)
+        # 设置阴影Y轴偏移量为0
         self.shadow.setYOffset(0)
+        # 设置阴影颜色为黑色，透明度为150
         self.shadow.setColor(QColor(0, 0, 0, 150))
+        # 将阴影效果应用到主框架上
         self.ui.frame_main.setGraphicsEffect(self.shadow)
+        # 设置大小调整控件
         self.sizegrip = QSizeGrip(self.ui.frame_size_grip)
+        # 设置大小调整控件的样式
         self.sizegrip.setStyleSheet("width: 20px; height: 20px; margin 0px; padding: 0px;")
+        # 将最小化按钮的点击事件绑定到showMinimized函数
         self.ui.btn_minimize.clicked.connect(lambda: self.showMinimized())
+        # 将最大化/恢复按钮的点击事件绑定到UIFunctions.maximize_restore(self)函数
         self.ui.btn_maximize_restore.clicked.connect(lambda: UIFunctions.maximize_restore(self))
+        # 将关闭按钮的点击事件绑定到close函数
         self.ui.btn_close.clicked.connect(lambda: self.close())
 

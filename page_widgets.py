@@ -26,80 +26,79 @@ class init_page_widgets(QWidget):
         
         self.verticalLayout_6 = QVBoxLayout(self.page_widgets)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        # self.verticalLayout_6.setSpacing(0)
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------
-        # 创建一个QFrame对象，并将其添加到page_widgets中
+       # 创建一个QFrame对象，并将其添加到page_widgets中
         self.frame = QFrame(self.page_widgets)
         # 设置对象的名称为"frame"
         self.frame.setObjectName(u"frame")
-        # 设置对象的样式为边框半径为5px
-        self.frame.setStyleSheet(u"border-radius: 5px;")
         # 设置对象的形状为StyledPanel
-        self.frame.setStyleSheet(u"background-color: rgb(2, 45, 222);")
+        self.frame.setStyleSheet(u"background-color: rgb(2, 45, 222); border-radius: 5px;")
         self.frame.setFrameShape(QFrame.StyledPanel)
         # 设置对象的阴影为Raised
         self.frame.setFrameShadow(QFrame.Raised)
-        
-        self.verticalLayout_15 = QVBoxLayout(self.frame)
-        self.verticalLayout_15.setSpacing(0)
-        self.verticalLayout_15.setObjectName(u"verticalLayout_15")
-        self.verticalLayout_15.setContentsMargins(0, 0, 0, 0)
 
-        self.frame_div_content_1 = QFrame(self.frame)
-        self.frame_div_content_1.setObjectName(u"frame_div_content_1")
-        self.frame_div_content_1.setStyleSheet(u"background-color: rgb(41, 45, 56);\n"
-                                        "border-radius: 5px;\n")
-        self.frame_div_content_1.setFrameShape(QFrame.NoFrame)
-        self.frame_div_content_1.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_frame_1V = QVBoxLayout(self.frame)
+        self.verticalLayout_frame_1V.setSpacing(0)
+        self.verticalLayout_frame_1V.setContentsMargins(0, 0, 0, 0)
 
-        self.verticalLayout_7 = QVBoxLayout(self.frame_div_content_1)
-        self.verticalLayout_7.setSpacing(0)
-        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_frame_1H = QHBoxLayout()  # 这里不再把布局绑定到 self.frame
 
-        # Frame Title Widget
-        self.frame_title_wid = QFrame(self.frame_div_content_1)
-        self.frame_title_wid.setStyleSheet(u"background-color: rgb(222, 44, 54);")
-        self.frame_title_wid.setMinimumHeight(25)
-        self.title_layout = QVBoxLayout(self.frame_title_wid)
- # 设置标题布局的边距为
-        self.title_layout.setContentsMargins(0, 0, 0, 0)
-        self.title_frame = QLabel(self.frame_title_wid)
+        self.title_frame = QLabel()
         self.title_frame.setAlignment(Qt.AlignCenter)
         self.title_frame.setObjectName(u"title_frame")
         self.title_frame.setText("Title Frame")
+        self.title_frame.setStyleSheet(u"background-color: rgb(211, 45, 222); border-radius: 5px;")
         self.title_frame.setFont(font1)
-        self.title_layout.addWidget(self.title_frame)
-        self.verticalLayout_7.addWidget(self.frame_title_wid)
+        self.verticalLayout_frame_1V.addWidget(self.title_frame)
 
-        # Text Edit Layout
-        self.edit_frame = QFrame(self.frame_div_content_1)
-        self.edit_frame.setMinimumHeight(100)
-        self.layout_VH = QHBoxLayout(self.edit_frame)
-        self.Text_edit1 = QTextEdit(self.frame_div_content_1)
+        # Frame1 with TextEdit
+        self.frame1_textedit = QFrame(self.frame)
+        self.frame1_layout = QVBoxLayout(self.frame1_textedit)  # 添加布局到 frame1_textedit
+        self.Text_edit1 = QTextEdit(self.frame1_textedit)
         self.Text_edit1.setObjectName(u"Text_edit1")
+        self.Text_edit1.setText("huanyan boat")
         self.Text_edit1.setFont(font1)
         self.Text_edit1.setStyleSheet(u"QTextEdit{\n"
-                                "background-color: rgb(0, 45, 56);\n"
+                                "background-color: #ffffff;\n"
                                 "border-radius: 5px;\n"
+                                "}\n"
+                                "QTextEdit:hover{\n"
                                 "border: 2px solid rgb(222, 115, 56);\n"
-                                "padding-left: 5px;\n"
-                                "padding-right: 5px;\n"
-                                "}")
-        self.Text_edit2 = QTextEdit(self.frame_div_content_1)
+                                "}\n"
+                                "QTextEdit:focus{\n"
+                                "border: 2px solid rgb(22, 115, 56);\n"
+                                "}\n")
+        self.frame1_layout.addWidget(self.Text_edit1)  # 将 TextEdit 添加到 frame1_layout
+
+        # Frame2 with TextEdit
+        self.frame2_textedit = QFrame(self.frame)
+        self.frame2_layout = QVBoxLayout(self.frame2_textedit)  # 添加布局到 frame2_textedit
+        self.Text_edit2 = QTextEdit(self.frame2_textedit)
         self.Text_edit2.setObjectName(u"Text_edit2")
         self.Text_edit2.setFont(font1)
+        self.Text_edit2.setText("江苏省镇江市")
         self.Text_edit2.setStyleSheet(u"QTextEdit{\n"
-                                "background-color: rgb(0, 45, 56);\n"
+                                "background-color: #ffffff;\n"
                                 "border-radius: 5px;\n"
-                                "border: 2px solid rgb(22, 45, 56);\n"
-                                "padding-left: 5px;\n"
-                                "padding-right: 5px;\n"
-                                "}")
-        self.layout_VH.addWidget(self.Text_edit1)
-        self.layout_VH.addWidget(self.Text_edit2)
-        self.verticalLayout_7.addWidget(self.edit_frame)
-        self.verticalLayout_15.addWidget(self.frame_div_content_1)
+                                "}\n"
+                                "QTextEdit:hover{\n"
+                                "border: 2px solid rgb(222, 15, 56);\n"
+                                "}\n"
+                                "QTextEdit:focus{\n"
+                                "border: 2px solid rgb(22, 115, 56);\n"
+                                "}\n")
+        self.frame2_layout.addWidget(self.Text_edit2)  # 将 TextEdit 添加到 frame2_layout
+
+        # 添加两个 frame 到 horizontal layout
+        self.verticalLayout_frame_1H.addWidget(self.frame1_textedit)
+        self.verticalLayout_frame_1H.addWidget(self.frame2_textedit)
+
+        # 将 horizontal layout 添加到 vertical layout
+        self.verticalLayout_frame_1V.addLayout(self.verticalLayout_frame_1H)
         self.verticalLayout_6.addWidget(self.frame)
+
+        
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------
         self.frame_2 = QFrame(self.page_widgets)
         self.frame_2.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
@@ -135,32 +134,27 @@ class init_page_widgets(QWidget):
                                    "border-radius: 5px;")
         self.horizontalLayout_12 = QHBoxLayout(self.frame_3)
         # 设置水平布局的间距为0
-        self.horizontalLayout_12.setSpacing(0)
+        # self.horizontalLayout_12.setSpacing(0)
         # 设置水平布局的名称为"horizontalLayout_12"
         self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
         # 设置水平布局的外边距为0
           
 
-
-        self.content2 = QFrame(self.frame_3)
-        self.content2.setMinimumHeight(150)
-        self.content2.setFrameShape(QFrame.StyledPanel)
-        self.content2.setFrameShadow(QFrame.Raised)
-        self.content2.setStyleSheet(u"background-color: #ff22;border-radius: 5px;")  # 正确的白色
-        self.content_layout = QHBoxLayout(self.content2)
-        self.content_1 = QFrame(self.content2)
+        
+        
+        self.content_1 = QFrame(self.frame_3)
         self.content_1.setStyleSheet(u"background-color: #A0A0A0;border-radius: 5px;")  # 正确的白色
-        self.content_2 = QFrame(self.content2)
+        self.content_2 = QFrame(self.frame_3)
         self.content_2.setStyleSheet(u"background-color: #606060;border-radius: 5px;")  # 正确的白色
-        self.content_3 = QFrame(self.content2)
+        self.content_3 = QFrame(self.frame_3)
         self.content_3.setStyleSheet(u"background-color: #202020;border-radius: 5px;")  # 正确的白色
-        self.content_layout.addWidget(self.content_1)
-        self.content_layout.addWidget(self.content_2)
-        self.content_layout.addWidget(self.content_3)
+        self.horizontalLayout_12.addWidget(self.content_1)
+        self.horizontalLayout_12.addWidget(self.content_2)
+        self.horizontalLayout_12.addWidget(self.content_3)
 
-        self.content_layout.addWidget(self.content_1)
-        self.horizontalLayout_12.addWidget(self.content2)
+        self.horizontalLayout_12.addWidget(self.frame_3)
         self.verticalLayout_6.addWidget(self.frame_3)
+
         self.setLayout(QVBoxLayout())
         self.layout().addWidget(self.page_widgets)
 #+________________________________________________________________________   
@@ -170,10 +164,10 @@ if __name__ == '__main__':
     
     app = QApplication(sys.argv)
     
-  
-   
-
     # 将init_page_widgets添加到主窗口
     widget = init_page_widgets()
+    # 设置窗口大小
+    widget.resize(1000, 720)
     widget.show()
     sys.exit(app.exec_())
+    

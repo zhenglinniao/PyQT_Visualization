@@ -51,6 +51,13 @@ class MainWindow(QMainWindow):
         UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/16x16/icons/16x16/cil-home.png)", True)
         UIFunctions.addNewMenu(self, "Add User", "btn_new_user", "url(:/16x16/icons/16x16/cil-user-follow.png)", True)
         UIFunctions.addNewMenu(self, "Setting", "btn_widgets", "url(:/16x16/icons/16x16/cil-settings.png)", False)
+
+        UIFunctions.setPanelColor(self, "frame_center")
+        UIFunctions.setPanelColor(self, "frame_top_info")
+        UIFunctions.setPanelColor(self, "frame_top_btns")
+        # UIFunctions.setPanelColor(self, "")
+        # 添加新页面
+
         
         # 设置默认菜单
         UIFunctions.selectStandardMenu(self, "btn_home")
@@ -81,6 +88,18 @@ class MainWindow(QMainWindow):
         # 显示主窗口
         self.show()
         ## ==> END ##
+
+    def changeColor(self,color):
+        btn = self.sender()
+        if btn.objectName() == "frame_center":
+            self.ui.frame_center.setStyleSheet(f"background-color: rgb({color.red()}, {color.green()}, {color.blue()});")
+        if btn.objectName() == "frame_top_info":
+            self.ui.frame_top_info.setStyleSheet(f"background-color: rgb({color.red()}, {color.green()}, {color.blue()});")
+        if btn.objectName() == "frame_top_btns":
+            self.ui.frame_top_btns.setStyleSheet(f"background-color: rgb({color.red()}, {color.green()}, {color.blue()});")
+ 
+
+
 
         
         

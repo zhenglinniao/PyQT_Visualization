@@ -18,11 +18,12 @@ from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
     QRadialGradient)
 from PySide2.QtWidgets import *
 import pyqtgraph as pg
-import files_rc
+
 from page_widgets import *
 from ChartThemes import *
 from LineStack import *
 from pyqtgraph import PlotWidget
+from ColorChangeWindow import *
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if MainWindow.objectName():
@@ -400,9 +401,9 @@ class Ui_MainWindow(object):
         self.btn_toggle_menu.setStyleSheet(u"QPushButton {\n"
 "	background-image: url(:/24x24/icons/24x24/cil-menu.png);\n"
 "	background-position: center;\n"
-"	background-repeat: no-reperat;\n"
+"	background-repeat: no-repeat;\n"
 "	border: none;\n"
-"	background-color: rgb(27, 29, 35);\n"
+"	background-color: rgb(127, 29, 35);\n"
 "}\n"
 "QPushButton:hover {\n"
 "	background-color: rgb(33, 37, 43);\n"
@@ -446,7 +447,9 @@ class Ui_MainWindow(object):
         self.frame_label_top_btns.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_10 = QHBoxLayout(self.frame_label_top_btns)
         self.horizontalLayout_10.setSpacing(0)
+        
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
+# 设置水平布局的边距，左边距为5，上边距为0，右边距为10，下边距为0
         self.horizontalLayout_10.setContentsMargins(5, 0, 10, 0)
         self.frame_icon_top_bar = QFrame(self.frame_label_top_btns)
         self.frame_icon_top_bar.setObjectName(u"frame_icon_top_bar")
@@ -471,8 +474,23 @@ class Ui_MainWindow(object):
         self.label_title_bar_top.setFont(font1)
         self.label_title_bar_top.setStyleSheet(u"background: transparent;\n"
 "")
-
         self.horizontalLayout_10.addWidget(self.label_title_bar_top)
+
+#改变主题颜色 自定义
+        
+        
+        self.ColorChange_frame = QFrame(self.frame_label_top_btns)
+        self.ColorChange_frame.setObjectName(u"ColorChange_frame")
+        self.horizontalLayout_10.addWidget(self.ColorChange_frame)
+
+        self.ColorChange_Hlayout = QHBoxLayout(self.ColorChange_frame)
+        self.ColorChange_Hlayout.setSpacing(0)
+        self.ColorChange_Hlayout.setAlignment(Qt.AlignRight)
+
+        
+     
+   
+#---------------------------------------------------------
 
 
         self.horizontalLayout_4.addWidget(self.frame_label_top_btns)
@@ -706,7 +724,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_9 = QVBoxLayout(self.frame_content)
         self.verticalLayout_9.setSpacing(0)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
-        self.verticalLayout_9.setContentsMargins(5, 5, 5, 5)
+# 设置垂直布局的边距为5
+        self.verticalLayout_9.setContentsMargins(0,0,0,0)
         self.stackedWidget = QStackedWidget(self.frame_content)
         self.stackedWidget.setObjectName(u"stackedWidget")
         self.stackedWidget.setStyleSheet(u"background: transparent;")

@@ -43,5 +43,12 @@ class Style():
         background-color: rgb(85, 170, 255);
         border-left: 28px solid rgb(85, 170, 255);
     }
+
+QLAbel {
+    color: rgb(255, 255, 255);
+    border: #000000;
+    padding-top: 5px;
+}
+
     """
     )

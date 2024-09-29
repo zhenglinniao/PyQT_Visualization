@@ -98,13 +98,22 @@ main.py
 
 LineStack.py
 
-- 使用QTchart实现的线性图  实现了鼠标移动事件点击事件 已经显示动画
+- 使用QTchart实现的线性图  实现了鼠标移动事件点击事件 已经显示动画（堆叠窗口）
 
 ChartThemes.py
 
-- 使用Qtchart z自带的图形工具初始化的图组件
+- 使用Qtchart z自带的图形工具初始化的图组件（堆叠窗口）
+
+page_widgets.py
+
+- 堆叠窗口
 
 （预实现窗口拖放实现客制化的可视化面板）
 
+部分布局参考：
+
+[Wanderson-Magalhaes (github.com)](https://github.com/Wanderson-Magalhaes/Modern_GUI_PyDracula_PySide6_or_PyQt6)
+
 frame_center   frame_top_info frame_top_btns  frame_left_menu    frame_toggle(btn_toggle_menu)
+
 

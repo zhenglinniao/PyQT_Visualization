@@ -453,11 +453,12 @@ if __name__ == '__main__':
 
     app = QApplication(sys.argv)
 
-    window = QMainWindow()
+    # window = QMainWindow()
     # window.setStyleSheet("QMainWindow{background-color: #ff0}")
     widget = ThemeWidget()
-    window.setCentralWidget(widget)
-    window.resize(900, 600)
-    window.show()
+    widget.show()
+    # window.setCentralWidget(widget)
+# window.resize(900, 600)
+    # window.show()
 
     sys.exit(app.exec_())
