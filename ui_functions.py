@@ -11,7 +11,7 @@
 
 ## ==> GUI FILE
 from main import *
-from ColorChangeWindow import *
+from 测试组件.ColorChangeWindow import *
 
 ## ==> GLOBALS
 GLOBAL_STATE = 0

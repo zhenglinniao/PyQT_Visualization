@@ -23,7 +23,9 @@ from page_widgets import *
 from ChartThemes import *
 from LineStack import *
 from pyqtgraph import PlotWidget
-from ColorChangeWindow import *
+from 测试组件.ColorChangeWindow import *
+from pyqt配合js.main import *
+from ui转换.mian import *
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if MainWindow.objectName():
@@ -741,7 +743,7 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.page_home)
         self.stackedWidget.addWidget(self.page_two_home)
 
-        self.page_widget = init_page_widgets()
+        self.page_widget = main_ui()
         self.stackedWidget.addWidget(self.page_widget)
 
         palette1 = QPalette()
