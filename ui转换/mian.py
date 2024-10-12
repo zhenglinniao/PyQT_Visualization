@@ -38,15 +38,18 @@ class main_ui(QWidget):
         self.verticalFrame1 = QtWidgets.QFrame(self.horizontalFrame)
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.verticalFrame1)
         self.verticalLayout = QtWidgets.QVBoxLayout()
-        self.verticalLayout.addWidget(self.SetQWidget("QWidget", "C:/Users/ZJB-24082001/Downloads/【框架】可视化大屏 (1)/border.png"))
+        self.QWidget0 = self.SetQWidget("QWidget0", "C:/Users/ZJB-24082001/Downloads/【框架】可视化大屏 (1)/border.png")
+        self.verticalLayout.addWidget(self.QWidget0)
         self.verticalLayout_3.addLayout(self.verticalLayout)
 
         self.verticalLayout_16 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_16.addWidget(self.SetQWidget("QWidget16", "C:/Users/ZJB-24082001/Downloads/【框架】可视化大屏 (1)/border.png"))
+        self.QWidget16 = self.SetQWidget("QWidget16", "C:/Users/ZJB-24082001/Downloads/【框架】可视化大屏 (1)/border.png")
+        self.verticalLayout_16.addWidget(self.QWidget16)
         self.verticalLayout_3.addLayout(self.verticalLayout_16)
 
         self.verticalLayout_17 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_17.addWidget(self.SetQWidget("QWidget17", "C:/Users/ZJB-24082001/Downloads/【框架】可视化大屏 (1)/border.png"))
+        self.QWidget17 = self.SetQWidget("QWidget17", "C:/Users/ZJB-24082001/Downloads/【框架】可视化大屏 (1)/border.png")
+        self.verticalLayout_17.addWidget(self.QWidget17)
         self.verticalLayout_3.addLayout(self.verticalLayout_17)
 
         self.horizontalLayout_3.addWidget(self.verticalFrame1)
@@ -55,11 +58,13 @@ class main_ui(QWidget):
         self.verticalFrame_2 = QtWidgets.QFrame(self.horizontalFrame)
         self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.verticalFrame_2)
         self.verticalLayout_8 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_8.addWidget(self.SetQWidget("QWidget8", ""))
+        self.QWidget8 = self.SetQWidget("QWidget8", "")
+        self.verticalLayout_8.addWidget(self.QWidget8)
         self.verticalLayout_5.addLayout(self.verticalLayout_8)
 
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_2.addWidget(self.SetQWidget("QWidget2", "C:/Users/ZJB-24082001/Downloads/【框架】可视化大屏 (1)/border.png"))
+        self.QWidget2 = self.SetQWidget("QWidget2", "C:/Users/ZJB-24082001/Downloads/【框架】可视化大屏 (1)/border.png")
+        self.horizontalLayout_2.addWidget(self.QWidget2)
         self.verticalLayout_5.addLayout(self.horizontalLayout_2)
 
         self.horizontalLayout_3.addWidget(self.verticalFrame_2)
@@ -68,26 +73,31 @@ class main_ui(QWidget):
         self.verticalFrame_3 = QtWidgets.QFrame(self.horizontalFrame)
         self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.verticalFrame_3)
         self.verticalLayout_9 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_9.addWidget(self.SetQWidget("QWidget9", "C:/Users/ZJB-24082001/Downloads/【框架】可视化大屏 (1)/border.png"))
+        self.QWidget9 = self.SetQWidget("QWidget9", "C:/Users/ZJB-24082001/Downloads/【框架】可视化大屏 (1)/border.png")
+        self.verticalLayout_9.addWidget(self.QWidget9)
         self.verticalLayout_6.addLayout(self.verticalLayout_9)
 
         self.verticalLayout_10 = QtWidgets.QVBoxLayout()
+        self.QWidget10 = self.SetQWidget("QWidget10", "C:/Users/ZJB-24082001/Downloads/【框架】可视化大屏 (1)/border.png")
         self.verticalLayout_10.addWidget(self.SetQWidget("QWidget10", "C:/Users/ZJB-24082001/Downloads/【框架】可视化大屏 (1)/border.png"))
         self.verticalLayout_6.addLayout(self.verticalLayout_10)
 
         self.horizontalLayout_5 = QtWidgets.QHBoxLayout()
         self.verticalLayout_11 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_11.addWidget(self.SetQWidget("QWidget11", "C:/Users/ZJB-24082001/Downloads/【框架】可视化大屏 (1)/border.png"))
+        self.QWidget11 = self.SetQWidget("QWidget11", "C:/Users/ZJB-24082001/Downloads/【框架】可视化大屏 (1)/border.png")
+        self.verticalLayout_11.addWidget(self.QWidget11)
         self.horizontalLayout_5.addLayout(self.verticalLayout_11)
 
         self.verticalLayout_13 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_13.addWidget(self.SetQWidget("QWidget13", "C:/Users/ZJB-24082001/Downloads/【框架】可视化大屏 (1)/border.png"))
+        self.QWidget13 = self.SetQWidget("QWidget13", "C:/Users/ZJB-24082001/Downloads/【框架】可视化大屏 (1)/border.png")
+        self.verticalLayout_13.addWidget(self.QWidget13)
         self.horizontalLayout_5.addLayout(self.verticalLayout_13)
 
         self.verticalLayout_6.addLayout(self.horizontalLayout_5)
 
         self.verticalLayout_14 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_14.addWidget(self.SetQWidget("QWidget14", "C:/Users/ZJB-24082001/Downloads/【框架】可视化大屏 (1)/border.png"))
+        self.QWidget14 = self.SetQWidget("QWidget14", "C:/Users/ZJB-24082001/Downloads/【框架】可视化大屏 (1)/border.png")
+        self.verticalLayout_14.addWidget(self.QWidget14)
         self.verticalLayout_6.addLayout(self.verticalLayout_14)
 
         self.horizontalLayout_3.addWidget(self.verticalFrame_3)

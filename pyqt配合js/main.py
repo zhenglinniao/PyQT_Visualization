@@ -32,7 +32,7 @@ if __name__ == '__main__':
         #全屏展示
         window.showMaximized()
         # window.setWindowFlag(Qt.FramelessWindowHint) # 隐藏边框
-        # window.resize(800, 600)
+        window.resize(800, 600)
         window.show()
 
         # 运行应用程序的事件循环

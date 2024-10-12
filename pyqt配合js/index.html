@@ -1,262 +1,230 @@
+<!doctype html>
 <!DOCTYPE html>
 <html>
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport">
-	<link rel="stylesheet" href="./static/swiper.min.css">
-	<link rel="stylesheet" type="text/css" href="./static/style.css">
-	<title>上海市图书馆指挥中心</title>
-	<style id="ai-assist-right-style">
-		html.ai-assist-html {
-			width: calc(100% - 480px)!important;
-			position: relative!important;
-			min-height: 100vh!important
-		}
-		.ai-assist-highlight {
-			background: yellow;
-		}
-	</style>
-	<script src="static/common.js"></script>
+    <meta charset="utf-8">
+    <title>企业营收大数据统计html页面图表</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+    <script type="text/javascript" src="js/js.js"></script>
+    <script type="text/javascript" src="js/jquery.liMarquee.js"></script>
+    <script type="text/javascript" src="js/jquery.cxselect.min.js"></script>
+    <link rel="stylesheet" href="css/comon0.css">
 </head>
 
 <body>
-<div class="tsg box report">
-	<!-- head -->
-	<div class="tsg_head ">
-		<div class="tsg_title fc">
-			<div class="d1">
-				<p id="time">2024-6-21 10:1:49</p>
-			</div>
-			<div class="d2"><img src="./static/title.png"></div>
-			<div class="d3"><iframe allowtransparency="true" frameborder="0" width="255" height="60" scrolling="no" src="https://tianqi.2345.com/plugin/widget/index.htm?s=1&z=1&t=1&v=0&d=1&bd=0&k=000000&f=00ffff&ltf=009944&htf=cc0000&q=0&e=0&a=1&c=54511&w=255&h=60&align=center"></iframe></div>
-		</div>
-		<div class="tsg_hul fc">
-			<div class="tsg_hli">
-				<p class="p1"><img class="img1" src="./static/right.png"><span>data1</span><img class="img2" src="./static/right.png"></p>
-				<p class="p2">3367220<span>件/元/?</span></p>
-			</div>
-			<div class="tsg_hli">
-				<p class="p1"><img class="img1" src="./static/right.png"><span>data2</span><img class="img2" src="./static/right.png"></p>
-				<p class="p2">76921<span>件/元/?</span></p>
-			</div>
-			<div class="tsg_hli">
-				<p class="p1"><img class="img1" src="./static/right.png"><span>dat3</span><img class="img2" src="./static/right.png"></p>
-				<p class="p2">271599<span>件/元/?</span></p>
-			</div>
-			<div class="tsg_hli">
-				<p class="p1"><img class="img1" src="./static/right.png"><span>dat4</span><img class="img2" src="./static/right.png"></p>
-				<p class="p2">19206<span>件/元/?</span></p>
-			</div>
-			<div class="tsg_hli">
-				<p class="p1"><img class="img1" src="./static/right.png"><span>data4</span><img class="img2" src="./static/right.png"></p>
-				<p class="p2">17741348<span>件/元/?</span></p>
-			</div>
-			<div class="tsg_hli">
-				<p class="p1"><img class="img1" src="./static/right.png"><span>data5</span><img class="img2" src="./static/right.png"></p>
-				<p class="p2">1066937<span>件/元/?</span></p>
-			</div>
-		</div>
-	</div>
-	<div class="tsg_box fl">
-		<!-- 左侧 -->
-		<div class="tsg_box_left tsg_box_lis">
-			<!-- 新增馆藏/新增读者分析 -->
-			<div class="tsg_box_left_li tsg_table_6">
-				<div class="tsg_box_t tsg_hli">
-					<p class="p1"><img class="img1" src="./static/right.png"><span>线型图分析</span><img class="img2" src="./static/right.png"></p>
-				</div>
-				<!-- echarts_1 -->
-				<div id="echarts_1" class="echarts_1" _echarts_instance_="ec_1718935309104" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative;">
-					<div style="position: relative; width: 559px; height: 243px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="559" height="243" style="position: absolute; left: 0px; top: 0px; width: 559px; height: 243px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div>
-					<div></div>
-				</div>
-			</div>
-			<!-- 到馆人次/借阅件/元/?次分析 -->
-			<div class="tsg_box_left_li tsg_table_6">
-				<div class="tsg_box_t tsg_hli">
-					<p class="p1"><img class="img1" src="./static/right.png"><span>柱状图分析</span><img class="img2" src="./static/right.png"></p>
-
-				</div>
-				<!-- echarts_2 -->
-				<div>
-					<div id="echarts_2" class="echarts_1 echarts_tab" _echarts_instance_="ec_1718935309105" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative; display: block;">
-						<div style="position: relative; width: 559px; height: 243px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="559" height="243" style="position: absolute; left: 0px; top: 0px; width: 559px; height: 243px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div>
-						<div></div>
-					</div>
-					<div id="echarts_21" class="echarts_1 echarts_tab" _echarts_instance_="ec_1718935309106" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative; display: none;">
-						<div style="position: relative; width: 559px; height: 243px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="559" height="243" style="position: absolute; left: 0px; top: 0px; width: 559px; height: 243px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div>
-						<div></div>
-					</div>
-					<div id="echarts_22" class="echarts_1 echarts_tab" _echarts_instance_="ec_1718935309107" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative; display: none;">
-						<div style="position: relative; width: 559px; height: 243px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="559" height="243" style="position: absolute; left: 0px; top: 0px; width: 559px; height: 243px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div>
-						<div></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- 中间 -->
-		<div class="tsg_box_center tsg_box_lis">
-			<!-- 实时客流分析 -->
-			<div class="tsg_box_left_li tsg_table_3">
-				<div class="tsg_box_t tsg_hli">
-					<p class="p1"><img class="img1" src="./static/right.png"><span>data7</span><img class="img2" src="./static/right.png"></p>
-				</div>
-				<div class="tsg_online_kl fc">
-					<div class="tsg_online_kl_li fc">
-						<div>
-							<div class="tsg_box_t tsg_hli">
-								<p class="p1"><img class="img1" src="./static/right.png"><span>name1</span><img class="img2" src="./static/right.png"></p>
-							</div>
-							<div class="tsg_online_kl_1">235</div>
-							<div class="tsg_online_kl_2">人</div>
-						</div>
-					</div>
-					<div class="tsg_online_kl_li fc">
-						<div>
-							<div class="tsg_box_t tsg_hli">
-								<p class="p1"><img class="img1" src="./static/right.png"><span>name2</span><img class="img2" src="./static/right.png"></p>
-							</div>
-							<div class="tsg_online_kl_1 tsg_online_kl_11">95</div>
-							<div class="tsg_online_kl_2">人</div>
-						</div>
-					</div>
-				</div>
-				<div class="tsg_online_text">7小时内读者滞馆情况</div>
-				<!-- echarts_3 -->
-				<div id="echarts_3" class="echarts_2" _echarts_instance_="ec_1718935309108" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative;">
-					<div style="position: relative; width: 552px; height: 270px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="552" height="270" style="position: absolute; left: 0px; top: 0px; width: 552px; height: 270px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div>
-					<div></div>
-				</div>
-			</div>
-		</div>
-		<!-- 右侧 -->
-		<div class="tsg_box_right tsg_box_lis">
-			<!-- 最近24小时分管借阅情况 -->
-			<div class="tsg_box_left_li tsg_table_7">
-				<div class="tsg_box_t tsg_hli">
-					<p class="p1"><img class="img1" src="./static/right.png"><span>最近24小时流量情况</span><img class="img2" src="./static/right.png"></p>
-				</div>
-				<div class="tsg_box_rul tsg_box_rul24 ">
-					<div class="tsg_box_rhead fc">
-						<div class="d1">借阅位置</div>
-						<div class="d1">件/元/?次</div>
-						<div class="d1">最后借阅时间</div>
-					</div>
-					<div class="tsg_box_rtr">
-						<div class="tsg_box_rli fc">
-							<div class="d2">上海图书馆综合借阅室</div>
-							<div class="d3">121</div>
-							<div class="d4">2024-08-25 17:00:00</div>
-						</div>
-						<div class="tsg_box_rli fc">
-							<div class="d2">上海图书馆璜土分管</div>
-							<div class="d3">105</div>
-							<div class="d4">2024-08-25 17:00:00</div>
-						</div>
-						<div class="tsg_box_rli fc">
-							<div class="d2">上海图书馆少儿馆</div>
-							<div class="d3">95</div>
-							<div class="d4">2024-08-25 17:00:00</div>
-						</div>
-						<div class="tsg_box_rli fc">
-							<div class="d2">上海图书馆嘉定分馆</div>
-							<div class="d3">84</div>
-							<div class="d4">2024-08-25 17:00:00</div>
-						</div>
-						<div class="tsg_box_rli fc">
-							<div class="d2">上海图书馆世纪广场</div>
-							<div class="d3">76</div>
-							<div class="d4">2024-08-25 17:00:00</div>
-						</div>
-						<div class="tsg_box_rli fc">
-							<div class="d2">上海图书馆长宁分馆</div>
-							<div class="d3">59</div>
-							<div class="d4">2024-08-25 17:00:00</div>
-						</div>
-						<div class="tsg_box_rli fc">
-							<div class="d2">上海图书馆少儿馆</div>
-							<div class="d3">49</div>
-							<div class="d4">2024-08-25 17:00:00</div>
-						</div>
-						<div class="tsg_box_rli fc">
-							<div class="d2">上海图书馆综合借阅室</div>
-							<div class="d3">44</div>
-							<div class="d4">2024-08-25 17:00:00</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- 读者构成情况分析 -->
-			<div class="tsg_box_left_li tsg_table_7">
-				<div class="tsg_box_t tsg_hli">
-					<p class="p1"><img class="img1" src="./static/right.png"><span>读者构成情况分析</span><img class="img2" src="./static/right.png"></p>
-				</div>
-				<div class="tsg_box_two fc">
-					<div id="echarts_4" class="echarts_3 tsg_box_two_li" _echarts_instance_="ec_1718935309109" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative;">
-						<div style="position: relative; width: 279px; height: 270px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="279" height="270" style="position: absolute; left: 0px; top: 0px; width: 279px; height: 270px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div>
-						<div></div>
-					</div>
-					<div id="echarts_5" class="echarts_4 tsg_box_two_li" _echarts_instance_="ec_1718935309110" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative;">
-						<div style="position: relative; width: 279px; height: 270px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="279" height="270" style="position: absolute; left: 0px; top: 0px; width: 279px; height: 270px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div>
-						<div></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<script type="text/javascript" src="./static/jquery.min.js"></script>
-<script type="text/javascript" src="./static/swiper.min.js"></script>
-<script type="text/javascript" src="./static/echarts.min.js"></script>
-<script type="text/javascript" src="./static/common.js"></script>
-<script>
-
-	var swiper = new Swiper('.swiper-container',{
-		pagination:'.swiper-pagination',
-		loop:true,
-		autoplay:3000,
-		//grabCursor:true,
-		centeredSlides:true,
-		slidesPerView:'2',
-		effect:'coverflow', //叠加
-		coverflow:{
-			rotate:0,//滑动时旋转角度
-			stretch:50,//聚合宽度
-			depth:100,//景深
-			modifier:1,//覆盖叠加层数
-			slideShadows:false//是否阴影
-		}
-	});
-	window.onload = function(){
-		getCurDate()
-	}
-
-	setInterval("getCurDate()", 1000);
-
-
-	function getCurDate() {
-		var date = new Date()
-		var y = date.getFullYear();
-		var m = date.getMonth() + 1;
-		var d = date.getDate();
-		var h = date.getHours();
-		var min = date.getMinutes();
-		var s = date.getSeconds();
-		s = s<10 ? "0" + s : s;
-		document.getElementById("time").innerHTML = y + "-" + m + "-" + d + " " + h + ":" + min + ":" + s;
-	}
-</script>
-<!---->
+    <div style="background:#000d4a url(img/bg.jpeg) center top;">
+        <div class="loading">
+            <div class="loadbox"><img src="img/loading.gif">页面加载中...</div>
+        </div>
+        <div class="back"></div>
+        <div class="head">
+            <div class="weather"><span id="showTime"></span></div>
+            <h1>企业营收大数据可视化大屏</h1>
+        </div>
+        <script>
+            var t = null;
+            t = setTimeout(time, 1000); /*開始运行*/
+            function time() {
+                clearTimeout(t); /*清除定时器*/
+                dt = new Date();
+                var y = dt.getFullYear();
+                var mt = dt.getMonth() + 1;
+                var day = dt.getDate();
+                var h = dt.getHours();
+                var m = dt.getMinutes();
+                var s = dt.getSeconds();
+                document.getElementById("showTime").innerHTML = y + "年" + mt + "月" + day + "日" + h + "时" + m + "分" + s + "秒";
+                t = setTimeout(time, 1000);
+            }
+        </script>
+        <div class="mainbox">
+            <ul class="clearfix">
+                <li>
+                    <div class="boxall" style="height:400px;">
+                        <div class="alltitle">标题样式</div>
+                        <div class="navboxall" id="echart5"></div>
+                    </div>
+                    <div class="boxall" style="height:260px;">
+                        <div class="alltitle">标题样式</div>
+                        <div class="navboxall">
+                            <div class="wraptit"><span>单号</span><span>金额</span><span>品名</span><span>时间</span></div>
+                            <div class="wrap">
+                                <ul>
+                                    <li>
+                                        <p><span>100021415</span><span>199</span><span>手机</span><span>18小时</span></p>
+                                    </li>
+                                    <li>
+                                        <p><span>100021415</span><span>199</span><span>手机</span><span>18小时</span></p>
+                                    </li>
+                                    <li>
+                                        <p><span>100021415</span><span>199</span><span>手机</span><span>18小时</span></p>
+                                    </li>
+                                    <li>
+                                        <p><span>100021415</span><span>199</span><span>手机</span><span>18小时</span></p>
+                                    </li>
+                                    <li>
+                                        <p><span>100021415</span><span>199</span><span>手机</span><span>18小时</span></p>
+                                    </li>
+                                    <li>
+                                        <p><span>100021415</span><span>199</span><span>手机</span><span>18小时</span></p>
+                                    </li>
+                                    <li>
+                                        <p><span>100021415</span><span>199</span><span>手机</span><span>18小时</span></p>
+                                    </li>
+                                    <li>
+                                        <p><span>100021415</span><span>199</span><span>手机</span><span>18小时</span></p>
+                                    </li>
+                                    <li>
+                                        <p><span>100021415</span><span>199</span><span>手机</span><span>18小时</span></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boxall" style="height:260px;">
+                        <div class="alltitle">标题样式</div>
+                        <div class="navboxall" id="echart1"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="boxall" style="height:230px">
+                        <div class="clearfix navboxall" style="height: 100%">
+                            <div class="pulll_left num">
+                                <div class="numbt">总体情况<span>(单位：元)</span></div>
+                                <div class="numtxt">19382721</div>
+                            </div>
+                            <div class="pulll_right zhibiao">
+                                <div class="zb1"><span>标题样式</span>
+                                    <div id="zb1"></div>
+                                </div>
+                                <div class="zb2"><span>标题样式</span>
+                                    <div id="zb2"></div>
+                                </div>
+                                <div class="zb3"><span>标题样式</span>
+                                    <div id="zb3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boxall" style="height:350px">
+                        <div class="alltitle">标题样式</div>
+                        <div class="navboxall" id="echart4"></div>
+                    </div>
+                    <div class="boxall" style="height:340px">
+                        <div class="alltitle">标题样式</div>
+                        <div class="navboxall" id="echart3"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="boxall" style="height:300px">
+                        <div class="alltitle">标题样式</div>
+                        <div class="navboxall">
+                            <table class="table1" width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <th scope="col">排名</th>
+                                        <th scope="col">公司</th>
+                                        <th scope="col">数量</th>
+                                        <th scope="col">增长率</th>
+                                    </tr>
+                                    <tr>
+                                        <td><span>1</span></td>
+                                        <td>腾讯科技</td>
+                                        <td>114万<br></td>
+                                        <td>100%<br></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>2</span></td>
+                                        <td>百度公司</td>
+                                        <td>923823万</td>
+                                        <td>21%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>3</span></td>
+                                        <td>新浪</td>
+                                        <td>1240253万</td>
+                                        <td>12%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>4</span></td>
+                                        <td>网易</td>
+                                        <td>1.2亿</td>
+                                        <td>39%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>5</span></td>
+                                        <td>雅虎</td>
+                                        <td>13423万</td>
+                                        <td>9%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="boxall" style="height: 300px">
+                        <div class="alltitle">标题样式</div>
+                        <div class="navboxall">
+                            <table class="table1" width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <th scope="col">排名</th>
+                                        <th scope="col">公司</th>
+                                        <th scope="col">数量</th>
+                                        <th scope="col">增长率</th>
+                                    </tr>
+                                    <tr>
+                                        <td><span>1</span></td>
+                                        <td>腾讯科技</td>
+                                        <td>114万<br></td>
+                                        <td>100%<br></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>2</span></td>
+                                        <td>百度公司</td>
+                                        <td>923823万</td>
+                                        <td>21%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>3</span></td>
+                                        <td>新浪</td>
+                                        <td>1240253万</td>
+                                        <td>12%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>4</span></td>
+                                        <td>网易</td>
+                                        <td>1.2亿</td>
+                                        <td>39%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>5</span></td>
+                                        <td>雅虎</td>
+                                        <td>13423万</td>
+                                        <td>9%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="boxall" style="height:320px">
+                        <div class="alltitle">标题样式</div>
+                        <div class="navboxall" id="echart2"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        $(function() {
+            $('.wrap,.adduser').liMarquee({
+                direction: 'up',
+                /*身上滚动*/ runshort: false,
+                /*内容不足时不滚动*/ scrollamount: 20 /*速度*/
+            });
+        });
+    </script>
 </body>
-<style>
-	body{
-	    margin: 0;
-		padding: 0;
-		width: 100vw;  /* 页面宽度为窗口宽度的 100% */
-		height: 100vh; /* 页面高度为窗口高度的 100% */
-		box-sizing: border-box;
-	}
-</style>
+
 </html>

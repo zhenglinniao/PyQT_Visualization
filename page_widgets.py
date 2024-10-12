@@ -5,7 +5,7 @@ from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
     QRadialGradient)
 from PySide2.QtWidgets import *
 import pyqtgraph as pg
-import files_rc
+
 
 class init_page_widgets(QWidget):
     def __init__(self):

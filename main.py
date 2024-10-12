@@ -17,6 +17,7 @@ from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFo
 from PySide2.QtWidgets import *
 import numpy as np
 import pyqtgraph as pg
+import files_rc
 # GUI FILE IMPORTS
 from app_modules import *
 class MainWindow(QMainWindow):
@@ -42,7 +43,6 @@ class MainWindow(QMainWindow):
         startSize = QSize(1000, 720)
         self.resize(startSize)
         self.setMinimumSize(startSize)
-       
         # 点击按钮切换菜单大小
         self.ui.btn_toggle_menu.clicked.connect(lambda: UIFunctions.toggleMenu(self, 220, True))
         # 设置菜单最小宽度
