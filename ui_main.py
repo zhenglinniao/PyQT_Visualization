@@ -746,6 +746,9 @@ class Ui_MainWindow(object):
         self.page_widget = main_ui()
         self.stackedWidget.addWidget(self.page_widget)
 
+        self.new_page = init_page_widgets()
+        self.stackedWidget.addWidget(self.new_page)
+
         palette1 = QPalette()
         palette1.setBrush(QPalette.Active, QPalette.WindowText, brush6)
         brush15 = QBrush(QColor(39, 44, 54, 255))

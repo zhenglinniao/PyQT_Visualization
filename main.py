@@ -51,6 +51,7 @@ class MainWindow(QMainWindow):
         UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/16x16/icons/16x16/cil-home.png)", True)
         UIFunctions.addNewMenu(self, "Add User", "btn_new_user", "url(:/16x16/icons/16x16/cil-user-follow.png)", True)
         UIFunctions.addNewMenu(self, "Setting", "btn_widgets", "url(:/16x16/icons/16x16/cil-settings.png)", False)
+        UIFunctions.addNewMenu(self, "new_page", "new_page", "url(:/16x16/icons/16x16/cil-media-step-forward.png)", True)
 
         UIFunctions.setPanelColor(self, "frame_center")
         UIFunctions.setPanelColor(self, "frame_top_info")
@@ -132,6 +133,16 @@ class MainWindow(QMainWindow):
         if btnWidget.objectName() == "btn_widgets":
             # 设置当前页面为page_widgets
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_widget)
+            # 重置按钮样式
+            UIFunctions.resetStyle(self, "btn_widgets")
+            # 设置标签页标题
+            UIFunctions.labelPage(self, "Custom Widgets")
+            # 设置按钮样式
+            btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
+
+        if btnWidget.objectName() == "new_page":
+            # 设置当前页面为page_widgets
+            self.ui.stackedWidget.setCurrentWidget(self.ui.new_page)
             # 重置按钮样式
             UIFunctions.resetStyle(self, "btn_widgets")
             # 设置标签页标题
