@@ -6,7 +6,7 @@ from PySide2.QtWidgets import QApplication, QWidget, QMainWindow
 from PySide2.QtGui import QPalette, QBrush, QPixmap
 from PySide2.QtCore import Qt
 
-
+# main
 class main_ui(QWidget):
     def __init__(self):
         super().__init__()
