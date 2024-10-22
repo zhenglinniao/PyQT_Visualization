@@ -62,6 +62,7 @@ class TransparentWindow(QMainWindow):
 
         # 创建 QChartView 以显示图表
         chart_view = QChartView(chart)
+ # 设置渲染提示，启用抗锯齿
         chart_view.setRenderHint(QPainter.Antialiasing)
         chart_view.setStyleSheet("background-color: transparent;")  # 设置背景透明
         layout.addWidget(chart_view)  # 将 chart_view 添加到布局中

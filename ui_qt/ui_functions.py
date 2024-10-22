@@ -12,7 +12,7 @@
 ## ==> GUI FILE
 from main import *
 from 测试组件.ColorChangeWindow import *
-
+import logging
 ## ==> GLOBALS
 GLOBAL_STATE = 0
 GLOBAL_TITLE_BAR = True
@@ -22,6 +22,7 @@ count = 1
 
 class UIFunctions(MainWindow):
 
+  
     ## ==> GLOBALS
     GLOBAL_STATE = 0
     GLOBAL_TITLE_BAR = True

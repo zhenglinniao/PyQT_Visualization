@@ -1,0 +1,721 @@
+2024-10-14 16:37:09,714 - DEBUG - 这是调试信息
+2024-10-14 16:37:09,715 - INFO - 这是信息信息
+2024-10-14 16:37:09,715 - WARNING - 这是警告信息
+2024-10-14 16:37:09,715 - ERROR - 这是错误信息
+2024-10-14 16:37:09,715 - CRITICAL - 这是严重错误信息
+2024-10-14 16:38:08,741 - DEBUG - qqqq
+2024-10-14 16:38:08,741 - INFO - 这是信息信息
+2024-10-14 16:38:08,741 - WARNING - 这是警告信息
+2024-10-14 16:38:08,741 - ERROR - 这是错误信息
+2024-10-14 16:38:08,741 - CRITICAL - 这是严重错误信息
+2024-10-14 16:38:53,095 - DEBUG - qqqq
+2024-10-14 16:38:53,095 - INFO - 杩欐槸淇℃伅淇℃伅
+2024-10-14 16:38:53,095 - WARNING - 杩欐槸璀﹀憡淇℃伅
+2024-10-14 16:38:53,095 - ERROR - 杩欐槸閿欒淇℃伅
+2024-10-14 16:38:53,095 - CRITICAL - 杩欐槸涓ラ噸閿欒淇℃伅
+2024-10-14 16:39:13,054 - INFO - 杩欐槸涓�涓俊鎭俊鎭紝璁板綍鍒版枃浠朵腑
+2024-10-14 16:42:48,037 - INFO - 杩欐槸涓�涓俊鎭俊鎭紝璁板綍鍒版枃浠朵腑
+2024-10-14 16:45:16,666 - INFO - 杩欐槸涓�涓俊鎭俊鎭紝璁板綍鍒版枃浠朵腑
+2024-10-14 16:47:51,553 - INFO - 杩欐槸涓�涓俊鎭俊鎭紝璁板綍鍒版枃浠朵腑
+2024-10-14 16:48:24,965 - INFO - 杩欐槸涓�涓俊鎭俊鎭紝璁板綍鍒版枃浠朵腑
+2024-10-14 16:51:47,784 - INFO - log information...
+2024-10-14 16:53:40,124 - INFO - log information...
+2024-10-14 16:53:40,541 - INFO - System info: Windows
+2024-10-14 16:54:44,508 - INFO - log information...
+2024-10-14 16:54:44,925 - INFO - System info: Windows
+2024-10-14 16:54:44,925 - INFO - System version: 10
+2024-10-14 16:54:44,926 - INFO - Python version: 3.6.15
+2024-10-14 17:02:32,186 - INFO - Initializing the MainWindow...
+2024-10-14 17:02:32,642 - INFO - System info: Windows
+2024-10-14 17:02:32,642 - INFO - System version: 10
+2024-10-14 17:02:32,643 - INFO - Python version: 3.6.15
+2024-10-14 17:02:32,643 - ERROR - Error adding new menu: name 'QFont' is not defined
+2024-10-14 17:02:32,670 - INFO - Height: 720 | Width: 1000
+2024-10-14 17:06:33,021 - INFO - log information...
+2024-10-14 17:06:33,518 - INFO - System info: Windows
+2024-10-14 17:06:33,518 - INFO - System version: 10
+2024-10-14 17:06:33,518 - INFO - Python version: 3.6.15
+2024-10-14 17:18:14,339 - INFO - log information...
+2024-10-14 17:18:14,793 - INFO - System info: Windows
+2024-10-14 17:18:14,794 - INFO - System version: 10
+2024-10-14 17:18:14,794 - INFO - Python version: 3.6.15
+2024-10-15 08:20:19,321 - INFO - log information...
+2024-10-15 08:20:20,180 - INFO - System info: Windows
+2024-10-15 08:20:20,180 - INFO - System version: 10
+2024-10-15 08:20:20,180 - INFO - Python version: 3.6.15
+2024-10-15 08:24:01,774 - INFO - log information...
+2024-10-15 08:24:02,116 - INFO - System info: Windows
+2024-10-15 08:24:02,116 - INFO - System version: 10
+2024-10-15 08:24:02,116 - INFO - Python version: 3.6.15
+2024-10-15 08:24:02,118 - ERROR - Error in main application loop: division by zero
+2024-10-15 08:24:15,235 - INFO - log information...
+2024-10-15 08:24:15,542 - INFO - System info: Windows
+2024-10-15 08:24:15,543 - INFO - System version: 10
+2024-10-15 08:24:15,543 - INFO - Python version: 3.6.15
+2024-10-15 08:24:15,545 - ERROR - Error in main application loop: division by zero
+2024-10-15 08:25:13,672 - INFO - log information...
+2024-10-15 08:25:13,970 - INFO - System info: Windows
+2024-10-15 08:25:13,970 - INFO - System version: 10
+2024-10-15 08:25:13,970 - INFO - Python version: 3.6.15
+2024-10-15 08:25:13,973 - ERROR - Error in main application loop: division by zero
+2024-10-15 08:25:41,150 - INFO - log information...
+2024-10-15 08:25:41,451 - INFO - System info: Windows
+2024-10-15 08:25:41,451 - INFO - System version: 10
+2024-10-15 08:25:41,451 - INFO - Python version: 3.6.15
+2024-10-15 08:25:41,454 - ERROR - Error in main application loop: division by zero
+2024-10-15 08:26:27,043 - INFO - log information...
+2024-10-15 08:26:27,338 - INFO - System info: Windows
+2024-10-15 08:26:27,338 - INFO - System version: 10
+2024-10-15 08:26:27,338 - INFO - Python version: 3.6.15
+2024-10-15 08:30:14,398 - INFO - log information...
+2024-10-15 08:30:14,666 - ERROR - Error during UI initialization: division by zero
+2024-10-15 08:30:14,668 - INFO - System info: Windows
+2024-10-15 08:30:14,669 - INFO - System version: 10
+2024-10-15 08:30:14,669 - INFO - Python version: 3.6.15
+2024-10-15 08:30:14,671 - ERROR - Error in main application loop: division by zero
+2024-10-15 08:30:22,050 - INFO - log information...
+2024-10-15 08:30:22,304 - ERROR - Error during UI initialization: division by zero
+2024-10-15 08:30:22,304 - INFO - System info: Windows
+2024-10-15 08:30:22,305 - INFO - System version: 10
+2024-10-15 08:30:22,305 - INFO - Python version: 3.6.15
+2024-10-15 08:30:22,306 - ERROR - Error in main application loop: division by zero
+2024-10-15 08:30:58,236 - INFO - log information...
+2024-10-15 08:30:58,441 - ERROR - Error during UI initialization: division by zero
+2024-10-15 08:30:58,442 - INFO - System info: Windows
+2024-10-15 08:30:58,442 - INFO - System version: 10
+2024-10-15 08:30:58,442 - INFO - Python version: 3.6.15
+2024-10-15 08:30:58,444 - ERROR - 鍏ㄥ眬鎹曡幏
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 192, in <module>
+    window = MainWindow()
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 85, in __init__
+    y = 1/0
+ZeroDivisionError: division by zero
+2024-10-15 08:31:12,675 - INFO - log information...
+2024-10-15 08:31:12,891 - ERROR - Error during UI initialization: division by zero
+2024-10-15 08:31:12,892 - INFO - System info: Windows
+2024-10-15 08:31:12,892 - INFO - System version: 10
+2024-10-15 08:31:12,892 - INFO - Python version: 3.6.15
+2024-10-15 08:31:12,895 - ERROR - Error in UI definitions: 'Ui_MainWindow' object has no attribute 'frame_size_grip'
+2024-10-15 08:31:27,153 - INFO - log information...
+2024-10-15 08:31:27,402 - ERROR - Error during UI initialization: division by zero
+2024-10-15 08:31:27,403 - INFO - System info: Windows
+2024-10-15 08:31:27,403 - INFO - System version: 10
+2024-10-15 08:31:27,403 - INFO - Python version: 3.6.15
+2024-10-15 08:31:27,407 - ERROR - Error in UI definitions: 'Ui_MainWindow' object has no attribute 'frame_size_grip'
+2024-10-15 08:31:55,520 - INFO - log information...
+2024-10-15 08:31:55,824 - INFO - System info: Windows
+2024-10-15 08:31:55,824 - INFO - System version: 10
+2024-10-15 08:31:55,824 - INFO - Python version: 3.6.15
+2024-10-15 08:32:41,068 - INFO - log information...
+2024-10-15 08:32:41,368 - INFO - System info: Windows
+2024-10-15 08:32:41,369 - INFO - System version: 10
+2024-10-15 08:32:41,369 - INFO - Python version: 3.6.15
+2024-10-15 08:32:54,382 - INFO - log information...
+2024-10-15 08:32:54,592 - ERROR - Error during UI initialization: division by zero
+2024-10-15 08:32:54,593 - INFO - System info: Windows
+2024-10-15 08:32:54,593 - INFO - System version: 10
+2024-10-15 08:32:54,593 - INFO - Python version: 3.6.15
+2024-10-15 08:32:54,596 - ERROR - Error in UI definitions: 'Ui_MainWindow' object has no attribute 'frame_size_grip'
+2024-10-15 08:33:14,254 - INFO - log information...
+2024-10-15 08:33:14,489 - ERROR - Error during UI initialization: division by zero
+2024-10-15 08:33:14,490 - INFO - System info: Windows
+2024-10-15 08:33:14,490 - INFO - System version: 10
+2024-10-15 08:33:14,491 - INFO - Python version: 3.6.15
+2024-10-15 08:33:14,494 - ERROR - Error in UI definitions: 'Ui_MainWindow' object has no attribute 'frame_size_grip'
+2024-10-15 08:37:24,777 - INFO - log information...
+2024-10-15 08:37:25,102 - INFO - System info: Windows
+2024-10-15 08:37:25,102 - INFO - System version: 10
+2024-10-15 08:37:25,103 - INFO - Python version: 3.6.15
+2024-10-15 08:38:28,887 - INFO - log information...
+2024-10-15 08:38:29,093 - ERROR - Error during UI initialization: division by zero
+2024-10-15 08:38:29,094 - INFO - System info: Windows
+2024-10-15 08:38:29,094 - INFO - System version: 10
+2024-10-15 08:38:29,094 - INFO - Python version: 3.6.15
+2024-10-15 08:38:29,097 - ERROR - Error in UI definitions: 'Ui_MainWindow' object has no attribute 'frame_size_grip'
+2024-10-15 08:38:48,903 - INFO - log information...
+2024-10-15 08:38:49,103 - ERROR - Error during UI initialization: division by zero
+2024-10-15 08:38:49,104 - INFO - System info: Windows
+2024-10-15 08:38:49,104 - INFO - System version: 10
+2024-10-15 08:38:49,104 - INFO - Python version: 3.6.15
+2024-10-15 08:38:49,107 - ERROR - Error in UI definitions: 'Ui_MainWindow' object has no attribute 'frame_size_grip'
+2024-10-15 08:39:38,178 - INFO - log information...
+2024-10-15 08:39:38,375 - ERROR - Error during UI initialization: division by zero
+2024-10-15 08:39:38,376 - INFO - System info: Windows
+2024-10-15 08:39:38,376 - INFO - System version: 10
+2024-10-15 08:39:38,376 - INFO - Python version: 3.6.15
+2024-10-15 08:39:38,380 - ERROR - Error in UI definitions: 'Ui_MainWindow' object has no attribute 'frame_size_grip'
+2024-10-15 08:43:43,460 - INFO - log information...
+2024-10-15 08:43:43,666 - ERROR - Error: division by zero
+2024-10-15 08:43:43,765 - INFO - System info: Windows
+2024-10-15 08:43:43,765 - INFO - System version: 10
+2024-10-15 08:43:43,766 - INFO - Python version: 3.6.15
+2024-10-15 08:43:53,918 - INFO - log information...
+2024-10-15 08:43:54,126 - ERROR - Error: division by zero
+2024-10-15 08:43:54,228 - INFO - System info: Windows
+2024-10-15 08:43:54,228 - INFO - System version: 10
+2024-10-15 08:43:54,229 - INFO - Python version: 3.6.15
+2024-10-15 08:44:19,945 - INFO - log information...
+2024-10-15 08:44:20,137 - ERROR - Error: division by zero
+2024-10-15 08:44:20,237 - INFO - System info: Windows
+2024-10-15 08:44:20,237 - INFO - System version: 10
+2024-10-15 08:44:20,237 - INFO - Python version: 3.6.15
+2024-10-15 08:45:03,742 - INFO - log information...
+2024-10-15 08:45:03,941 - ERROR - Error: division by zero
+2024-10-15 08:45:04,040 - INFO - System info: Windows
+2024-10-15 08:45:04,040 - INFO - System version: 10
+2024-10-15 08:45:04,040 - INFO - Python version: 3.6.15
+2024-10-15 08:47:52,664 - INFO - log information...
+2024-10-15 08:47:52,869 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\LineStack.py", line 300, in __init__
+    y = 1/0
+ZeroDivisionError: division by zero
+2024-10-15 08:47:52,966 - INFO - System info: Windows
+2024-10-15 08:47:52,967 - INFO - System version: 10
+2024-10-15 08:47:52,967 - INFO - Python version: 3.6.15
+2024-10-15 08:57:20,374 - ERROR - 鍏ㄥ眬鎹曡幏
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 22, in <module>
+    from app_modules import *
+  File "D:\programfile_app\anaconda\envs\qt\lib\site-packages\shiboken2\files.dir\shibokensupport\__feature__.py", line 142, in _import
+    return original_import(name, *args, **kwargs)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\app_modules.py", line 24, in <module>
+    from ui_functions import *
+  File "D:\programfile_app\anaconda\envs\qt\lib\site-packages\shiboken2\files.dir\shibokensupport\__feature__.py", line 142, in _import
+    return original_import(name, *args, **kwargs)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_functions.py", line 13, in <module>
+    from main import *
+  File "D:\programfile_app\anaconda\envs\qt\lib\site-packages\shiboken2\files.dir\shibokensupport\__feature__.py", line 142, in _import
+    return original_import(name, *args, **kwargs)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\main.py", line 185, in <module>
+    sss
+NameError: name 'sss' is not defined
+2024-10-15 08:57:57,444 - INFO - log information...
+2024-10-15 08:57:57,725 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\LineStack.py", line 300, in __init__
+    y = 1/0
+ZeroDivisionError: division by zero
+2024-10-15 08:57:57,727 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 34, in __init__
+    self.ui.setupUi(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_main.py", line 739, in setupUi
+    self.page_two_home = content_charts()
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\LineStack.py", line 304, in __init__
+    aa
+NameError: name 'aa' is not defined
+2024-10-15 08:57:57,728 - INFO - System info: Windows
+2024-10-15 08:57:57,728 - INFO - System version: 10
+2024-10-15 08:57:57,728 - INFO - Python version: 3.6.15
+2024-10-15 08:57:57,732 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 100, in __init__
+    UIFunctions.uiDefinitions(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_functions.py", line 249, in uiDefinitions
+    self.sizegrip = QSizeGrip(self.ui.frame_size_grip)
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_size_grip'
+2024-10-15 09:02:11,119 - ERROR - 鍏ㄥ眬鎹曡幏
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 22, in <module>
+    from app_modules import *
+  File "D:\programfile_app\anaconda\envs\qt\lib\site-packages\shiboken2\files.dir\shibokensupport\__feature__.py", line 142, in _import
+    return original_import(name, *args, **kwargs)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\app_modules.py", line 24, in <module>
+    from ui_functions import *
+  File "D:\programfile_app\anaconda\envs\qt\lib\site-packages\shiboken2\files.dir\shibokensupport\__feature__.py", line 142, in _import
+    return original_import(name, *args, **kwargs)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_functions.py", line 23, in <module>
+    class UIFunctions(MainWindow):
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_functions.py", line 25, in UIFunctions
+    y = 1/0
+ZeroDivisionError: division by zero
+2024-10-15 11:11:47,149 - ERROR - 鍏ㄥ眬鎹曡幏
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 22, in <module>
+    from app_modules import *
+  File "D:\programfile_app\anaconda\envs\qt\lib\site-packages\shiboken2\files.dir\shibokensupport\__feature__.py", line 142, in _import
+    return original_import(name, *args, **kwargs)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\app_modules.py", line 24, in <module>
+    from ui_functions import *
+  File "D:\programfile_app\anaconda\envs\qt\lib\site-packages\shiboken2\files.dir\shibokensupport\__feature__.py", line 142, in _import
+    return original_import(name, *args, **kwargs)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_functions.py", line 23, in <module>
+    class UIFunctions(MainWindow):
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_functions.py", line 25, in UIFunctions
+    y = 1/0
+ZeroDivisionError: division by zero
+2024-10-15 11:13:33,299 - ERROR - An error occurred
+Traceback (most recent call last):
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_functions.py", line 26, in UIFunctions
+    y= 1/0
+ZeroDivisionError: division by zero
+2024-10-15 11:13:33,592 - INFO - log information...
+2024-10-15 11:13:34,016 - ERROR - Error1111 occurred:
+Traceback (most recent call last):
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\LineStack.py", line 300, in __init__
+    y = 1/0
+ZeroDivisionError: division by zero
+2024-10-15 11:13:34,139 - INFO - System info: Windows
+2024-10-15 11:13:34,139 - INFO - System version: 10
+2024-10-15 11:13:34,139 - INFO - Python version: 3.6.15
+2024-10-15 11:15:46,482 - INFO - log information...
+2024-10-15 11:15:46,741 - ERROR - Error1111 occurred:
+Traceback (most recent call last):
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\LineStack.py", line 300, in __init__
+    y = 1/0
+ZeroDivisionError: division by zero
+2024-10-15 11:15:46,852 - INFO - System info: Windows
+2024-10-15 11:15:46,852 - INFO - System version: 10
+2024-10-15 11:15:46,852 - INFO - Python version: 3.6.15
+2024-10-15 11:16:47,178 - INFO - log information...
+2024-10-15 11:16:47,398 - ERROR - Error1111 occurred:
+Traceback (most recent call last):
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\LineStack.py", line 300, in __init__
+    y = 1/0
+ZeroDivisionError: division by zero
+2024-10-15 11:16:47,495 - INFO - System info: Windows
+2024-10-15 11:16:47,495 - INFO - System version: 10
+2024-10-15 11:16:47,495 - INFO - Python version: 3.6.15
+2024-10-15 11:18:25,665 - INFO - log information...
+2024-10-15 11:18:25,873 - ERROR - Error1111 occurred:
+Traceback (most recent call last):
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\LineStack.py", line 300, in __init__
+    y = 1/0
+ZeroDivisionError: division by zero
+2024-10-15 11:18:25,972 - INFO - System info: Windows
+2024-10-15 11:18:25,973 - INFO - System version: 10
+2024-10-15 11:18:25,973 - INFO - Python version: 3.6.15
+2024-10-15 11:28:49,835 - INFO - log information...
+2024-10-15 11:28:50,050 - ERROR - Error1111 occurred:
+Traceback (most recent call last):
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\LineStack.py", line 300, in __init__
+    y = 1/0
+ZeroDivisionError: division by zero
+2024-10-15 11:28:50,151 - INFO - System info: Windows
+2024-10-15 11:28:50,151 - INFO - System version: 10
+2024-10-15 11:28:50,152 - INFO - Python version: 3.6.15
+2024-10-15 13:48:23,137 - INFO - log information...
+2024-10-15 13:48:23,363 - ERROR - Error1111 occurred:
+Traceback (most recent call last):
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\LineStack.py", line 300, in __init__
+    y = 1/0
+ZeroDivisionError: division by zero
+2024-10-15 13:48:23,462 - INFO - System info: Windows
+2024-10-15 13:48:23,462 - INFO - System version: 10
+2024-10-15 13:48:23,462 - INFO - Python version: 3.6.15
+2024-10-15 13:59:42,529 - INFO - log information...
+2024-10-15 13:59:42,768 - ERROR - Error1111 occurred:
+Traceback (most recent call last):
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\LineStack.py", line 300, in __init__
+    y = 1/0
+ZeroDivisionError: division by zero
+2024-10-15 13:59:42,866 - INFO - System info: Windows
+2024-10-15 13:59:42,866 - INFO - System version: 10
+2024-10-15 13:59:42,866 - INFO - Python version: 3.6.15
+2024-10-15 14:00:31,773 - INFO - log information...
+2024-10-15 14:00:31,979 - ERROR - Error1111 occurred:
+Traceback (most recent call last):
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\LineStack.py", line 300, in __init__
+    y = 1/0
+ZeroDivisionError: division by zero
+2024-10-15 14:00:32,080 - INFO - System info: Windows
+2024-10-15 14:00:32,080 - INFO - System version: 10
+2024-10-15 14:00:32,081 - INFO - Python version: 3.6.15
+2024-10-15 14:00:54,149 - INFO - log information...
+2024-10-15 14:00:54,354 - ERROR - Error1111 occurred:
+Traceback (most recent call last):
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\LineStack.py", line 300, in __init__
+    y = 1/0
+ZeroDivisionError: division by zero
+2024-10-15 14:00:54,454 - INFO - System info: Windows
+2024-10-15 14:00:54,454 - INFO - System version: 10
+2024-10-15 14:00:54,454 - INFO - Python version: 3.6.15
+2024-10-15 16:35:12,543 - INFO - log information...
+2024-10-15 16:35:13,024 - INFO - System info: Windows
+2024-10-15 16:35:13,024 - INFO - System version: 10
+2024-10-15 16:35:13,024 - INFO - Python version: 3.6.15
+2024-10-15 16:35:37,299 - INFO - log information...
+2024-10-15 16:35:37,598 - INFO - System info: Windows
+2024-10-15 16:35:37,599 - INFO - System version: 10
+2024-10-15 16:35:37,599 - INFO - Python version: 3.6.15
+2024-10-16 09:36:23,525 - INFO - log information...
+2024-10-16 09:36:23,839 - INFO - System info: Windows
+2024-10-16 09:36:23,839 - INFO - System version: 10
+2024-10-16 09:36:23,840 - INFO - Python version: 3.6.15
+2024-10-16 09:46:58,907 - INFO - log information...
+2024-10-16 09:46:59,242 - INFO - System info: Windows
+2024-10-16 09:46:59,242 - INFO - System version: 10
+2024-10-16 09:46:59,242 - INFO - Python version: 3.6.15
+2024-10-16 09:54:24,964 - INFO - log information...
+2024-10-16 09:54:25,002 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 34, in __init__
+    self.ui.setupUi(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_main.py", line 724, in setupUi
+    self.frame_content.setStyle("background: transparent;")
+TypeError: 'PySide2.QtWidgets.QWidget.setStyle' called with wrong argument types:
+  PySide2.QtWidgets.QWidget.setStyle(str)
+Supported signatures:
+  PySide2.QtWidgets.QWidget.setStyle(PySide2.QtWidgets.QStyle)
+2024-10-16 09:54:25,005 - INFO - System info: Windows
+2024-10-16 09:54:25,005 - INFO - System version: 10
+2024-10-16 09:54:25,005 - INFO - Python version: 3.6.15
+2024-10-16 09:54:25,005 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 61, in __init__
+    self.ui.stackedWidget.setMinimumWidth(20)
+AttributeError: 'Ui_MainWindow' object has no attribute 'stackedWidget'
+2024-10-16 09:54:25,008 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 81, in __init__
+    self.ui.stackedWidget.setCurrentWidget(self.ui.page_home)
+AttributeError: 'Ui_MainWindow' object has no attribute 'stackedWidget'
+2024-10-16 09:54:25,013 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 100, in __init__
+    UIFunctions.uiDefinitions(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_functions.py", line 250, in uiDefinitions
+    self.sizegrip = QSizeGrip(self.ui.frame_size_grip)
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_size_grip'
+2024-10-16 09:54:58,994 - INFO - log information...
+2024-10-16 09:54:59,013 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 34, in __init__
+    self.ui.setupUi(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_main.py", line 724, in setupUi
+    self.frame_content.setStyle("background: transparent;")
+TypeError: 'PySide2.QtWidgets.QWidget.setStyle' called with wrong argument types:
+  PySide2.QtWidgets.QWidget.setStyle(str)
+Supported signatures:
+  PySide2.QtWidgets.QWidget.setStyle(PySide2.QtWidgets.QStyle)
+2024-10-16 09:54:59,015 - INFO - System info: Windows
+2024-10-16 09:54:59,015 - INFO - System version: 10
+2024-10-16 09:54:59,015 - INFO - Python version: 3.6.15
+2024-10-16 09:54:59,016 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 61, in __init__
+    self.ui.stackedWidget.setMinimumWidth(20)
+AttributeError: 'Ui_MainWindow' object has no attribute 'stackedWidget'
+2024-10-16 09:54:59,018 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 81, in __init__
+    self.ui.stackedWidget.setCurrentWidget(self.ui.page_home)
+AttributeError: 'Ui_MainWindow' object has no attribute 'stackedWidget'
+2024-10-16 09:54:59,020 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 100, in __init__
+    UIFunctions.uiDefinitions(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_functions.py", line 250, in uiDefinitions
+    self.sizegrip = QSizeGrip(self.ui.frame_size_grip)
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_size_grip'
+2024-10-16 09:55:08,563 - INFO - log information...
+2024-10-16 09:55:08,898 - INFO - System info: Windows
+2024-10-16 09:55:08,898 - INFO - System version: 10
+2024-10-16 09:55:08,898 - INFO - Python version: 3.6.15
+2024-10-16 09:59:46,774 - INFO - log information...
+2024-10-16 09:59:46,788 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 34, in __init__
+    self.ui.setupUi(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_main.py", line 156, in setupUi
+    self.frame_main.setStyle("background: transparent;")
+TypeError: 'PySide2.QtWidgets.QWidget.setStyle' called with wrong argument types:
+  PySide2.QtWidgets.QWidget.setStyle(str)
+Supported signatures:
+  PySide2.QtWidgets.QWidget.setStyle(PySide2.QtWidgets.QStyle)
+2024-10-16 09:59:46,790 - INFO - System info: Windows
+2024-10-16 09:59:46,790 - INFO - System version: 10
+2024-10-16 09:59:46,790 - INFO - Python version: 3.6.15
+2024-10-16 09:59:46,790 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 51, in __init__
+    UIFunctions.labelTitle(self, 'Main Window - Python Base')
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_functions.py", line 108, in labelTitle
+    self.ui.label_title_bar_top.setText(text)
+AttributeError: 'Ui_MainWindow' object has no attribute 'label_title_bar_top'
+2024-10-16 09:59:46,791 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 67, in __init__
+    UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/16x16/icons/16x16/cil-home.png)", True)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_functions.py", line 136, in addNewMenu
+    self.ui.layout_menus.addWidget(button)
+AttributeError: 'Ui_MainWindow' object has no attribute 'layout_menus'
+2024-10-16 09:59:46,791 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 80, in __init__
+    UIFunctions.selectStandardMenu(self, "btn_home")
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_functions.py", line 166, in selectStandardMenu
+    for w in self.ui.frame_left_menu.findChildren(QPushButton):
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_left_menu'
+2024-10-16 09:59:46,792 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 191, in <module>
+    window = MainWindow()
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 96, in __init__
+    self.ui.frame_label_top_btns.mouseMoveEvent = moveWindow
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_label_top_btns'
+2024-10-16 10:00:15,597 - INFO - log information...
+2024-10-16 10:00:15,611 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 34, in __init__
+    self.ui.setupUi(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_main.py", line 156, in setupUi
+    self.frame_main.setStyle("background:tansparent")
+TypeError: 'PySide2.QtWidgets.QWidget.setStyle' called with wrong argument types:
+  PySide2.QtWidgets.QWidget.setStyle(str)
+Supported signatures:
+  PySide2.QtWidgets.QWidget.setStyle(PySide2.QtWidgets.QStyle)
+2024-10-16 10:00:15,612 - INFO - System info: Windows
+2024-10-16 10:00:15,612 - INFO - System version: 10
+2024-10-16 10:00:15,613 - INFO - Python version: 3.6.15
+2024-10-16 10:00:15,613 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 51, in __init__
+    UIFunctions.labelTitle(self, 'Main Window - Python Base')
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_functions.py", line 108, in labelTitle
+    self.ui.label_title_bar_top.setText(text)
+AttributeError: 'Ui_MainWindow' object has no attribute 'label_title_bar_top'
+2024-10-16 10:00:15,613 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 67, in __init__
+    UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/16x16/icons/16x16/cil-home.png)", True)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_functions.py", line 136, in addNewMenu
+    self.ui.layout_menus.addWidget(button)
+AttributeError: 'Ui_MainWindow' object has no attribute 'layout_menus'
+2024-10-16 10:00:15,614 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 80, in __init__
+    UIFunctions.selectStandardMenu(self, "btn_home")
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_functions.py", line 166, in selectStandardMenu
+    for w in self.ui.frame_left_menu.findChildren(QPushButton):
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_left_menu'
+2024-10-16 10:00:15,614 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 191, in <module>
+    window = MainWindow()
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 96, in __init__
+    self.ui.frame_label_top_btns.mouseMoveEvent = moveWindow
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_label_top_btns'
+2024-10-16 10:01:04,545 - INFO - log information...
+2024-10-16 10:01:04,559 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 34, in __init__
+    self.ui.setupUi(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_main.py", line 156, in setupUi
+    self.frame_main.setStyle("background:tansparent")
+TypeError: 'PySide2.QtWidgets.QWidget.setStyle' called with wrong argument types:
+  PySide2.QtWidgets.QWidget.setStyle(str)
+Supported signatures:
+  PySide2.QtWidgets.QWidget.setStyle(PySide2.QtWidgets.QStyle)
+2024-10-16 10:01:04,560 - INFO - System info: Windows
+2024-10-16 10:01:04,561 - INFO - System version: 10
+2024-10-16 10:01:04,561 - INFO - Python version: 3.6.15
+2024-10-16 10:01:04,561 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 51, in __init__
+    UIFunctions.labelTitle(self, 'Main Window - Python Base')
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_functions.py", line 108, in labelTitle
+    self.ui.label_title_bar_top.setText(text)
+AttributeError: 'Ui_MainWindow' object has no attribute 'label_title_bar_top'
+2024-10-16 10:01:04,562 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 67, in __init__
+    UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/16x16/icons/16x16/cil-home.png)", True)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_functions.py", line 136, in addNewMenu
+    self.ui.layout_menus.addWidget(button)
+AttributeError: 'Ui_MainWindow' object has no attribute 'layout_menus'
+2024-10-16 10:01:04,562 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 80, in __init__
+    UIFunctions.selectStandardMenu(self, "btn_home")
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_functions.py", line 166, in selectStandardMenu
+    for w in self.ui.frame_left_menu.findChildren(QPushButton):
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_left_menu'
+2024-10-16 10:01:04,563 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 191, in <module>
+    window = MainWindow()
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 96, in __init__
+    self.ui.frame_label_top_btns.mouseMoveEvent = moveWindow
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_label_top_btns'
+2024-10-16 10:01:38,419 - INFO - log information...
+2024-10-16 10:01:38,766 - INFO - System info: Windows
+2024-10-16 10:01:38,767 - INFO - System version: 10
+2024-10-16 10:01:38,767 - INFO - Python version: 3.6.15
+2024-10-16 10:02:10,209 - INFO - log information...
+2024-10-16 10:02:10,637 - INFO - System info: Windows
+2024-10-16 10:02:10,637 - INFO - System version: 10
+2024-10-16 10:02:10,637 - INFO - Python version: 3.6.15
+2024-10-16 10:44:31,895 - ERROR - 鍏ㄥ眬鎹曡幏
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 22, in <module>
+    from app_modules import *
+  File "D:\programfile_app\anaconda\envs\qt\lib\site-packages\shiboken2\files.dir\shibokensupport\__feature__.py", line 142, in _import
+    return original_import(name, *args, **kwargs)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\app_modules.py", line 29, in <module>
+    from LineStack import *
+  File "D:\programfile_app\anaconda\envs\qt\lib\site-packages\shiboken2\files.dir\shibokensupport\__feature__.py", line 142, in _import
+    return original_import(name, *args, **kwargs)
+ModuleNotFoundError: No module named 'LineStack'
+2024-10-16 10:44:53,794 - INFO - log information...
+2024-10-16 10:44:54,101 - INFO - System info: Windows
+2024-10-16 10:44:54,101 - INFO - System version: 10
+2024-10-16 10:44:54,101 - INFO - Python version: 3.6.15
+2024-10-17 16:15:24,248 - INFO - log information...
+2024-10-17 16:15:24,872 - INFO - System info: Windows
+2024-10-17 16:15:24,872 - INFO - System version: 10
+2024-10-17 16:15:24,872 - INFO - Python version: 3.6.15
+2024-10-17 16:21:34,690 - INFO - log information...
+2024-10-17 16:21:35,053 - INFO - System info: Windows
+2024-10-17 16:21:35,053 - INFO - System version: 10
+2024-10-17 16:21:35,053 - INFO - Python version: 3.6.15
+2024-10-17 16:22:08,940 - INFO - log information...
+2024-10-17 16:22:09,263 - INFO - System info: Windows
+2024-10-17 16:22:09,263 - INFO - System version: 10
+2024-10-17 16:22:09,263 - INFO - Python version: 3.6.15
+2024-10-18 09:18:37,769 - INFO - log information...
+2024-10-18 09:18:38,308 - INFO - System info: Windows
+2024-10-18 09:18:38,308 - INFO - System version: 10
+2024-10-18 09:18:38,309 - INFO - Python version: 3.6.15
+2024-10-18 09:24:01,251 - INFO - log information...
+2024-10-18 09:24:01,611 - INFO - System info: Windows
+2024-10-18 09:24:01,611 - INFO - System version: 10
+2024-10-18 09:24:01,611 - INFO - Python version: 3.6.15
+2024-10-18 10:34:38,941 - INFO - log information...
+2024-10-18 10:34:39,284 - INFO - System info: Windows
+2024-10-18 10:34:39,284 - INFO - System version: 10
+2024-10-18 10:34:39,284 - INFO - Python version: 3.6.15
+2024-10-18 10:38:01,231 - INFO - log information...
+2024-10-18 10:38:01,571 - INFO - System info: Windows
+2024-10-18 10:38:01,571 - INFO - System version: 10
+2024-10-18 10:38:01,571 - INFO - Python version: 3.6.15
+2024-10-18 10:42:14,111 - INFO - log information...
+2024-10-18 10:42:14,478 - INFO - System info: Windows
+2024-10-18 10:42:14,478 - INFO - System version: 10
+2024-10-18 10:42:14,478 - INFO - Python version: 3.6.15
+2024-10-18 10:45:21,066 - INFO - log information...
+2024-10-18 10:45:21,071 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 34, in __init__
+    self.ui.setupUi(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_main.py", line 735, in setupUi
+    self.page_home.setObjectName(u"page_home")
+TypeError: descriptor 'setObjectName' requires a 'PySide2.QtCore.QObject' object but received a 'str'
+2024-10-18 10:45:21,075 - INFO - System info: Windows
+2024-10-18 10:45:21,075 - INFO - System version: 10
+2024-10-18 10:45:21,075 - INFO - Python version: 3.6.15
+2024-10-18 10:45:21,085 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 81, in __init__
+    self.ui.stackedWidget.setCurrentWidget(self.ui.page_home)
+TypeError: 'PySide2.QtWidgets.QStackedWidget.setCurrentWidget' called with wrong argument types:
+  PySide2.QtWidgets.QStackedWidget.setCurrentWidget(ObjectType)
+Supported signatures:
+  PySide2.QtWidgets.QStackedWidget.setCurrentWidget(PySide2.QtWidgets.QWidget)
+2024-10-18 10:45:21,087 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 105, in __init__
+    UIFunctions.uiDefinitions(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 250, in uiDefinitions
+    self.sizegrip = QSizeGrip(self.ui.frame_size_grip)
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_size_grip'
+2024-10-18 10:45:31,267 - INFO - log information...
+2024-10-18 10:45:31,272 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 34, in __init__
+    self.ui.setupUi(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_main.py", line 735, in setupUi
+    self.page_home.setObjectName(u"page_home")
+TypeError: descriptor 'setObjectName' requires a 'PySide2.QtCore.QObject' object but received a 'str'
+2024-10-18 10:45:31,274 - INFO - System info: Windows
+2024-10-18 10:45:31,274 - INFO - System version: 10
+2024-10-18 10:45:31,274 - INFO - Python version: 3.6.15
+2024-10-18 10:45:31,284 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 81, in __init__
+    self.ui.stackedWidget.setCurrentWidget(self.ui.page_home)
+TypeError: 'PySide2.QtWidgets.QStackedWidget.setCurrentWidget' called with wrong argument types:
+  PySide2.QtWidgets.QStackedWidget.setCurrentWidget(ObjectType)
+Supported signatures:
+  PySide2.QtWidgets.QStackedWidget.setCurrentWidget(PySide2.QtWidgets.QWidget)
+2024-10-18 10:45:31,287 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 105, in __init__
+    UIFunctions.uiDefinitions(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 250, in uiDefinitions
+    self.sizegrip = QSizeGrip(self.ui.frame_size_grip)
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_size_grip'
+2024-10-18 10:47:09,397 - INFO - log information...
+2024-10-18 10:47:09,403 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 34, in __init__
+    self.ui.setupUi(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_main.py", line 735, in setupUi
+    self.page_home.setObjectName(u"page_home")
+TypeError: descriptor 'setObjectName' requires a 'PySide2.QtCore.QObject' object but received a 'str'
+2024-10-18 10:47:09,404 - INFO - System info: Windows
+2024-10-18 10:47:09,404 - INFO - System version: 10
+2024-10-18 10:47:09,404 - INFO - Python version: 3.6.15
+2024-10-18 10:47:09,415 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 81, in __init__
+    self.ui.stackedWidget.setCurrentWidget(self.ui.page_home)
+TypeError: 'PySide2.QtWidgets.QStackedWidget.setCurrentWidget' called with wrong argument types:
+  PySide2.QtWidgets.QStackedWidget.setCurrentWidget(ObjectType)
+Supported signatures:
+  PySide2.QtWidgets.QStackedWidget.setCurrentWidget(PySide2.QtWidgets.QWidget)
+2024-10-18 10:47:09,742 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 117, in __init__
+    UIFunctions.uiDefinitions(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 250, in uiDefinitions
+    self.sizegrip = QSizeGrip(self.ui.frame_size_grip)
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_size_grip'
+2024-10-18 10:47:26,826 - INFO - log information...
+2024-10-18 10:47:26,832 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 34, in __init__
+    self.ui.setupUi(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_main.py", line 735, in setupUi
+    self.page_home.setObjectName(u"page_home")
+TypeError: descriptor 'setObjectName' requires a 'PySide2.QtCore.QObject' object but received a 'str'
+2024-10-18 10:47:26,833 - INFO - System info: Windows
+2024-10-18 10:47:26,833 - INFO - System version: 10
+2024-10-18 10:47:26,833 - INFO - Python version: 3.6.15
+2024-10-18 10:47:26,845 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 81, in __init__
+    self.ui.stackedWidget.setCurrentWidget(self.ui.page_home)
+TypeError: 'PySide2.QtWidgets.QStackedWidget.setCurrentWidget' called with wrong argument types:
+  PySide2.QtWidgets.QStackedWidget.setCurrentWidget(ObjectType)
+Supported signatures:
+  PySide2.QtWidgets.QStackedWidget.setCurrentWidget(PySide2.QtWidgets.QWidget)
+2024-10-18 10:47:27,209 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 117, in __init__
+    UIFunctions.uiDefinitions(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 250, in uiDefinitions
+    self.sizegrip = QSizeGrip(self.ui.frame_size_grip)
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_size_grip'
+2024-10-18 10:48:08,258 - INFO - log information...
+2024-10-18 10:48:08,632 - INFO - System info: Windows
+2024-10-18 10:48:08,632 - INFO - System version: 10
+2024-10-18 10:48:08,633 - INFO - Python version: 3.6.15
+2024-10-18 13:05:45,977 - INFO - log information...
+2024-10-18 13:05:46,734 - INFO - System info: Windows
+2024-10-18 13:05:46,735 - INFO - System version: 10
+2024-10-18 13:05:46,735 - INFO - Python version: 3.6.15
+2024-10-18 13:10:46,591 - INFO - log information...
+2024-10-18 13:10:46,958 - INFO - System info: Windows
+2024-10-18 13:10:46,958 - INFO - System version: 10
+2024-10-18 13:10:46,958 - INFO - Python version: 3.6.15
+2024-10-18 13:47:42,542 - INFO - log information...
+2024-10-18 13:47:42,978 - INFO - System info: Windows
+2024-10-18 13:47:42,978 - INFO - System version: 10
+2024-10-18 13:47:42,978 - INFO - Python version: 3.6.15
+2024-10-18 13:48:02,836 - INFO - log information...
+2024-10-18 13:48:03,202 - INFO - System info: Windows
+2024-10-18 13:48:03,202 - INFO - System version: 10
+2024-10-18 13:48:03,202 - INFO - Python version: 3.6.15

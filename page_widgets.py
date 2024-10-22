@@ -139,6 +139,7 @@ class init_page_widgets(QWidget):
         self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
         # 设置水平布局的外边距为0
           
+        self.verticalLayout_6.addWidget(self.frame_3)
 
         
         
@@ -152,8 +153,7 @@ class init_page_widgets(QWidget):
         self.horizontalLayout_12.addWidget(self.content_2)
         self.horizontalLayout_12.addWidget(self.content_3)
 
-        self.horizontalLayout_12.addWidget(self.frame_3)
-        self.verticalLayout_6.addWidget(self.frame_3)
+
 
         self.setLayout(QVBoxLayout())
         self.layout().addWidget(self.page_widgets)

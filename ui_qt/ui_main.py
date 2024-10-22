@@ -23,8 +23,7 @@ from page_widgets import *
 from ChartThemes import *
 from LineStack import *
 from pyqtgraph import PlotWidget
-from 测试组件.ColorChangeWindow import *
-from pyqt配合js.main import *
+
 from ui转换.mian import *
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):

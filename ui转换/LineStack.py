@@ -118,7 +118,7 @@ class ChartView(QChartView):
         self.dataTable = [
             ["tip1", [120, 132, 101, 134, 90, 230, 210]],
             ["tip2", [220, 182, 191, 234, 290, 330, 310]],
-            ["tip3", [150, 232, 201, 154, 190, 330, 410]],
+            
         ]
         self.initChart()
 

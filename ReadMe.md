@@ -116,4 +116,14 @@ page_widgets.py
 
 frame_center   frame_top_info frame_top_btns  frame_left_menu    frame_toggle(btn_toggle_menu)
 
+## 实现窗口透明化的步骤
 
+· 首先需要父级窗口无边框化透明化
+
+- self.setWindowsFlags(QT.FramlssWindownHint) 无边框化
+- self.setAttribute(QT.WA_Tranlucentbackground)
+
+. 组件需要设置透明格式
+
+- setStyleSheet("backgroung-Color": transparent)
+- (chart不支持setStyleSheet 设置透明格式) chart.setBackgroundBrush(QT.transparent)

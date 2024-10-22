@@ -15,13 +15,13 @@
 ################################################################################
 
 # GUI FILE
-from ui_main import Ui_MainWindow
+from ui_qt.ui_main import Ui_MainWindow
 
 # IMPORT QSS CUSTOM
-from ui_styles import Style
+from ui_qt.ui_styles import Style
 
 # IMPORT FUNCTIONS
-from ui_functions import *
+from ui_qt.ui_functions import *
 
 ## ==> APP FUNCTIONS
 from app_functions import *
@@ -29,3 +29,5 @@ from app_functions import *
 from LineStack import *
 from ChartThemes import *
 from page_widgets import *
+from ui转换.mian import *
+
