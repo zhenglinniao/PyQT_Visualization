@@ -367,6 +367,8 @@ class ThemeWidget(QWidget):
             for chartView in self.m_charts:
 # 设置图表视图的主题
                 chartView.chart().setTheme(QChart.ChartTheme(theme))
+                #设置反锯齿
+                chartView.chart().setAntialiasing(True)
 
             # 获取窗口的调色板
             pal = self.window().palette()

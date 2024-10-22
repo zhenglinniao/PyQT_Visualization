@@ -5,9 +5,9 @@ from PySide2 import QtCore, QtGui, QtWidgets
 from PySide2.QtWidgets import QApplication, QWidget, QMainWindow
 from PySide2.QtGui import QPalette, QBrush, QPixmap
 from PySide2.QtCore import Qt,QSize
-from LineStack import ChartView
+from LineStack import *
 import os
-from PyQt5.QtCore import QTimer
+from PySide2.QtCore import QTimer
 from SQLAlchemy import *
 # main
 class main_ui(QWidget):
@@ -53,15 +53,13 @@ class main_ui(QWidget):
 
 #TODO: 添加其他内容 verticalLayout一号布局 verticalLayout_3左边布局
         layout0 = QtWidgets.QHBoxLayout()
+        layout0.setSpacing(0)
         self.QWidget0.setMaximumSize(636,300)
 
+        
+        self.chart = content_charts()
 
-        self.chart = ChartView()
-        test = ["tip4", [150, 232, 201, 154, 190, 330, 410]]
-        self.chart.dataTable.append(test)
-        self.chart.initChart()
-
-        self.chart.setMaximumSize(370,400)
+        self.chart.setMaximumSize(400,400)
         self.chart.setStyleSheet("background-color: transparent;")
     
         self.QWidget0_right = QtWidgets.QVBoxLayout()
@@ -84,9 +82,8 @@ class main_ui(QWidget):
         font: \"微软雅黑\";
     }
         QPushButton {
-                
                 border-radius: 7px;  /* 半径设为宽度的一半，变成圆形 */
-                border: 10px solid #ffffff;  /* 边框颜色 */
+                border: 10px solid #000000;  /* 边框颜色 */
             }
             QPushButton:pressed {
                 background-color: #2980b9;  /* 按下时颜色变化 */
@@ -100,13 +97,16 @@ class main_ui(QWidget):
         self.label1 = QtWidgets.QLabel("生产总数：")
         self.label2 = QtWidgets.QLabel("新增生产：")
         self.label3 = QtWidgets.QLabel(" 待生产 ：")
-
+        
+        self.data_fetch_thread = DtaFetchThread_1()
+# 当数据被获取时，调用update_labels方法
+        self.data_fetch_thread.data_fetched.connect(self.update_labels)
+        
         self.timer = QTimer()
-        self.timer.timeout.connect(self.update_data)
-        self.timer.start(6000) 
-
+        self.timer.timeout.connect(self.update_data1)
+        self.timer.start(1000)
         # 初始化界面数据
-        self.update_data()
+        self.update_data1()
 
   
 
@@ -120,7 +120,7 @@ class main_ui(QWidget):
         self.title_text_layout2.addWidget(self.label2)
         self.title_text_layout2.addSpacerItem(QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum))
 
-        self.title_text_layout3.addSpacerItem(QtWidgets.QSpacerItem(75, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum))
+        self.title_text_layout3.addSpacerItem(QtWidgets.QSpacerItem(70, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum))
         self.title_text_layout3.addWidget(self.but3)
         self.title_text_layout3.addWidget(self.label3)
         
@@ -129,8 +129,8 @@ class main_ui(QWidget):
 
         
         
-        self.title.setMinimumSize(240, 0)
-        self.title.setMaximumSize(240, 50)
+        self.title.setMinimumSize(200, 0)
+        self.title.setMaximumSize(200, 50)
         self.title.setStyleSheet("color:rgb(255, 255, 255);font: 15pt \"微软雅黑\";background-color: transparent;")
         self.QWidget0_right.addWidget(self.title)
         self.QWidget0_right.addStretch()
@@ -215,19 +215,20 @@ class main_ui(QWidget):
 
         self.verticalLayout_2.addWidget(self.horizontalFrame)
 
-    def update_data(self):
-        self.data = print_sql2()  # 获取最新数据
-        self.plot_data()  # 更新图表
 
-    def plot_data(self):
-        if self.data:
+    def update_data1(self):
+        self.data_fetch_thread.start()
+
+    def update_labels(self,data):
+        if data:
         # 假设只显示第一个数据项的信息
-            first_data = self.data
+            first_data = data
             self.label1.setText(f'生产总数: {first_data["data_list"]}')
             self.label2.setText(f'新增生产: {first_data["data_list"]}')
             self.label3.setText(f'待生产: {first_data["data_list"]}')
             
-        
+
+
     def SetQWidget(self, name, path=None):
         # 创建带背景图片的QWidget
         first_background = QWidget()

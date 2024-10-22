@@ -5,7 +5,7 @@ import threading
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-
+from PySide2.QtCore import QThread, Signal
 
 # 创建基础类
 Base = declarative_base()
@@ -41,7 +41,9 @@ class MO_MO_Summary(Base):
     #金额字段
     Mo_Amount = Column(Integer)
 
-#插入数据MO_MO_Summary
+
+    
+
 def insert_data():
     session = run()
     try:
@@ -85,46 +87,50 @@ def run():
 
 
 
+
+
+# 创建一个线程类，用于执行数据获取操作  获取线性表
+class DataFetchThread(QThread):
+    data_fetched = Signal(object)  # 定义一个信号，用于传递获取到的数据
+    def run(self):
+        # 这里执行耗时的数据获取操作
+        data = self.print_MO_MO_Summary()
+        self.data_fetched.emit(data)  # 发出信号，将数据传递回主线程
+    def print_MO_MO_Summary(self):
+        session = run()
+        #时间排序获取MO_MO_Summary表里Mo_Amount
+        try:
+            users = session.query(MO_MO_Summary).order_by(MO_MO_Summary.Mo_Date).all()
+            data =  [{"category": user.Mo_Date, "Mo_Amount": user.Mo_Amount} for user in users]
+            return {"num": len(users),"data": data}
+        except Exception as e:
+            logging.error("查询数据失败", exc_info=True)
+        finally:
+            session.close()
+
+#TODO 获取单个数字表
+class DtaFetchThread_1(QThread):
+    data_fetched = Signal(object)
+    def run(self):
+        # 这里执行耗时的数据获取操作
+        data = self.print_sql()
+        self.data_fetched.emit(data)  # 发出信号，将数据传递回主线程
+    def print_sql(self):   
 #查询MO_MO表里state为0的数据
-def print_sql2():
-    session = run()
-    try:
-        users = session.query(MO_MO).filter(MO_MO.State==0).all()
-        logging.info("查询到 %d 条数据", len(users))
-        # data =  [{"Mo_Name": user.Mo_Name, "State": user.State} for user in users]
-        return {"data_list": len(users)}
-    except Exception as e:
-        logging.error("查询数据失败", exc_info=True)
-    finally:
-        session.close()
-
-def print_MO_MO_Summary():
-    session = run()
-    #时间排序获取MO_MO_Summary表里Mo_Amount
-    try:
-        users = session.query(MO_MO_Summary).order_by(MO_MO_Summary.Mo_Date).all()
-        
-        Amount = [{"Mo_Amount": user.Mo_Amount} for user in users]
-        logging.info(Amount)
-    except Exception as e:
-        logging.error("查询数据失败", exc_info=True)
-    finally:
-        session.close()
+        session = run()
+        try:
+            users = session.query(MO_MO).filter(MO_MO.State==0).all()
+            logging.info("查询到 %d 条数据", len(users))
+            # data =  [{"Mo_Name": user.Mo_Name, "State": user.State} for user in users]
+            return {"data_list": len(users)}
+        except Exception as e:
+            logging.error("查询数据失败", exc_info=True)
+        finally:
+            session.close()
 
 
-# 定义一个线程任务函数
-def threaded_task():
-    # 无限循环
-    while True:
-        # 运行所有待定的任务
-        schedule.run_pending()
-        # 休眠1秒
-        time.sleep(1)
 
 
-# 每隔10秒执行一次print_sql2函数
-
-schedule.every(5).seconds.do(print_sql2)
 
 
 
@@ -133,7 +139,8 @@ schedule.every(5).seconds.do(print_sql2)
 # 主程序
 if __name__ == "__main__":
     # 创建一个线程来运行调度任务
-    print_MO_MO_Summary()
+    
+# 创建一个线程，目标函数为threaded_task
     schedule_thread = threading.Thread(target=threaded_task)
     
     # 设置守护线程，主线程退出时该线程自动退出
