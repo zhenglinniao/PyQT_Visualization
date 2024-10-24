@@ -131,6 +131,10 @@ class ThemeWidget(QWidget):
     def createAreaChart(self,m_dataTable):
         chart = QChart()
         chart.setTitle("Area chart")
+        chart.setTitleBrush(Qt.white)
+        legend = chart.legend()
+        legend.setLabelBrush(Qt.white)
+       
 
         # The lower series is initialized to zero values.
         lowerSeries = None
@@ -167,12 +171,19 @@ class ThemeWidget(QWidget):
             lowerSeries = upperSeries
 
         chart.createDefaultAxes()
+        chart.axisY().setLabelsBrush(Qt.white)
+        chart.axisX().setLabelsBrush(Qt.white)
+
+        return chart
 
         return chart
 # 创建一个柱状图，并将其添加到布局中
     def createBarChart(self, m_dataTable):
         chart = QChart()
         chart.setTitle("Bar chart")
+        chart.setTitleBrush(Qt.white)
+        legend = chart.legend()
+        legend.setLabelBrush(Qt.white)
 
         series = QStackedBarSeries(chart)
 
@@ -184,6 +195,8 @@ class ThemeWidget(QWidget):
         chart.addSeries(series)
 
         chart.createDefaultAxes()
+        chart.axisY().setLabelsBrush(Qt.white)
+        
     # 定义一个包含5个元素的列表
         categories = ["A", "B", "C", "D", "E"]
 # 创建一个QCategoryAxis对象
@@ -192,6 +205,7 @@ class ThemeWidget(QWidget):
         for category in categories:
             axisX.append(category, categories.index(category))  
         
+        axisX.setLabelsBrush(Qt.white)
 # 将QCategoryAxis对象设置为图表的X轴
         chart.setAxisX(axisX, series)
 # 将数据集添加到图表中
@@ -202,7 +216,11 @@ class ThemeWidget(QWidget):
 # 创建一个折线图，并将其添加到布局中
     def createLineChart(self,m_dataTable):
         chart = QChart()
+        chart.setBackgroundBrush(Qt.transparent)
         chart.setTitle("Line chart")
+        chart.setTitleBrush(Qt.white)
+        legend = chart.legend()
+        legend.setLabelBrush(Qt.white)
         for i, data_list in m_dataTable:
             series = QLineSeries(chart)
             for index, value in enumerate(data_list):
@@ -213,12 +231,17 @@ class ThemeWidget(QWidget):
             chart.addSeries(series)
 
         chart.createDefaultAxes()
+        chart.axisY().setLabelsBrush(Qt.white)
+        chart.axisX().setLabelsBrush(Qt.white)
 
         return chart
  # 创建一个饼图，并将其添加到布局中
     def createPieChart(self,m_dataTable):
         chart = QChart()
         chart.setTitle("Pie chart")
+        chart.setTitleBrush(Qt.white)
+        legend = chart.legend()
+        legend.setLabelBrush(Qt.white)
 
         pieSize = 1.0 / len(m_dataTable)
 
@@ -243,12 +266,17 @@ class ThemeWidget(QWidget):
             series.setVerticalPosition(0.5)
 
             chart.addSeries(series)
-
+        chart.createDefaultAxes()
+        chart.axisY().setLabelsBrush(Qt.white)
+        chart.axisX().setLabelsBrush(Qt.white)
         return chart
 # 创建一个曲线图，并将其添加到布局中
     def createSplineChart(self,m_dataTable):
         chart = QChart()
         chart.setTitle("Spline chart")
+        chart.setTitleBrush(Qt.white)
+        legend = chart.legend()
+        legend.setLabelBrush(Qt.white)
 
         for i, (index,data_list) in enumerate(m_dataTable):
             series = QSplineSeries(chart)
@@ -259,12 +287,16 @@ class ThemeWidget(QWidget):
             chart.addSeries(series)
 
         chart.createDefaultAxes()
-
+        chart.axisY().setLabelsBrush(Qt.white)
+        chart.axisX().setLabelsBrush(Qt.white)
         return chart
 # 创建一个散点图，并将其添加到布局中
     def createScatterChart(self,m_dataTable):
         chart = QChart()
         chart.setTitle("Scatter chart")
+        chart.setTitleBrush(Qt.white)
+        legend = chart.legend()
+        legend.setLabelBrush(Qt.white)
 
         for i, (index,data_list) in enumerate(m_dataTable):
             series = QScatterSeries(chart)
@@ -273,6 +305,8 @@ class ThemeWidget(QWidget):
             series.setName("Series " + str(i))
             chart.addSeries(series)
         chart.createDefaultAxes()
+        chart.axisY().setLabelsBrush(Qt.white)
+        chart.axisX().setLabelsBrush(Qt.white)
         return chart
     @pyqtSlot()
     def updateUI(self,parent,index=None):
@@ -356,16 +390,15 @@ class ThemeWidget(QWidget):
 class createpie(QWidget):
     def __init__(self, parent=None):
         super(createpie, self).__init__(parent)
-
+        self.setAttribute(Qt.WA_TranslucentBackground)
+        self.setWindowFlags(Qt.FramelessWindowHint)
         self.ui = ThemeWidget()
         self.m_charts=[]
-        
         self.m_dataTable = [
             ["tip1", [120, 132, 101, 134, 90, 230, 210,222]],
             ["tip2", [220, 182, 191, 234, 290, 330, 310]],
         ]
         # 创建主题下拉框
-  
         self.m_themeComboBox = self.ui.createThemeBox()
 
         # 创建动画下拉框
@@ -422,7 +455,8 @@ class createpie(QWidget):
         ]
         if self.chartView:
             # 清除现有的图表
-            self.chartView.setChart(self.ui.createBarChart(self.m_dataTable))
+            self.chartView.setChart(self.ui.createLineChart(self.m_dataTable))
+            self.ui.updateUI(self,self)
        
 
 

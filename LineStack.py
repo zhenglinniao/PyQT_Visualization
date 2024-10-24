@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
@@ -8,11 +9,12 @@ Createon : 2024年9月24日
 @file: LineStack.py
 @desc: 图表展示
 """
-
+from PySide2 import QtCore, QtGui, QtWidgets
 import logging
 from PySide2.QtWidgets import QApplication, QWidget, QFrame, QGridLayout, QLabel
 import sys
 from PySide2.QtGui import QColor
+from SQLbase.SQLAlchemy import *
 try:
     from PySide2.QtChart import QChartView, QChart, QLineSeries, QLegend, \
         QCategoryAxis
@@ -108,22 +110,17 @@ class GraphicsProxyWidget(QGraphicsProxyWidget):
 
 class ChartView(QChartView):
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self,category, dataTable, *args, **kwargs):
         super(ChartView, self).__init__(*args, **kwargs)
 
         self.resize(800, 600)
         self.setRenderHint(QPainter.Antialiasing)  # 抗锯齿
         # 自定义x轴label
-        self.category = ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
-        self.dataTable = [
-            ["tip1", [120, 132, 101, 134, 90, 230, 210]],
-            ["tip2", [220, 182, 191, 234, 290, 330, 310]],
-            ["tip3", [150, 232, 201, 154, 190, 330, 410]],
-        ]
+        self.category = category
+        self.dataTable = dataTable
         self.initChart()
 
-        # 提示widget
-        self.toolTipWidget = GraphicsProxyWidget(self._chart)
+        
 
         # line
         self.lineItem = QGraphicsLineItem(self._chart)
@@ -147,54 +144,8 @@ class ChartView(QChartView):
         self.min_y, self.max_y = axisY.min(), axisY.max()
    
 
-    def resizeEvent(self, event):
-        super(ChartView, self).resizeEvent(event)
-        # 当窗口大小改变时需要重新计算
-        # 坐标系中左上角顶点
-        self.point_top = self._chart.mapToPosition(
-            QPointF(self.min_x, self.max_y))
-        # 坐标原点坐标
-        self.point_bottom = self._chart.mapToPosition(
-            QPointF(self.min_x, self.min_y))
-        self.step_x = (self.max_x - self.min_x) / \
-                      (self._chart.axisX().tickCount() - 1)
 
-    def mouseMoveEvent(self, event):
-        super(ChartView, self).mouseMoveEvent(event)
-        pos = event.pos()
-        # 把鼠标位置所在点转换为对应的xy值
-        x = self._chart.mapToValue(pos).x()
-        y = self._chart.mapToValue(pos).y()
-        index = round((x - self.min_x) / self.step_x)
-        # 得到在坐标系中的所有正常显示的series的类型和点
-        points = [(serie, serie.at(index))
-                  for serie in self._chart.series()
-                  if self.min_x <= x <= self.max_x and
-                  self.min_y <= y <= self.max_y]
-        if points:
-            pos_x = self._chart.mapToPosition(
-                QPointF(index * self.step_x + self.min_x, self.min_y))
-            self.lineItem.setLine(pos_x.x(), self.point_top.y(),
-                                  pos_x.x(), self.point_bottom.y())
-            self.lineItem.show()
-            try:
-                title = self.category[index]
-            except:
-                title = ""
-            t_width = self.toolTipWidget.width()
-            t_height = self.toolTipWidget.height()
-            # 如果鼠标位置离右侧的距离小于tip宽度
-            x = pos.x() - t_width if self.width() - \
-                                     pos.x() - 20 < t_width else pos.x()
-            # 如果鼠标位置离底部的高度小于tip高度
-            y = pos.y() - t_height if self.height() - \
-                                      pos.y() - 20 < t_height else pos.y()
-            self.toolTipWidget.show(
-                title, points, QPoint(x, y))
-        else:
-            self.toolTipWidget.hide()
-            self.lineItem.hide()
-   
+    
     #鼠标点击消失
     def handleMarkerClicked(self):
         marker = self.sender()  # 信号发送者
@@ -255,33 +206,41 @@ class ChartView(QChartView):
         self._chart.setAcceptHoverEvents(True)
         # Series动画
         self._chart.setAnimationOptions(QChart.SeriesAnimations)
+
+        # 提示widget
+        self.toolTipWidget = GraphicsProxyWidget(self._chart)
         
         for series_name, data_list in self.dataTable:
+            
             series = QLineSeries(self._chart)
             for j, v in enumerate(data_list):
                 series.append(j, v)
-            series.setName(series_name)
+            series.setName("series_name")
             series.setPointsVisible(True)  # 显示圆点
             series.hovered.connect(self.handleSeriesHoverd)  # 鼠标悬停
             self._chart.addSeries(series)
+
         self._chart.createDefaultAxes()  # 创建默认的轴
-        axisX = self._chart.axisX()  # x轴
-        axisX.setTickCount(7)  # x轴设置7个刻度
-        axisX.setGridLineVisible(False)  # 隐藏从x轴往上的线条
+
         axisY = self._chart.axisY()
-        axisY.setTickCount(7)  # y轴设置7个刻度
-        axisY.setRange(0, 1500)  # 设置y轴范围
-        # 自定义x轴
+        axisY.setLabelsBrush(Qt.white)
+        axisX = self._chart.axisX()  # x轴
+
         axis_x = QCategoryAxis(
             self._chart, labelsPosition=QCategoryAxis.AxisLabelsPositionOnValue)
         axis_x.setTickCount(7)
         axis_x.setGridLineVisible(False)
+
         min_x = axisX.min()
         max_x = axisX.max()
         step = (max_x - min_x) / (7 - 1)  # 7个tick
+
         for i in range(0, 7):
             axis_x.append(self.category[i], min_x + i * step)
+        axis_x.setLabelsBrush(Qt.white)
+
         self._chart.setAxisX(axis_x, self._chart.series()[-1])
+        
         # chart的图例
         legend = self._chart.legend()
         # 设置图例由Series来决定样式
@@ -292,43 +251,176 @@ class ChartView(QChartView):
             marker.clicked.connect(self.handleMarkerClicked)
             # 鼠标悬停事件
             marker.hovered.connect(self.handleMarkerHovered)
+            
+    
+            
         self.setChart(self._chart)
 
+    def mouseMoveEvent(self, event):
+        super(ChartView, self).mouseMoveEvent(event)
+        pos = event.pos()
+        # 把鼠标位置所在点转换为对应的xy值
+        x = self._chart.mapToValue(pos).x()
+        y = self._chart.mapToValue(pos).y()
+        index = round((x - self.min_x) / self.step_x)
+        
+        points = [(serie, serie.at(index))
+                  for serie in self._chart.series()
+                  if self.min_x <= x <= self.max_x and
+                  self.min_y <= y <= self.max_y]
+        if points:
+            pos_x = self._chart.mapToPosition(
+                QPointF(index * self.step_x + self.min_x, self.min_y))
+            self.lineItem.setLine(pos_x.x(), self.point_top.y(),
+                                  pos_x.x(), self.point_bottom.y())
+            self.lineItem.show()
+            try:
+                title = self.category[index]
+            except:
+                title = ""
+            t_width = self.toolTipWidget.width()
+            t_height = self.toolTipWidget.height()
+            # 如果鼠标位置离右侧的距离小于tip宽度
+            x = pos.x() - t_width if self.width() - \
+                                     pos.x() - 20 < t_width else pos.x()
+            # 如果鼠标位置离底部的高度小于tip高度
+            y = pos.y() - t_height if self.height() - \
+                                      pos.y() - 20 < t_height else pos.y()
+            self.toolTipWidget.show(
+                title, points, QPoint(x, y))
+        else:
+            self.toolTipWidget.hide()
+            self.lineItem.hide()
+    #窗口变化时调整大小
+    def resizeEvent(self, event):
+        super(ChartView, self).resizeEvent(event)
+        # 当窗口大小改变时需要重新计算
+        # 坐标系中左上角顶点
+        self.point_top = self._chart.mapToPosition(
+            QPointF(self.min_x, self.max_y))
+        # 坐标原点坐标
+        self.point_bottom = self._chart.mapToPosition(QPointF(self.min_x, self.min_y))
+        self.step_x = (self.max_x - self.min_x) / (self._chart.axisX().tickCount() - 1)
 
 class content_charts(QWidget):
     def __init__(self):
         super().__init__()
         self.setAttribute(Qt.WA_TranslucentBackground)  # 透明背景
         self.setWindowFlags(Qt.FramelessWindowHint) 
-        # try:
-        #     y = 1/0
-        # except Exception as e:
-        #     logging.error("Error1111 occurred:", exc_info=True)
-        self.frame = QFrame(self)
+
         
-        self.QV_layout = QVBoxLayout(self.frame)
-        self.QH_layout_1 = QHBoxLayout(self.frame)
-        self.QH_layout_2 = QHBoxLayout(self.frame)
+        
+        self.QV_layout = QVBoxLayout(self)
+  
+# 创建一个DataFetchThread对象
+        self.data_fetch_thread = DataFetchThread()
+# 当数据被获取时，调用update_labels方法
+        self.data_fetch_thread.data_fetched.connect(self.update_labels)
 
-        self.chart1 = ChartView()
-        self.chart1.setStyleSheet("background-color: transparent;")
-        self.chart2 = ChartView()
-        self.chart3 = ChartView()
-        self.chart4 = ChartView()
-        self.QH_layout_1.addWidget(self.chart1)
-        self.QH_layout_1.addWidget(self.chart2)
-        self.QH_layout_2.addWidget(self.chart3)
-        self.QH_layout_2.addWidget(self.chart4)
 
-        self.QV_layout.addLayout(self.QH_layout_1)
-        self.QV_layout.addLayout(self.QH_layout_2)
+         # test = ["当前销售额：", [data["Mo_Amount"] for data in self.data2["data"]]]
+        # self.chart.category = [data["category"] for data in self.data2["data"]]
 
-        # 设置主布局
-        main_layout = QVBoxLayout(self)  # 创建主布局
-        main_layout.addWidget(self.frame)  # 将框架添加到主布局
+        self.timer = QtCore.QTimer(self)
+        self.timer.timeout.connect(self.start_data_fetch)
+# 启动定时器，每隔60秒执行一次
+        self.timer.start(6 * 1000)
+        # 初始化图表
+        #TODO: x轴暂时未定
+        self.category = ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
+        self.dataTable = [
+            ["", [120, 132, 101, 134, 90, 230, 210]],
+            ["2", [140, 532, 701, 634, 90, 830, 310]],
+        ]
+        
+        # 创建ChartView实例并添加到布局
+        self.chart1 = ChartView(self.category, self.dataTable)
+        self.QV_layout.addWidget(self.chart1)
 
-        # 设置 ContentCharts 的布局
-        self.setLayout(main_layout)
+        self.setLayout(self.QV_layout)
+
+    def start_data_fetch(self):
+    # 开始数据获取线程
+        self.data_fetch_thread.start()
+
+    def update_labels(self, datas):
+        print(datas)
+        if datas["num"]<7:
+            logging.error("数据不足")
+        self.category = [data["category"] for data in datas["data"]]
+        logging.info("category: %s", datas)
+        self.dataTable = [
+            ["tip", [data["Mo_Amount"] for data in datas["data"]]],    
+        ]
+        
+        self.chart1.category = self.category
+        self.chart1.dataTable = self.dataTable
+        
+        # 如果你的ChartView类有更新方法，可以调用这个方法
+        self.chart1.initChart()
+
+        axisX, axisY = self.chart1._chart.axisX(), self.chart1._chart.axisY()
+        self.chart1.min_x, self.chart1.max_x = axisX.min(), axisX.max()
+        self.chart1.min_y, self.chart1.max_y = axisY.min(), axisY.max()
+
+        self.data_fetch_thread.quit()
+        self.data_fetch_thread.wait()
+
+
+
+#TODO :线程定义新的线型图类
+class linecharts(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.setAttribute(Qt.WA_TranslucentBackground)  # 透明背景
+        self.setWindowFlags(Qt.FramelessWindowHint) 
+  
+        self.QV_layout = QVBoxLayout(self) 
+
+
+#创建数据获取线程 这里是DataFetchThread实例
+        self.data_fetch_thread = DataFetchThread()
+# 当数据被获取时，调用update_labels方法
+        self.data_fetch_thread.data_fetched.connect(self.update_labels)
+        self.timer = QtCore.QTimer(self)
+        self.timer.timeout.connect(self.start_data_fetch)
+# 启动定时器，每隔60秒执行一次
+        self.timer.start(6 * 1000)
+        # 初始化图表
+        #TODO: x轴暂时未定
+        self.category = ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
+        self.dataTable = [
+            ["", [120, 132, 101, 134, 90, 230, 210]],
+            ["2", [140, 532, 701, 634, 90, 830, 310]],
+ ]       
+        # 创建ChartView实例并添加到布局
+        self.chart1 = ChartView(self.category, self.dataTable)
+        self.QV_layout.addWidget(self.chart1)
+        self.setLayout(self.QV_layout)
+       
+    def start_data_fetch(self):
+    # 开始数据获取线程
+        self.data_fetch_thread.start()
+
+    def update_labels(self, datas):
+         # test = ["当前销售额：", [data["Mo_Amount"] for data in self.data2["data"]]]
+        # self.chart.category = [data["category"] for data in self.data2["data"]]
+        if datas["num"]<7:
+            logging.error("数据不足")
+        self.category = [data["category"] for data in datas["data"]]
+        logging.info("category: %s", datas)
+        self.dataTable = [
+            ["tip", [data["Mo_Amount"] for data in datas["data"]]],    
+        ]
+        
+        self.chart1.category = self.category
+        self.chart1.dataTable = self.dataTable
+        
+        # 如果你的ChartView类有更新方法，可以调用这个方法
+        self.chart1.initChart()
+
+        
+        
 
 
 

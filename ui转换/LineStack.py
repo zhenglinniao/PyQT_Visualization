@@ -10,6 +10,7 @@ Createon : 2024年9月24日
 @desc: 图表展示
 """
 from PySide2 import QtCore, QtGui, QtWidgets
+from PySide2.QtGui import QFont, QBrush, QColor
 import logging
 from PySide2.QtWidgets import QApplication, QWidget, QFrame, QGridLayout, QLabel
 import sys
@@ -144,54 +145,8 @@ class ChartView(QChartView):
         self.min_y, self.max_y = axisY.min(), axisY.max()
    
 
-    def resizeEvent(self, event):
-        super(ChartView, self).resizeEvent(event)
-        # 当窗口大小改变时需要重新计算
-        # 坐标系中左上角顶点
-        self.point_top = self._chart.mapToPosition(
-            QPointF(self.min_x, self.max_y))
-        # 坐标原点坐标
-        self.point_bottom = self._chart.mapToPosition(
-            QPointF(self.min_x, self.min_y))
-        self.step_x = (self.max_x - self.min_x) / \
-                      (self._chart.axisX().tickCount() - 1)
 
-    def mouseMoveEvent(self, event):
-        super(ChartView, self).mouseMoveEvent(event)
-        pos = event.pos()
-        # 把鼠标位置所在点转换为对应的xy值
-        x = self._chart.mapToValue(pos).x()
-        y = self._chart.mapToValue(pos).y()
-        index = round((x - self.min_x) / self.step_x)
-        # 得到在坐标系中的所有正常显示的series的类型和点
-        points = [(serie, serie.at(index))
-                  for serie in self._chart.series()
-                  if self.min_x <= x <= self.max_x and
-                  self.min_y <= y <= self.max_y]
-        if points:
-            pos_x = self._chart.mapToPosition(
-                QPointF(index * self.step_x + self.min_x, self.min_y))
-            self.lineItem.setLine(pos_x.x(), self.point_top.y(),
-                                  pos_x.x(), self.point_bottom.y())
-            self.lineItem.show()
-            try:
-                title = self.category[index]
-            except:
-                title = ""
-            t_width = self.toolTipWidget.width()
-            t_height = self.toolTipWidget.height()
-            # 如果鼠标位置离右侧的距离小于tip宽度
-            x = pos.x() - t_width if self.width() - \
-                                     pos.x() - 20 < t_width else pos.x()
-            # 如果鼠标位置离底部的高度小于tip高度
-            y = pos.y() - t_height if self.height() - \
-                                      pos.y() - 20 < t_height else pos.y()
-            self.toolTipWidget.show(
-                title, points, QPoint(x, y))
-        else:
-            self.toolTipWidget.hide()
-            self.lineItem.hide()
-   
+    
     #鼠标点击消失
     def handleMarkerClicked(self):
         marker = self.sender()  # 信号发送者
@@ -247,46 +202,54 @@ class ChartView(QChartView):
 
     def initChart(self):
         self._chart = QChart(title="test_chart")
+        self._chart.setTitleBrush(Qt.white)
+        self._chart.setTitleFont(QFont("微软雅黑", 12))
+        legend = self._chart.legend()
+        legend.setLabelBrush(Qt.white)
+        self._chart.legend().setFont(QFont("微软雅黑", 8))
+
+        
         #TODO:设置背景透明
         self._chart.setBackgroundBrush(Qt.transparent)
         self._chart.setAcceptHoverEvents(True)
         # Series动画
         self._chart.setAnimationOptions(QChart.SeriesAnimations)
 
+
         # 提示widget
         self.toolTipWidget = GraphicsProxyWidget(self._chart)
         
         for series_name, data_list in self.dataTable:
+            
             series = QLineSeries(self._chart)
             for j, v in enumerate(data_list):
                 series.append(j, v)
-            series.setName(series_name)
+            series.setName("series_name")
             series.setPointsVisible(True)  # 显示圆点
             series.hovered.connect(self.handleSeriesHoverd)  # 鼠标悬停
             self._chart.addSeries(series)
+
         self._chart.createDefaultAxes()  # 创建默认的轴
 
         axisY = self._chart.axisY()
-        axisY.setTickCount(7)  # y轴设置7个刻度
-        axisY.setRange(0, 1500)  # 设置y轴范围
         axisY.setLabelsBrush(Qt.white)
+        axisY.setLabelsFont(QFont("微软雅黑", 7))
         axisX = self._chart.axisX()  # x轴
-        
-        
-        # 自定义x轴
+
         axis_x = QCategoryAxis(
             self._chart, labelsPosition=QCategoryAxis.AxisLabelsPositionOnValue)
         axis_x.setTickCount(7)
         axis_x.setGridLineVisible(False)
+
         min_x = axisX.min()
         max_x = axisX.max()
         step = (max_x - min_x) / (7 - 1)  # 7个tick
 
         for i in range(0, 7):
-            # 将self.category[i]和min_x + i * step添加到axis_x列表中
             axis_x.append(self.category[i], min_x + i * step)
         axis_x.setLabelsBrush(Qt.white)
-# 将axis_x列表和最后一个系列设置为图表的X轴
+        axis_x.setLabelsFont(QFont("微软雅黑", 7))
+
         self._chart.setAxisX(axis_x, self._chart.series()[-1])
         
         # chart的图例
@@ -299,14 +262,62 @@ class ChartView(QChartView):
             marker.clicked.connect(self.handleMarkerClicked)
             # 鼠标悬停事件
             marker.hovered.connect(self.handleMarkerHovered)
+            
+    
+            
         self.setChart(self._chart)
 
+    def mouseMoveEvent(self, event):
+        super(ChartView, self).mouseMoveEvent(event)
+        pos = event.pos()
+        # 把鼠标位置所在点转换为对应的xy值
+        x = self._chart.mapToValue(pos).x()
+        y = self._chart.mapToValue(pos).y()
+        index = round((x - self.min_x) / self.step_x)
+        
+        points = [(serie, serie.at(index))
+                  for serie in self._chart.series()
+                  if self.min_x <= x <= self.max_x and
+                  self.min_y <= y <= self.max_y]
+        if points:
+            pos_x = self._chart.mapToPosition(
+                QPointF(index * self.step_x + self.min_x, self.min_y))
+            self.lineItem.setLine(pos_x.x(), self.point_top.y(),
+                                  pos_x.x(), self.point_bottom.y())
+            self.lineItem.show()
+            try:
+                title = self.category[index]
+            except:
+                title = ""
+            t_width = self.toolTipWidget.width()
+            t_height = self.toolTipWidget.height()
+            # 如果鼠标位置离右侧的距离小于tip宽度
+            x = pos.x() - t_width if self.width() - \
+                                     pos.x() - 20 < t_width else pos.x()
+            # 如果鼠标位置离底部的高度小于tip高度
+            y = pos.y() - t_height if self.height() - \
+                                      pos.y() - 20 < t_height else pos.y()
+            self.toolTipWidget.show(
+                title, points, QPoint(x, y))
+        else:
+            self.toolTipWidget.hide()
+            self.lineItem.hide()
+    #窗口变化时调整大小
+    def resizeEvent(self, event):
+        super(ChartView, self).resizeEvent(event)
+        # 当窗口大小改变时需要重新计算
+        # 坐标系中左上角顶点
+        self.point_top = self._chart.mapToPosition(
+            QPointF(self.min_x, self.max_y))
+        # 坐标原点坐标
+        self.point_bottom = self._chart.mapToPosition(QPointF(self.min_x, self.min_y))
+        self.step_x = (self.max_x - self.min_x) / (self._chart.axisX().tickCount() - 1)
 
 class content_charts(QWidget):
     def __init__(self):
         super().__init__()
-        self.setAttribute(Qt.WA_TranslucentBackground)  # 透明背景
-        self.setWindowFlags(Qt.FramelessWindowHint) 
+        # self.setAttribute(Qt.WA_TranslucentBackground)  # 透明背景
+        # self.setWindowFlags(Qt.FramelessWindowHint) 
 
         
         
@@ -330,6 +341,7 @@ class content_charts(QWidget):
         self.category = ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
         self.dataTable = [
             ["", [120, 132, 101, 134, 90, 230, 210]],
+            ["2", [140, 532, 701, 634, 90, 830, 310]],
         ]
         
         # 创建ChartView实例并添加到布局
@@ -343,8 +355,7 @@ class content_charts(QWidget):
         self.data_fetch_thread.start()
 
     def update_labels(self, datas):
-         # test = ["当前销售额：", [data["Mo_Amount"] for data in self.data2["data"]]]
-        # self.chart.category = [data["category"] for data in self.data2["data"]]
+        print(datas)
         if datas["num"]<7:
             logging.error("数据不足")
         self.category = [data["category"] for data in datas["data"]]
@@ -358,6 +369,11 @@ class content_charts(QWidget):
         
         # 如果你的ChartView类有更新方法，可以调用这个方法
         self.chart1.initChart()
+
+        axisX, axisY = self.chart1._chart.axisX(), self.chart1._chart.axisY()
+        self.chart1.min_x, self.chart1.max_x = axisX.min(), axisX.max()
+        self.chart1.min_y, self.chart1.max_y = axisY.min(), axisY.max()
+
         self.data_fetch_thread.quit()
         self.data_fetch_thread.wait()
 
@@ -386,6 +402,7 @@ class linecharts(QWidget):
         self.category = ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
         self.dataTable = [
             ["", [120, 132, 101, 134, 90, 230, 210]],
+            ["2", [140, 532, 701, 634, 90, 830, 310]],
  ]       
         # 创建ChartView实例并添加到布局
         self.chart1 = ChartView(self.category, self.dataTable)
@@ -422,6 +439,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     color = QColor(255, 100, 50)
     view = content_charts()
+    view.setStyleSheet("background-color: transparent;")
     
     # 显示视图
     view.show()
