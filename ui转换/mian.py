@@ -137,10 +137,12 @@ class main_ui(QWidget):
         
         
         self.label1 = QtWidgets.QLabel("生产总数：")
+        self.label1.setStyleSheet("color: rgb(255, 255, 255); font-size: 15px; font-family: '微软雅黑';")
         self.label2 = QtWidgets.QLabel("新增生产：")
+        self.label2.setStyleSheet("color: rgb(255, 255, 255); font-size: 15px; font-family: '微软雅黑';")
         self.label3 = QtWidgets.QLabel(" 待生产 ：")
+        self.label3.setStyleSheet("color: rgb(255, 255, 255); font-size: 15px; font-family: '微软雅黑';")
    
-        
         self.data_fetch_thread = DtaFetchThread_1()
 # 当数据被获取时，调用update_labels方法
         self.data_fetch_thread.data_fetched.connect(self.update_labels)
