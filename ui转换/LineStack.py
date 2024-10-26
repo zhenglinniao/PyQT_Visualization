@@ -234,6 +234,7 @@ class ChartView(QChartView):
         axisY = self._chart.axisY()
         axisY.setLabelsBrush(Qt.white)
         axisY.setLabelsFont(QFont("微软雅黑", 7))
+        axisY.setGridLineVisible(False)
         axisX = self._chart.axisX()  # x轴
 
         axis_x = QCategoryAxis(
@@ -316,8 +317,8 @@ class ChartView(QChartView):
 class content_charts(QWidget):
     def __init__(self):
         super().__init__()
-        # self.setAttribute(Qt.WA_TranslucentBackground)  # 透明背景
-        # self.setWindowFlags(Qt.FramelessWindowHint) 
+        self.setAttribute(Qt.WA_TranslucentBackground)  # 透明背景
+        self.setWindowFlags(Qt.FramelessWindowHint) 
 
         
         
@@ -362,6 +363,7 @@ class content_charts(QWidget):
         logging.info("category: %s", datas)
         self.dataTable = [
             ["tip", [data["Mo_Amount"] for data in datas["data"]]],    
+            ["tip2", [1522,4844,1566,3546,4565,2225,5922]],
         ]
         
         self.chart1.category = self.category

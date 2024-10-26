@@ -224,12 +224,13 @@ class ChartView(QChartView):
 
         axisY = self._chart.axisY()
         axisY.setLabelsBrush(Qt.white)
+        axisY.setGridLineVisible(False)
         axisX = self._chart.axisX()  # x轴
 
         axis_x = QCategoryAxis(
             self._chart, labelsPosition=QCategoryAxis.AxisLabelsPositionOnValue)
         axis_x.setTickCount(7)
-        axis_x.setGridLineVisible(False)
+        
 
         min_x = axisX.min()
         max_x = axisX.max()
@@ -238,7 +239,7 @@ class ChartView(QChartView):
         for i in range(0, 7):
             axis_x.append(self.category[i], min_x + i * step)
         axis_x.setLabelsBrush(Qt.white)
-
+        axis_x.setGridLineVisible(False)
         self._chart.setAxisX(axis_x, self._chart.series()[-1])
         
         # chart的图例

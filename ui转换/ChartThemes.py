@@ -38,6 +38,7 @@ except ImportError:
     QStackedBarSeries = QtCharts.QStackedBarSeries
     QCategoryAxis = QtCharts.QCategoryAxis
 from SQLAlchemy import *
+from PyQt5.QtGui import QFont
 class ThemeWidget(QWidget):
     def __init__(self, parent=None):
         super(ThemeWidget, self).__init__(parent)
@@ -180,6 +181,7 @@ class ThemeWidget(QWidget):
 # 创建一个柱状图，并将其添加到布局中
     def createBarChart(self, m_dataTable):
         chart = QChart()
+        chart.setBackgroundBrush(Qt.transparent)
         chart.setTitle("Bar chart")
         chart.setTitleBrush(Qt.white)
         legend = chart.legend()
@@ -245,17 +247,15 @@ class ThemeWidget(QWidget):
 
         pieSize = 1.0 / len(m_dataTable)
 
-        for i, (index,data_list) in enumerate(m_dataTable):
+        for i, (index0,data_list) in enumerate(m_dataTable):
             # print(i,index,data_list)
             series = QPieSeries(chart)
             for index, value in enumerate(data_list):
-                label = f"Slice {index + 1}"  # 生成一个标签，如 "Slice 1", "Slice 2" 等
-                print(label, value)
+                label = f"{index0} {index + 1}"  # 生成一个标签，如 "Slice 1", "Slice 2" 等
                 slice = series.append(label,value)
                 if series.count() == 1:
                     slice.setLabelVisible()
                     slice.setExploded()
-
 # 计算饼图的水平位置
             hPos = (pieSize / 2) + (i / float(len(m_dataTable)))
 # 设置饼图的大小
@@ -266,9 +266,7 @@ class ThemeWidget(QWidget):
             series.setVerticalPosition(0.5)
 
             chart.addSeries(series)
-        chart.createDefaultAxes()
-        chart.axisY().setLabelsBrush(Qt.white)
-        chart.axisX().setLabelsBrush(Qt.white)
+        
         return chart
 # 创建一个曲线图，并将其添加到布局中
     def createSplineChart(self,m_dataTable):
@@ -311,13 +309,15 @@ class ThemeWidget(QWidget):
     @pyqtSlot()
     def updateUI(self,parent,index=None):
         # 获取当前主题
-        theme = parent.m_themeComboBox.itemData(
-            parent.m_themeComboBox.currentIndex())
+        try:
+            result1 = parent.m_themeComboBox.currentIndex() if parent.index1 == ""  else parent.index1
+        except:
+            result1 = parent.m_themeComboBox.currentIndex()
+        print("result1:",result1)
+        theme = parent.m_themeComboBox.itemData(int(result1))
         # 如果当前图表的主题与选择的主题不同，则更新所有图表的主题
         for chartView in parent.m_charts:
-            chartView.setRenderHint(QPainter.Antialiasing)
-
-        
+            chartView.setRenderHint(QPainter.Antialiasing)  
         if parent.m_charts[0].chart().theme() != theme:
             for chartView in parent.m_charts:
 # 设置图表视图的主题
@@ -328,32 +328,32 @@ class ThemeWidget(QWidget):
     
         
             if theme == QChart.ChartThemeLight:
-                pal.setColor(QPalette.Window, QColor(0xf0f0f0))
-                parent.frame.setStyleSheet("background-color: #f0f0f0")
+                # pal.setColor(QPalette.Window, QColor(0xf0f0f0))
+                # parent.frame.setStyleSheet("background-color: #f0f0f0")
                 pal.setColor(QPalette.WindowText, QColor(0x404044))
             elif theme == QChart.ChartThemeDark:
-                pal.setColor(QPalette.Window, QColor(0x121218))
-                parent.frame.setStyleSheet("background-color: #121218")
+                # pal.setColor(QPalette.Window, QColor(0x121218))
+                # parent.frame.setStyleSheet("background-color: #121218")
                 pal.setColor(QPalette.WindowText, QColor(0xd6d6d6))
             elif theme == QChart.ChartThemeBlueCerulean:
-                pal.setColor(QPalette.Window, QColor(0x40434a))
-                parent.frame.setStyleSheet("background-color: #40434a")
+                # pal.setColor(QPalette.Window, QColor(0x40434a))
+                # parent.frame.setStyleSheet("background-color: #40434a")
                 pal.setColor(QPalette.WindowText, QColor(0xd6d6d6))
             elif theme == QChart.ChartThemeBrownSand:
-                pal.setColor(QPalette.Window, QColor(0x9e8965))
-                parent.frame.setStyleSheet("background-color: #9e8965")
+                # pal.setColor(QPalette.Window, QColor(0x9e8965))
+                # parent.frame.setStyleSheet("background-color: #9e8965")
                 pal.setColor(QPalette.WindowText, QColor(0x404044))
             elif theme == QChart.ChartThemeBlueNcs:
-                pal.setColor(QPalette.Window, QColor(0x018bba))
-                parent.frame.setStyleSheet("background-color: #018bba")
+                # pal.setColor(QPalette.Window, QColor(0x018bba))
+                # parent.frame.setStyleSheet("background-color: #018bba")
                 pal.setColor(QPalette.WindowText, QColor(0x404044))
             elif theme == QChart.ChartThemeHighContrast:
-                pal.setColor(QPalette.Window, QColor(0xffab03))
-                parent.frame.setStyleSheet("background-color: #ffab03")
+                # pal.setColor(QPalette.Window, QColor(0xffab03))
+                # parent.frame.setStyleSheet("background-color: #ffab03")
                 pal.setColor(QPalette.WindowText, QColor(0x181818))
             elif theme == QChart.ChartThemeBlueIcy:
-                pal.setColor(QPalette.Window, QColor(0xcee7f0)) 
-                parent.frame.setStyleSheet("background-color: #cee7f0")
+                # pal.setColor(QPalette.Window, QColor(0xcee7f0)) 
+                # parent.frame.setStyleSheet("background-color: #cee7f0")
                 pal.setColor(QPalette.WindowText, QColor(0x404044))
             else: 
                 pal.setColor(QPalette.Window, QColor(0xf0f0f0))
@@ -361,9 +361,12 @@ class ThemeWidget(QWidget):
                 pal.setColor(QPalette.WindowText, QColor(0x404044))
             parent.window().setPalette(pal)
 # 获取动画选项
-        options = QChart.AnimationOptions(
-            parent.m_animatedComboBox.itemData(
-                parent.m_animatedComboBox.currentIndex()))
+
+        try:
+            result2 = parent.m_animatedComboBox.currentIndex() if parent.index2 == ""  else parent.index2
+        except:
+            result2 = parent.m_animatedComboBox.currentIndex()
+        options = QChart.AnimationOptions(parent.m_animatedComboBox.itemData(int(result2)))
 # 如果第一个图表视图的动画选项与获取的动画选项不同
         if parent.m_charts[0].chart().animationOptions() != options:
     # 遍历所有图表视图
@@ -372,9 +375,13 @@ class ThemeWidget(QWidget):
                 chartView.chart().setAnimationOptions(options)
 # 获取图例对齐方式
 # 获取图例组合框中当前项的数据
-        alignment = parent.m_legendComboBox.itemData(
-            parent.m_legendComboBox.currentIndex())
+        try:
+            result3 = parent.m_legendComboBox.currentIndex() if parent.index3 == ""  else parent.index3
+        except:
+            result3 = parent.m_legendComboBox.currentIndex()
+        alignment = parent.m_legendComboBox.itemData(int(result3))
 # 遍历所有图表视图
+        
         for chartView in parent.m_charts:
     # 获取当前图表的图例
             legend = chartView.chart().legend()
@@ -417,11 +424,10 @@ class createpie(QWidget):
         settingsLayout.addWidget(QLabel("Legend:"))
         settingsLayout.addWidget(self.m_legendComboBox)
 
-        # 添加一个拉伸组件，用于填充空白区域
-        settingsLayout.addStretch()
+        settingsLayout.setAlignment(Qt.AlignCenter)
         # 将设置布局添加到主布局中，位置为第0行第0列，占据1行3列
         baseLayout.addLayout(settingsLayout, 0, 0, 1, 3)
-        self.chartView = QChartView(self.ui.createLineChart(self.m_dataTable))
+        self.chartView = QChartView(self.ui.createBarChart(self.m_dataTable))
         self.chartView.setRenderHint(QPainter.Antialiasing)
         self.chartView.setStyleSheet("background: transparent; border: none;")  # 设置无边框和透明背景
         baseLayout.addWidget(self.chartView, 1, 0)
@@ -455,28 +461,23 @@ class createpie(QWidget):
         ]
         if self.chartView:
             # 清除现有的图表
-            self.chartView.setChart(self.ui.createLineChart(self.m_dataTable))
+            self.chartView.setChart(self.ui.createBarChart(self.m_dataTable))
             self.ui.updateUI(self,self)
        
-
 
 
 
 class createpie2(QWidget):
     def __init__(self, parent=None):
         super(createpie2, self).__init__(parent)
-
+        self.setAttribute(Qt.WA_TranslucentBackground)
+        self.setWindowFlags(Qt.FramelessWindowHint)
         self.ui = ThemeWidget()
         self.m_charts=[]
-        
-        self.m_listCount = 3
-        # 设置最大值为10
-        self.m_valueMax = 10
-        # 设置值数量为7
-        self.m_valueCount = 7
-        # 生成随机数据
-        self.m_dataTable = self.ui.generateRandomData(self.m_listCount,
-                                                   self.m_valueMax, self.m_valueCount)
+        self.m_dataTable = [
+            ["tip1", [120, 132, 101, 134, 90, 230, 210,222]],
+            ["tip2", [220, 182, 191, 234, 290, 330, 310]],
+        ]
         # 创建主题下拉框
         self.m_themeComboBox = self.ui.createThemeBox()
 
@@ -484,6 +485,9 @@ class createpie2(QWidget):
         self.m_animatedComboBox = self.ui.createAnimationBox()
         self.m_legendComboBox = self.ui.createLegendBox()
         self.ui.connectSignals(self)
+        self.index1 = 1
+        self.index2 = ""
+        self.index3 = 3
 
         self.frame = QFrame(self)
         self.frame.setObjectName("mainFrame")
@@ -497,32 +501,275 @@ class createpie2(QWidget):
         settingsLayout.addWidget(self.m_legendComboBox)
 
         # 添加一个拉伸组件，用于填充空白区域
-        settingsLayout.addStretch()
+        settingsLayout.setAlignment(Qt.AlignCenter)
         # 将设置布局添加到主布局中，位置为第0行第0列，占据1行3列
         baseLayout.addLayout(settingsLayout, 0, 0, 1, 3)
-        chartView = QChartView(self.ui.createLineChart(self.m_dataTable))
-        chartView.setRenderHint(QPainter.Antialiasing)
-        chartView.setStyleSheet("background: transparent; border: none;")  # 设置无边框和透明背景
-        baseLayout.addWidget(chartView, 1, 0)
-        self.m_charts.append(chartView)
+        self.chartView = QChartView(self.ui.createPieChart(self.m_dataTable))
+        self.chartView.setRenderHint(QPainter.Antialiasing)
+        self.chartView.setStyleSheet("background: transparent; border: none;")  # 设置无边框和透明背景
+        baseLayout.addWidget(self.chartView, 1, 0)
+        self.m_charts.append(self.chartView)
+
+
+        self.data_fetch_thread = DataFetchThread()
+# 当数据被获取时，调用update_labels方法
+        self.data_fetch_thread.data_fetched.connect(self.update_labels)
+
+        self.timer = QtCore.QTimer(self)
+        self.timer.timeout.connect(self.start_data_fetch)
+# 启动定时器，每隔60秒执行一次
+        self.timer.start(6 * 1000)
          # 设置布局
         main_layout = QGridLayout(self)  # 创建主窗口的布局
         main_layout.addWidget(self.frame)  # 将 QFrame 添加到主布局中
         self.setLayout(main_layout)  # 设置主窗口的布局
 
 
+    def start_data_fetch(self):
+        # 启动数据获取线程
+        self.data_fetch_thread.start()
+
+    def update_labels(self, datas):
+        self.m_dataTable = [
+            ["zln", [data["Mo_Amount"] for data in datas["data"]]],    
+        ]
+        if self.chartView:
+            # 清除现有的图表
+            self.chartView.setChart(self.ui.createPieChart(self.m_dataTable))
+            self.ui.updateUI(self,self)
+       
+#TODO:没用
+class createpie3(QWidget):
+    def __init__(self, parent=None):
+        super(createpie3, self).__init__(parent)
+        self.setAttribute(Qt.WA_TranslucentBackground)
+        self.setWindowFlags(Qt.FramelessWindowHint)
+        self.ui = ThemeWidget()
+        self.m_charts=[]
+        self.m_dataTable = [
+            ["tip1", [120, 132, 101, 134, 90, 230, 210,222]],
+            ["tip2", [220, 182, 191, 234, 290, 330, 310]],
+        ]
+        # 创建主题下拉框
+        self.m_themeComboBox = self.ui.createThemeBox()
+
+        # 创建动画下拉框
+        self.m_animatedComboBox = self.ui.createAnimationBox()
+        self.m_legendComboBox = self.ui.createLegendBox()
+        self.index1 = "1"
+        self.index2 = ""
+        self.index3 = "3"
+
+
+        self.ui.connectSignals(self)
+        
+
+        self.frame = QFrame(self)
+        self.frame.setObjectName("mainFrame")
+        baseLayout = QGridLayout(self.frame)
+        settingsLayout = QHBoxLayout()
+        settingsLayout.addWidget(QLabel("Theme:"))
+        settingsLayout.addWidget(self.m_themeComboBox)
+        settingsLayout.addWidget(QLabel("Animation:"))
+        settingsLayout.addWidget(self.m_animatedComboBox)
+        settingsLayout.addWidget(QLabel("Legend:"))
+        settingsLayout.addWidget(self.m_legendComboBox)
+        # 添加一个拉伸组件，用于填充空白区域
+        settingsLayout.setAlignment(Qt.AlignCenter)
+        # 将设置布局添加到主布局中，位置为第0行第0列，占据1行3列
+        baseLayout.addLayout(settingsLayout, 0, 0, 1, 3)
+
+        self.chartView = QChartView(self.ui.createPieChart(self.m_dataTable))
+        self.chartView.setRenderHint(QPainter.Antialiasing)
+        self.chartView.setStyleSheet("background: transparent; border: none;")  # 设置无边框和透明背景
+        baseLayout.addWidget(self.chartView, 1, 0)
+        self.m_charts.append(self.chartView)
+
+
+        self.data_fetch_thread = DataFetchThread()
+# 当数据被获取时，调用update_labels方法
+        self.data_fetch_thread.data_fetched.connect(self.update_labels)
+
+        self.timer = QtCore.QTimer(self)
+        self.timer.timeout.connect(self.start_data_fetch)
+# 启动定时器，每隔60秒执行一次
+        self.timer.start(6 * 1000)
+         # 设置布局
+        main_layout = QGridLayout(self)  # 创建主窗口的布局
+        main_layout.addWidget(self.frame)  # 将 QFrame 添加到主布局中
+        self.setLayout(main_layout)  # 设置主窗口的布局
+
+
+    def start_data_fetch(self):
+        # 启动数据获取线程
+        self.data_fetch_thread.start()
+
+    def update_labels(self, datas):
+        self.m_dataTable = [
+            ["zln", [data["Mo_Amount"] for data in datas["data"]]],    
+        ]
+        if self.chartView:
+            # 清除现有的图表
+            self.chartView.setChart(self.ui.createPieChart(self.m_dataTable))
+            self.ui.updateUI(self,self)
+    
+class createpie4(QWidget):
+    def __init__(self, parent=None):
+        super(createpie4, self).__init__(parent)
+        # self.setAttribute(Qt.WA_TranslucentBackground)
+        # self.setWindowFlags(Qt.FramelessWindowHint)
+        self.ui = ThemeWidget()
+        self.m_charts=[]
+        self.m_dataTable = [
+            ["tip1", [120, 132, 101, 134, 90, 230, 210,222]],
+        ]
+        # 创建主题下拉框
+        self.m_themeComboBox = self.ui.createThemeBox()
+
+        # 创建动画下拉框
+        self.m_animatedComboBox = self.ui.createAnimationBox()
+        self.m_legendComboBox = self.ui.createLegendBox()
+        self.index1 = "1"
+        self.index2 = ""
+        self.index3 = "3"
+        self.ui.connectSignals(self)
+        self.frame = QFrame(self)
+        self.frame.setObjectName("mainFrame")
+        baseLayout = QGridLayout(self.frame)
+        baseLayout.setContentsMargins(0, 0, 0, 0)
+        settingsLayout = QHBoxLayout()
+        settingsLayout.addWidget(QLabel("Theme:"))
+        settingsLayout.addWidget(self.m_themeComboBox)
+        settingsLayout.addWidget(QLabel("Animation:"))
+        settingsLayout.addWidget(self.m_animatedComboBox)
+        settingsLayout.addWidget(QLabel("Legend:"))
+        settingsLayout.addWidget(self.m_legendComboBox)
+        # 添加一个拉伸组件，用于填充空白区域
+        settingsLayout.setAlignment(Qt.AlignCenter)
+        # 将设置布局添加到主布局中，位置为第0行第0列，占据1行3列
+        #TODO: 不把菜单栏加入布局就不显示
+        # baseLayout.addLayout(settingsLayout, 0, 0, 1, 3)
+
+        self.chartView = QChartView(self.ui.createPieChart(self.m_dataTable))
+        self.chartView.setRenderHint(QPainter.Antialiasing)
+        self.chartView.setContentsMargins(0, 0, 0, 0)
+        self.chartView.setStyleSheet("background: transparent; border: none;")  # 设置无边框和透明背景
+        baseLayout.addWidget(self.chartView, 1, 0)
+        self.m_charts.append(self.chartView)
+
+
+        self.data_fetch_thread = DataFetchThread()
+# 当数据被获取时，调用update_labels方法
+        self.data_fetch_thread.data_fetched.connect(self.update_labels)
+
+        self.timer = QtCore.QTimer(self)
+        self.timer.timeout.connect(self.start_data_fetch)
+# 启动定时器，每隔60秒执行一次
+        self.timer.start(6 * 1000)
+         # 设置布局
+        main_layout = QGridLayout(self)  # 创建主窗口的布局
+        main_layout.addWidget(self.frame)  # 将 QFrame 添加到主布局中
+        self.setLayout(main_layout)  # 设置主窗口的布局
+
+
+    def start_data_fetch(self):
+        # 启动数据获取线程
+        self.data_fetch_thread.start()
+
+    def update_labels(self, datas):
+        self.m_dataTable = [
+            ["zln", [data["Mo_Amount"] for data in datas["data"]]],    
+        ]
+        if self.chartView:
+            # 清除现有的图表
+            self.chartView.setChart(self.ui.createPieChart(self.m_dataTable))
+            self.ui.updateUI(self,self)
+      
+class createpie5(QWidget):
+    def __init__(self, parent=None):
+        super(createpie5, self).__init__(parent)
+        self.setAttribute(Qt.WA_TranslucentBackground)
+        self.setWindowFlags(Qt.FramelessWindowHint)
+        self.ui = ThemeWidget()
+        self.m_charts=[]
+        self.m_dataTable = [
+            ["tip1", [120, 132, 101, 134, 90, 230, 210,222]],
+        ]
+        # 创建主题下拉框
+        self.m_themeComboBox = self.ui.createThemeBox()
+
+        # 创建动画下拉框
+        self.m_animatedComboBox = self.ui.createAnimationBox()
+        self.m_legendComboBox = self.ui.createLegendBox()
+        self.index1 = "1"
+        self.index2 = ""
+        self.index3 = "3"
+
+
+        self.ui.connectSignals(self)
+        
+
+        self.frame = QFrame(self)
+        self.frame.setObjectName("mainFrame")
+        baseLayout = QGridLayout(self.frame)
+        baseLayout.setContentsMargins(0, 0, 0, 0)
+        settingsLayout = QHBoxLayout()
+        settingsLayout.addWidget(QLabel("Theme:"))
+        settingsLayout.addWidget(self.m_themeComboBox)
+        settingsLayout.addWidget(QLabel("Animation:"))
+        settingsLayout.addWidget(self.m_animatedComboBox)
+        settingsLayout.addWidget(QLabel("Legend:"))
+        settingsLayout.addWidget(self.m_legendComboBox)
+        # 添加一个拉伸组件，用于填充空白区域
+        settingsLayout.setAlignment(Qt.AlignCenter)
+        # 将设置布局添加到主布局中，位置为第0行第0列，占据1行3列
+        #TODO: 不把菜单栏加入布局就不显示
+        # baseLayout.addLayout(settingsLayout, 0, 0, 1, 3)
+
+        self.chartView = QChartView(self.ui.createPieChart(self.m_dataTable))
+        self.chartView.setContentsMargins(0, 0, 0, 0)
+        self.chartView.setRenderHint(QPainter.Antialiasing)
+        self.chartView.setStyleSheet("background: transparent; border: none;")  # 设置无边框和透明背景
+        baseLayout.addWidget(self.chartView, 1, 0)
+        self.m_charts.append(self.chartView)
+
+
+        self.data_fetch_thread = DataFetchThread()
+# 当数据被获取时，调用update_labels方法
+        self.data_fetch_thread.data_fetched.connect(self.update_labels)
+
+        self.timer = QtCore.QTimer(self)
+        self.timer.timeout.connect(self.start_data_fetch)
+# 启动定时器，每隔60秒执行一次
+        self.timer.start(6 * 1000)
+         # 设置布局
+        main_layout = QGridLayout(self)  # 创建主窗口的布局
+        main_layout.addWidget(self.frame)  # 将 QFrame 添加到主布局中
+        self.setLayout(main_layout)  # 设置主窗口的布局
+
+
+    def start_data_fetch(self):
+        # 启动数据获取线程
+        self.data_fetch_thread.start()
+
+    def update_labels(self, datas):
+        self.m_dataTable = [
+            ["zln", [data["Mo_Amount"] for data in datas["data"]]],    
+        ]
+        if self.chartView:
+            # 清除现有的图表
+            self.chartView.setChart(self.ui.createPieChart(self.m_dataTable))
+            self.ui.updateUI(self,self)
+   
 
 if __name__ == '__main__':
     import sys
-
     app = QApplication(sys.argv)
-
     # window = QMainWindow()
     # window.setStyleSheet("QMainWindow{background-color: #ff0}")
-    widget = createpie()
+    widget = createpie4()
     widget.show()
     # window.setCentralWidget(widget)
     widget.resize(900, 600)
     # window.show()
-
     sys.exit(app.exec_())

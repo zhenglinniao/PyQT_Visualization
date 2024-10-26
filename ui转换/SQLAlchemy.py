@@ -128,7 +128,37 @@ class DtaFetchThread_1(QThread):
         finally:
             session.close()
 
+class DtaFetchThread_8(QThread):
+    data_fetched = Signal(object)
+    def run(self):
+        # 这里执行耗时的数据获取操作
+        data = self.print_sql()
+        self.data_fetched.emit(data)  # 发出信号，将数据传递回主线程
+    def print_sql(self):   
+#查询MO_MO表里state为0的数据
+        session = run()
+        try:
 
+
+            head = ["日期", "生产数量", "完成率", "状态"]# 设置表头
+
+            # 填充数据
+            production_data = [
+                ['2024-10-21', '100', '90%', '进行中'],
+                ['2024-10-22', '150', '100%', '已完成'],
+                ['2024-10-23', '120', '75%', '延迟'],
+                ['2024-10-24', '200', '80%', '进行中'],
+                ['2024-10-25', '180', '95%', '已完成'],
+                ['2024-10-24', '200', '80%', '进行中'],
+                ['2024-10-25', '180', '95%', '已完成'],
+                ['2024-10-24', '200', '80%', '进行中'],
+                ['2024-10-25', '180', '95%', '已完成'],
+            ]
+            return {"data_list": production_data, "head": head}
+        except Exception as e:
+            logging.error("查询数据失败", exc_info=True)
+        finally:
+            session.close()
 
 
 

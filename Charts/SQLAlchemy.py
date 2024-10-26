@@ -83,8 +83,6 @@ def run():
     Session = sessionmaker(bind=engine)
     return Session()
 
-
-
 # 创建一个线程类，用于执行数据获取操作  获取线性表
 class DataFetchThread(QThread):
     data_fetched = Signal(object)  # 定义一个信号，用于传递获取到的数据
@@ -123,11 +121,6 @@ class DtaFetchThread_1(QThread):
             logging.error("查询数据失败", exc_info=True)
         finally:
             session.close()
-
-
-
-
-
 
 
 
