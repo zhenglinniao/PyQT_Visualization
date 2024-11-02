@@ -742,6 +742,7 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.page_home)
         self.stackedWidget.addWidget(self.page_two_home)
 
+        #TODO: main_ui 地址引用错误会报错
         self.page_widget = main_ui()
         self.stackedWidget.addWidget(self.page_widget)
 

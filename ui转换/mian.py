@@ -8,7 +8,7 @@ from PySide2.QtCore import Qt,QSize
 from LineStack import *
 import os
 from PySide2.QtCore import QTimer
-from SQLAlchemy import *
+from SQLbase.SQLAlchemy import *
 from ChartThemes import *
 
 # main
@@ -85,6 +85,7 @@ class main_ui(QWidget):
     
         self.QWidget0_right = QtWidgets.QVBoxLayout()
         self.QWidget0_right.setSpacing(20)
+        self.QWidget0_right.setContentsMargins(0, 30, 0, 0)
        
         self.title = QtWidgets.QLabel("标题1")
         self.title.setContentsMargins(10, 20, 0, 0)
@@ -171,7 +172,6 @@ class main_ui(QWidget):
         self.title.setMaximumSize(200, 50)
         self.title.setStyleSheet("color:rgb(255, 255, 255);font: 15pt \"微软雅黑\";background-color: transparent;")
         self.QWidget0_right.addWidget(self.title)
-        self.QWidget0_right.addStretch()
         self.QWidget0_right.addLayout(self.title_text_layout1)
         self.QWidget0_right.addLayout(self.title_text_layout2)
         self.QWidget0_right.addLayout(self.title_text_layout3)
@@ -280,8 +280,6 @@ class main_ui(QWidget):
         
         
         
-
-
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.QWidget2 = self.SetQWidget("QWidget2", "./ui转换/border.png")
 # 设置QWidget2的最小尺寸为636x1000
@@ -290,11 +288,17 @@ class main_ui(QWidget):
         self.verticalLayout_5.addLayout(self.horizontalLayout_2)
         self.horizontalLayout_3.addWidget(self.verticalFrame_2)
         self.layout2 = QtWidgets.QVBoxLayout(self.QWidget2)
+        self.layout2.setSpacing(0)
+        self.layout2.setContentsMargins(0,10,0,0)
+        self.title2 = QtWidgets.QLabel("数据概览")
+        self.title2.setStyleSheet("font: 18px 'Microsoft YaHei';font-weight: bold; color: #3399FF;")
+        self.title2.setAlignment(Qt.AlignCenter)
+        self.chart2 = createBar6()
+        self.chart2.setStyleSheet("background-color: transparent;")
+        self.layout2.addWidget(self.title2)
+        self.layout2.addWidget(self.chart2)
         
         
-        
-
-
         # 右边内容布局
         self.verticalFrame_3 = QtWidgets.QFrame(self.horizontalFrame)
         self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.verticalFrame_3)
@@ -305,7 +309,7 @@ class main_ui(QWidget):
         self.verticalLayout_9.addWidget(self.QWidget9)
         self.verticalLayout_6.addLayout(self.verticalLayout_9)
         self.layout9 = QtWidgets.QVBoxLayout(self.QWidget9)
-        self.layout9.setSpacing(25)
+        self.layout9.setSpacing(20)
         self.layout9_top = QtWidgets.QHBoxLayout()
         self.layout9_top.setContentsMargins(20,10,0,0)
         self.layout9.setAlignment(Qt.AlignTop)
@@ -361,6 +365,7 @@ class main_ui(QWidget):
         self.layout9_top.addStretch()
         self.layout9.addLayout(self.layout9_top)
         self.layout9_bottom = QtWidgets.QHBoxLayout()
+        self.layout9_bottom.setContentsMargins(0,0,0,10)
         self.layout9_bottom_left = QtWidgets.QVBoxLayout()
         self.layout9_bottom_left.setSpacing(10)
         self.layout9_bottom_right = QtWidgets.QVBoxLayout()
@@ -445,7 +450,7 @@ class main_ui(QWidget):
         self.layout10_1.addWidget(self.season10)
         self.layout10_1.addStretch()
         self.layout10.addLayout(self.layout10_1)
-        self.char10 = createpie()
+        self.char10 = createBar()
         self.char10.setFixedSize(QSize(636, 300))
         self.char10.setStyleSheet("background-color: transparent;border: 0px;border-radius: 20px;")
         self.layout10.addWidget(self.char10)
@@ -661,6 +666,7 @@ class main_ui(QWidget):
             # 如果按钮取消选中，则恢复默认背景
             sender.setStyleSheet(self.button_style10)
 
+
     def update_data1(self):
         self.data_fetch_thread.start()
 
@@ -671,7 +677,8 @@ class main_ui(QWidget):
             self.label1.setText(f'生产总数: {first_data["data_list"]}')
             self.label2.setText(f'新增生产: {first_data["data_list"]}')
             self.label3.setText(f'待生产: {first_data["data_list"]}')
-            
+
+
     def update_data8(self):
         self.data_fetch_thread8.start()
     def update_labels8(self,datas):
@@ -687,6 +694,7 @@ class main_ui(QWidget):
                 item.setFlags(item.flags() & ~Qt.ItemIsEditable)
                 self.table8.setItem(row_index, col_index, item)
 
+    
 
     def SetQWidget(self, name, path=None):
         # 创建带背景图片的QWidget

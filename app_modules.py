@@ -15,6 +15,7 @@
 ################################################################################
 
 # GUI FILE
+
 from ui_qt.ui_main import Ui_MainWindow
 
 # IMPORT QSS CUSTOM

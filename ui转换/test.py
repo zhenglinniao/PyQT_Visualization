@@ -35,7 +35,8 @@ class PieChartWindow(QMainWindow):
             # 设置扇叶颜色
             brush = QBrush(colors[index])
             slice.setBrush(brush)
-
+        
+        
         # 创建图表并添加数据系列
         self.chart = QtCharts.QChart()
         self.chart.addSeries(self.series)

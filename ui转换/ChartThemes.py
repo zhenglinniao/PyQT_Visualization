@@ -394,9 +394,9 @@ class ThemeWidget(QWidget):
                 legend.show()
 
 
-class createpie(QWidget):
+class createBar(QWidget):
     def __init__(self, parent=None):
-        super(createpie, self).__init__(parent)
+        super(createBar, self).__init__(parent)
         self.setAttribute(Qt.WA_TranslucentBackground)
         self.setWindowFlags(Qt.FramelessWindowHint)
         self.ui = ThemeWidget()
@@ -616,8 +616,8 @@ class createpie3(QWidget):
 class createpie4(QWidget):
     def __init__(self, parent=None):
         super(createpie4, self).__init__(parent)
-        # self.setAttribute(Qt.WA_TranslucentBackground)
-        # self.setWindowFlags(Qt.FramelessWindowHint)
+        self.setAttribute(Qt.WA_TranslucentBackground)
+        self.setWindowFlags(Qt.FramelessWindowHint)
         self.ui = ThemeWidget()
         self.m_charts=[]
         self.m_dataTable = [
@@ -762,12 +762,84 @@ class createpie5(QWidget):
             self.ui.updateUI(self,self)
    
 
+class createBar6(QWidget):
+    def __init__(self, parent=None):
+        super(createBar6, self).__init__(parent)
+        self.setAttribute(Qt.WA_TranslucentBackground)
+        self.setWindowFlags(Qt.FramelessWindowHint)
+        self.ui = ThemeWidget()
+        self.m_charts=[]
+        self.m_dataTable = [
+            ["tip1", [120, 132, 101, 134, 90, 230, 210,222]],
+            ["tip2", [220, 182, 191, 234, 290, 330, 310]],
+        ]
+        # 创建主题下拉框
+        self.m_themeComboBox = self.ui.createThemeBox()
+
+        # 创建动画下拉框
+        self.m_animatedComboBox = self.ui.createAnimationBox()
+        self.m_legendComboBox = self.ui.createLegendBox()
+        self.ui.connectSignals(self)
+
+        self.frame = QFrame(self)
+        self.frame.setObjectName("mainFrame")
+        baseLayout = QGridLayout(self.frame)
+        settingsLayout = QHBoxLayout()
+        settingsLayout.addWidget(QLabel("Theme:"))
+        settingsLayout.addWidget(self.m_themeComboBox)
+        settingsLayout.addWidget(QLabel("Animation:"))
+        settingsLayout.addWidget(self.m_animatedComboBox)
+        settingsLayout.addWidget(QLabel("Legend:"))
+        settingsLayout.addWidget(self.m_legendComboBox)
+
+        settingsLayout.setAlignment(Qt.AlignCenter)
+        # 将设置布局添加到主布局中，位置为第0行第0列，占据1行3列
+        baseLayout.addLayout(settingsLayout, 0, 0, 1, 3)
+        self.chartView = QChartView(self.ui.createBarChart(self.m_dataTable))
+        self.chartView.setRenderHint(QPainter.Antialiasing)
+        self.chartView.setStyleSheet("background: transparent; border: none;")  # 设置无边框和透明背景
+        baseLayout.addWidget(self.chartView, 1, 0)
+        self.m_charts.append(self.chartView)
+
+
+        self.data_fetch_thread = DataFetchThread()
+# 当数据被获取时，调用update_labels方法
+        self.data_fetch_thread.data_fetched.connect(self.update_labels)
+
+        self.timer = QtCore.QTimer(self)
+        self.timer.timeout.connect(self.start_data_fetch)
+# 启动定时器，每隔60秒执行一次
+        self.timer.start(6 * 1000)
+
+
+
+         # 设置布局
+        main_layout = QGridLayout(self)  # 创建主窗口的布局
+        main_layout.addWidget(self.frame)  # 将 QFrame 添加到主布局中
+        self.setLayout(main_layout)  # 设置主窗口的布局
+
+
+    def start_data_fetch(self):
+        # 启动数据获取线程
+        self.data_fetch_thread.start()
+
+    def update_labels(self, datas):
+        self.m_dataTable = [
+            ["zln", [data["Mo_Amount"] for data in datas["data"]]],    
+        ]
+        if self.chartView:
+            # 清除现有的图表
+            self.chartView.setChart(self.ui.createBarChart(self.m_dataTable))
+            self.ui.updateUI(self,self)
+         
+
+
 if __name__ == '__main__':
     import sys
     app = QApplication(sys.argv)
     # window = QMainWindow()
     # window.setStyleSheet("QMainWindow{background-color: #ff0}")
-    widget = createpie4()
+    widget = createBar6()
     widget.show()
     # window.setCentralWidget(widget)
     widget.resize(900, 600)

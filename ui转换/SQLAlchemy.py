@@ -75,11 +75,17 @@ def run():
 
     # 连接到 MySQL 数据库
     try:
-        engine = create_engine('mysql+pymysql://root:20020318@localhost/huayan')
+        engine = create_engine('mysql+pymysql://root:20020318@localhost/huayan',
+                                pool_size=10,       # 连接池中的最大连接数
+                                max_overflow=5,     # 超出连接池大小时允许的最大连接数
+                                pool_timeout=30,    # 连接超时时间（秒）
+                                pool_recycle=1800   # 在连接池中，连接多长时间自动重置（秒）
+                                )
         logging.info("数据库连接成功")
     except Exception as e:
         logging.error("数据库连接失败", exc_info=True)
 
+# 创建所有表
     Base.metadata.create_all(engine)
     # 创建会话类
     Session = sessionmaker(bind=engine)

@@ -1195,3 +1195,509 @@ AttributeError: 'Ui_MainWindow' object has no attribute 'frame_size_grip'
 2024-10-23 13:53:27,892 - INFO - 查询到 3 条数据
 2024-10-23 13:53:28,867 - INFO - 数据库连接成功
 2024-10-23 13:53:28,892 - INFO - 查询到 3 条数据
+2024-11-02 17:12:49,120 - INFO - log information...
+2024-11-02 17:12:49,478 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 34, in __init__
+    self.ui.setupUi(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_main.py", line 745, in setupUi
+    self.page_widget = main_ui()
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui转换\mian.py", line 192, in __init__
+    self.piechart16 = createpie2()
+NameError: name 'createpie2' is not defined
+2024-11-02 17:12:49,482 - INFO - System info: Windows
+2024-11-02 17:12:49,482 - INFO - System version: 10
+2024-11-02 17:12:49,483 - INFO - Python version: 3.6.15
+2024-11-02 17:12:49,491 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 102, in __init__
+    UIFunctions.uiDefinitions(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 250, in uiDefinitions
+    self.sizegrip = QSizeGrip(self.ui.frame_size_grip)
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_size_grip'
+2024-11-02 17:12:49,573 - INFO - 数据库连接成功
+2024-11-02 17:12:49,588 - INFO - 查询到 3 条数据
+2024-11-02 17:15:31,422 - INFO - log information...
+2024-11-02 17:15:31,439 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 34, in __init__
+    self.ui.setupUi(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_main.py", line 138, in setupUi
+    MainWindow.setFont(font)  # 设置主窗口的字体
+TypeError: 'PySide2.QtWidgets.QWidget.setFont' called with wrong argument types:
+  PySide2.QtWidgets.QWidget.setFont(QFont)
+Supported signatures:
+  PySide2.QtWidgets.QWidget.setFont(PySide2.QtGui.QFont)
+2024-11-02 17:15:31,441 - INFO - System info: Windows
+2024-11-02 17:15:31,442 - INFO - System version: 10
+2024-11-02 17:15:31,442 - INFO - Python version: 3.6.15
+2024-11-02 17:15:31,442 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 52, in __init__
+    UIFunctions.labelTitle(self, 'Main Window - Python Base')
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 108, in labelTitle
+    self.ui.label_title_bar_top.setText(text)
+AttributeError: 'Ui_MainWindow' object has no attribute 'label_title_bar_top'
+2024-11-02 17:15:31,448 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 68, in __init__
+    UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/16x16/icons/16x16/cil-home.png)", True)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 136, in addNewMenu
+    self.ui.layout_menus.addWidget(button)
+AttributeError: 'Ui_MainWindow' object has no attribute 'layout_menus'
+2024-11-02 17:15:31,449 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 81, in __init__
+    UIFunctions.selectStandardMenu(self, "btn_home")
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 166, in selectStandardMenu
+    for w in self.ui.frame_left_menu.findChildren(QPushButton):
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_left_menu'
+2024-11-02 17:15:31,450 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 193, in <module>
+    window = MainWindow()
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 98, in __init__
+    self.ui.frame_label_top_btns.mouseMoveEvent = moveWindow
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_label_top_btns'
+2024-11-02 17:15:44,947 - INFO - log information...
+2024-11-02 17:15:44,961 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 34, in __init__
+    self.ui.setupUi(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_main.py", line 138, in setupUi
+    MainWindow.setFont(font)  # 设置主窗口的字体
+TypeError: 'PySide2.QtWidgets.QWidget.setFont' called with wrong argument types:
+  PySide2.QtWidgets.QWidget.setFont(QFont)
+Supported signatures:
+  PySide2.QtWidgets.QWidget.setFont(PySide2.QtGui.QFont)
+2024-11-02 17:15:44,962 - INFO - System info: Windows
+2024-11-02 17:15:44,962 - INFO - System version: 10
+2024-11-02 17:15:44,962 - INFO - Python version: 3.6.15
+2024-11-02 17:15:44,962 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 52, in __init__
+    UIFunctions.labelTitle(self, 'Main Window - Python Base')
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 108, in labelTitle
+    self.ui.label_title_bar_top.setText(text)
+AttributeError: 'Ui_MainWindow' object has no attribute 'label_title_bar_top'
+2024-11-02 17:15:44,968 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 68, in __init__
+    UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/16x16/icons/16x16/cil-home.png)", True)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 136, in addNewMenu
+    self.ui.layout_menus.addWidget(button)
+AttributeError: 'Ui_MainWindow' object has no attribute 'layout_menus'
+2024-11-02 17:15:44,968 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 81, in __init__
+    UIFunctions.selectStandardMenu(self, "btn_home")
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 166, in selectStandardMenu
+    for w in self.ui.frame_left_menu.findChildren(QPushButton):
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_left_menu'
+2024-11-02 17:15:44,969 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 193, in <module>
+    window = MainWindow()
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 98, in __init__
+    self.ui.frame_label_top_btns.mouseMoveEvent = moveWindow
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_label_top_btns'
+2024-11-02 17:16:44,035 - INFO - log information...
+2024-11-02 17:16:44,050 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 34, in __init__
+    self.ui.setupUi(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_main.py", line 138, in setupUi
+    MainWindow.setFont(font)  # 设置主窗口的字体
+TypeError: 'PySide2.QtWidgets.QWidget.setFont' called with wrong argument types:
+  PySide2.QtWidgets.QWidget.setFont(QFont)
+Supported signatures:
+  PySide2.QtWidgets.QWidget.setFont(PySide2.QtGui.QFont)
+2024-11-02 17:16:44,051 - INFO - System info: Windows
+2024-11-02 17:16:44,051 - INFO - System version: 10
+2024-11-02 17:16:44,051 - INFO - Python version: 3.6.15
+2024-11-02 17:16:44,051 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 52, in __init__
+    UIFunctions.labelTitle(self, 'Main Window - Python Base')
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 108, in labelTitle
+    self.ui.label_title_bar_top.setText(text)
+AttributeError: 'Ui_MainWindow' object has no attribute 'label_title_bar_top'
+2024-11-02 17:16:44,058 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 68, in __init__
+    UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/16x16/icons/16x16/cil-home.png)", True)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 136, in addNewMenu
+    self.ui.layout_menus.addWidget(button)
+AttributeError: 'Ui_MainWindow' object has no attribute 'layout_menus'
+2024-11-02 17:16:44,058 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 81, in __init__
+    UIFunctions.selectStandardMenu(self, "btn_home")
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 166, in selectStandardMenu
+    for w in self.ui.frame_left_menu.findChildren(QPushButton):
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_left_menu'
+2024-11-02 17:16:44,059 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 193, in <module>
+    window = MainWindow()
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 98, in __init__
+    self.ui.frame_label_top_btns.mouseMoveEvent = moveWindow
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_label_top_btns'
+2024-11-02 17:18:19,253 - INFO - log information...
+2024-11-02 17:18:19,267 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 34, in __init__
+    self.ui.setupUi(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_main.py", line 138, in setupUi
+    MainWindow.setFont(font)  # 设置主窗口的字体
+TypeError: 'PySide2.QtWidgets.QWidget.setFont' called with wrong argument types:
+  PySide2.QtWidgets.QWidget.setFont(QFont)
+Supported signatures:
+  PySide2.QtWidgets.QWidget.setFont(PySide2.QtGui.QFont)
+2024-11-02 17:18:19,268 - INFO - System info: Windows
+2024-11-02 17:18:19,268 - INFO - System version: 10
+2024-11-02 17:18:19,268 - INFO - Python version: 3.6.15
+2024-11-02 17:18:19,268 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 52, in __init__
+    UIFunctions.labelTitle(self, 'Main Window - Python Base')
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 108, in labelTitle
+    self.ui.label_title_bar_top.setText(text)
+AttributeError: 'Ui_MainWindow' object has no attribute 'label_title_bar_top'
+2024-11-02 17:18:19,274 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 68, in __init__
+    UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/16x16/icons/16x16/cil-home.png)", True)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 136, in addNewMenu
+    self.ui.layout_menus.addWidget(button)
+AttributeError: 'Ui_MainWindow' object has no attribute 'layout_menus'
+2024-11-02 17:18:19,275 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 81, in __init__
+    UIFunctions.selectStandardMenu(self, "btn_home")
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 166, in selectStandardMenu
+    for w in self.ui.frame_left_menu.findChildren(QPushButton):
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_left_menu'
+2024-11-02 17:18:19,276 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 193, in <module>
+    window = MainWindow()
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 98, in __init__
+    self.ui.frame_label_top_btns.mouseMoveEvent = moveWindow
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_label_top_btns'
+2024-11-02 17:18:27,070 - INFO - log information...
+2024-11-02 17:18:27,086 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 34, in __init__
+    self.ui.setupUi(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_main.py", line 138, in setupUi
+    MainWindow.setFont(font)  # 设置主窗口的字体
+TypeError: 'PySide2.QtWidgets.QWidget.setFont' called with wrong argument types:
+  PySide2.QtWidgets.QWidget.setFont(QFont)
+Supported signatures:
+  PySide2.QtWidgets.QWidget.setFont(PySide2.QtGui.QFont)
+2024-11-02 17:18:27,086 - INFO - System info: Windows
+2024-11-02 17:18:27,086 - INFO - System version: 10
+2024-11-02 17:18:27,086 - INFO - Python version: 3.6.15
+2024-11-02 17:18:27,088 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 52, in __init__
+    UIFunctions.labelTitle(self, 'Main Window - Python Base')
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 108, in labelTitle
+    self.ui.label_title_bar_top.setText(text)
+AttributeError: 'Ui_MainWindow' object has no attribute 'label_title_bar_top'
+2024-11-02 17:18:27,094 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 68, in __init__
+    UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/16x16/icons/16x16/cil-home.png)", True)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 136, in addNewMenu
+    self.ui.layout_menus.addWidget(button)
+AttributeError: 'Ui_MainWindow' object has no attribute 'layout_menus'
+2024-11-02 17:18:27,095 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 81, in __init__
+    UIFunctions.selectStandardMenu(self, "btn_home")
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 166, in selectStandardMenu
+    for w in self.ui.frame_left_menu.findChildren(QPushButton):
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_left_menu'
+2024-11-02 17:18:27,095 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 193, in <module>
+    window = MainWindow()
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 98, in __init__
+    self.ui.frame_label_top_btns.mouseMoveEvent = moveWindow
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_label_top_btns'
+2024-11-02 17:19:53,107 - INFO - log information...
+2024-11-02 17:19:53,124 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 34, in __init__
+    self.ui.setupUi(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_main.py", line 138, in setupUi
+    MainWindow.setFont(font)  # 设置主窗口的字体
+TypeError: 'PySide2.QtWidgets.QWidget.setFont' called with wrong argument types:
+  PySide2.QtWidgets.QWidget.setFont(QFont)
+Supported signatures:
+  PySide2.QtWidgets.QWidget.setFont(PySide2.QtGui.QFont)
+2024-11-02 17:19:53,125 - INFO - System info: Windows
+2024-11-02 17:19:53,125 - INFO - System version: 10
+2024-11-02 17:19:53,126 - INFO - Python version: 3.6.15
+2024-11-02 17:19:53,126 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 52, in __init__
+    UIFunctions.labelTitle(self, 'Main Window - Python Base')
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 108, in labelTitle
+    self.ui.label_title_bar_top.setText(text)
+AttributeError: 'Ui_MainWindow' object has no attribute 'label_title_bar_top'
+2024-11-02 17:19:53,133 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 68, in __init__
+    UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/16x16/icons/16x16/cil-home.png)", True)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 136, in addNewMenu
+    self.ui.layout_menus.addWidget(button)
+AttributeError: 'Ui_MainWindow' object has no attribute 'layout_menus'
+2024-11-02 17:19:53,134 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 81, in __init__
+    UIFunctions.selectStandardMenu(self, "btn_home")
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 166, in selectStandardMenu
+    for w in self.ui.frame_left_menu.findChildren(QPushButton):
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_left_menu'
+2024-11-02 17:19:53,134 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 193, in <module>
+    window = MainWindow()
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 98, in __init__
+    self.ui.frame_label_top_btns.mouseMoveEvent = moveWindow
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_label_top_btns'
+2024-11-02 17:20:46,102 - INFO - log information...
+2024-11-02 17:20:46,116 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 34, in __init__
+    self.ui.setupUi(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_main.py", line 138, in setupUi
+    MainWindow.setFont(font)  # 设置主窗口的字体
+TypeError: 'PySide2.QtWidgets.QWidget.setFont' called with wrong argument types:
+  PySide2.QtWidgets.QWidget.setFont(QFont)
+Supported signatures:
+  PySide2.QtWidgets.QWidget.setFont(PySide2.QtGui.QFont)
+2024-11-02 17:20:46,118 - INFO - System info: Windows
+2024-11-02 17:20:46,118 - INFO - System version: 10
+2024-11-02 17:20:46,118 - INFO - Python version: 3.6.15
+2024-11-02 17:20:46,118 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 52, in __init__
+    UIFunctions.labelTitle(self, 'Main Window - Python Base')
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 108, in labelTitle
+    self.ui.label_title_bar_top.setText(text)
+AttributeError: 'Ui_MainWindow' object has no attribute 'label_title_bar_top'
+2024-11-02 17:20:46,124 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 68, in __init__
+    UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/16x16/icons/16x16/cil-home.png)", True)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 136, in addNewMenu
+    self.ui.layout_menus.addWidget(button)
+AttributeError: 'Ui_MainWindow' object has no attribute 'layout_menus'
+2024-11-02 17:20:46,124 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 81, in __init__
+    UIFunctions.selectStandardMenu(self, "btn_home")
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 166, in selectStandardMenu
+    for w in self.ui.frame_left_menu.findChildren(QPushButton):
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_left_menu'
+2024-11-02 17:20:46,125 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 193, in <module>
+    window = MainWindow()
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 98, in __init__
+    self.ui.frame_label_top_btns.mouseMoveEvent = moveWindow
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_label_top_btns'
+2024-11-02 17:21:48,227 - INFO - log information...
+2024-11-02 17:21:48,241 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 35, in __init__
+    self.ui.setupUi(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_main.py", line 138, in setupUi
+    MainWindow.setFont(font)  # 设置主窗口的字体
+TypeError: 'PySide2.QtWidgets.QWidget.setFont' called with wrong argument types:
+  PySide2.QtWidgets.QWidget.setFont(QFont)
+Supported signatures:
+  PySide2.QtWidgets.QWidget.setFont(PySide2.QtGui.QFont)
+2024-11-02 17:21:48,243 - INFO - System info: Windows
+2024-11-02 17:21:48,243 - INFO - System version: 10
+2024-11-02 17:21:48,243 - INFO - Python version: 3.6.15
+2024-11-02 17:21:48,243 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 53, in __init__
+    UIFunctions.labelTitle(self, 'Main Window - Python Base')
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 108, in labelTitle
+    self.ui.label_title_bar_top.setText(text)
+AttributeError: 'Ui_MainWindow' object has no attribute 'label_title_bar_top'
+2024-11-02 17:21:48,244 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 69, in __init__
+    UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/16x16/icons/16x16/cil-home.png)", True)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 129, in addNewMenu
+    button.setFont(font)
+TypeError: 'PySide2.QtWidgets.QWidget.setFont' called with wrong argument types:
+  PySide2.QtWidgets.QWidget.setFont(QFont)
+Supported signatures:
+  PySide2.QtWidgets.QWidget.setFont(PySide2.QtGui.QFont)
+2024-11-02 17:21:48,244 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 82, in __init__
+    UIFunctions.selectStandardMenu(self, "btn_home")
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 166, in selectStandardMenu
+    for w in self.ui.frame_left_menu.findChildren(QPushButton):
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_left_menu'
+2024-11-02 17:21:48,245 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 194, in <module>
+    window = MainWindow()
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 99, in __init__
+    self.ui.frame_label_top_btns.mouseMoveEvent = moveWindow
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_label_top_btns'
+2024-11-02 17:22:03,991 - INFO - log information...
+2024-11-02 17:22:04,005 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 35, in __init__
+    self.ui.setupUi(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_main.py", line 138, in setupUi
+    MainWindow.setFont(font)  # 设置主窗口的字体
+TypeError: 'PySide2.QtWidgets.QWidget.setFont' called with wrong argument types:
+  PySide2.QtWidgets.QWidget.setFont(QFont)
+Supported signatures:
+  PySide2.QtWidgets.QWidget.setFont(PySide2.QtGui.QFont)
+2024-11-02 17:22:04,006 - INFO - System info: Windows
+2024-11-02 17:22:04,006 - INFO - System version: 10
+2024-11-02 17:22:04,006 - INFO - Python version: 3.6.15
+2024-11-02 17:22:04,006 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 53, in __init__
+    UIFunctions.labelTitle(self, 'Main Window - Python Base')
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 108, in labelTitle
+    self.ui.label_title_bar_top.setText(text)
+AttributeError: 'Ui_MainWindow' object has no attribute 'label_title_bar_top'
+2024-11-02 17:22:04,007 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 69, in __init__
+    UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/16x16/icons/16x16/cil-home.png)", True)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 129, in addNewMenu
+    button.setFont(font)
+TypeError: 'PySide2.QtWidgets.QWidget.setFont' called with wrong argument types:
+  PySide2.QtWidgets.QWidget.setFont(QFont)
+Supported signatures:
+  PySide2.QtWidgets.QWidget.setFont(PySide2.QtGui.QFont)
+2024-11-02 17:22:04,008 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 82, in __init__
+    UIFunctions.selectStandardMenu(self, "btn_home")
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 166, in selectStandardMenu
+    for w in self.ui.frame_left_menu.findChildren(QPushButton):
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_left_menu'
+2024-11-02 17:22:04,008 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 194, in <module>
+    window = MainWindow()
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 99, in __init__
+    self.ui.frame_label_top_btns.mouseMoveEvent = moveWindow
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_label_top_btns'
+2024-11-02 17:26:56,958 - INFO - log information...
+2024-11-02 17:26:57,266 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 34, in __init__
+    self.ui.setupUi(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_main.py", line 745, in setupUi
+    self.page_widget = main_ui()
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui转换\mian.py", line 192, in __init__
+    self.piechart16 = createpie2()
+NameError: name 'createpie2' is not defined
+2024-11-02 17:26:57,270 - INFO - System info: Windows
+2024-11-02 17:26:57,270 - INFO - System version: 10
+2024-11-02 17:26:57,270 - INFO - Python version: 3.6.15
+2024-11-02 17:26:57,279 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 102, in __init__
+    UIFunctions.uiDefinitions(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 250, in uiDefinitions
+    self.sizegrip = QSizeGrip(self.ui.frame_size_grip)
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_size_grip'
+2024-11-02 17:26:57,367 - INFO - 数据库连接成功
+2024-11-02 17:26:57,386 - INFO - 查询到 3 条数据
+2024-11-02 17:28:39,149 - INFO - log information...
+2024-11-02 17:28:39,557 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 34, in __init__
+    self.ui.setupUi(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_main.py", line 745, in setupUi
+    self.page_widget = main_ui()
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui转换\mian.py", line 192, in __init__
+    self.piechart16 = createpie2()
+NameError: name 'createpie2' is not defined
+2024-11-02 17:28:39,562 - INFO - System info: Windows
+2024-11-02 17:28:39,562 - INFO - System version: 10
+2024-11-02 17:28:39,563 - INFO - Python version: 3.6.15
+2024-11-02 17:28:39,574 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 102, in __init__
+    UIFunctions.uiDefinitions(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 250, in uiDefinitions
+    self.sizegrip = QSizeGrip(self.ui.frame_size_grip)
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_size_grip'
+2024-11-02 17:28:39,630 - INFO - 数据库连接成功
+2024-11-02 17:28:39,653 - INFO - 查询到 3 条数据
+2024-11-02 17:29:43,986 - INFO - log information...
+2024-11-02 17:29:44,263 - INFO - System info: Windows
+2024-11-02 17:29:44,264 - INFO - System version: 10
+2024-11-02 17:29:44,264 - INFO - Python version: 3.6.15
+2024-11-02 17:29:50,249 - INFO - 数据库连接成功
+2024-11-02 17:29:50,250 - INFO - 数据库连接成功
+2024-11-02 17:29:50,270 - INFO - category: {'num': 7, 'data': [{'category': '2022-01-01', 'Mo_Amount': 1000}, {'category': '2022-01-02', 'Mo_Amount': 2000}, {'category': '2022-01-03', 'Mo_Amount': 3000}, {'category': '2022-01-04', 'Mo_Amount': 4000}, {'category': '2022-01-05', 'Mo_Amount': 5000}, {'category': '2022-01-06', 'Mo_Amount': 6000}, {'category': '2022-01-07', 'Mo_Amount': 7000}]}
+2024-11-02 17:29:50,275 - INFO - category: {'num': 7, 'data': [{'category': '2022-01-01', 'Mo_Amount': 1000}, {'category': '2022-01-02', 'Mo_Amount': 2000}, {'category': '2022-01-03', 'Mo_Amount': 3000}, {'category': '2022-01-04', 'Mo_Amount': 4000}, {'category': '2022-01-05', 'Mo_Amount': 5000}, {'category': '2022-01-06', 'Mo_Amount': 6000}, {'category': '2022-01-07', 'Mo_Amount': 7000}]}
+2024-11-02 17:29:56,218 - INFO - 数据库连接成功
+2024-11-02 17:29:56,234 - INFO - 数据库连接成功
+2024-11-02 17:29:56,238 - INFO - category: {'num': 7, 'data': [{'category': '2022-01-01', 'Mo_Amount': 1000}, {'category': '2022-01-02', 'Mo_Amount': 2000}, {'category': '2022-01-03', 'Mo_Amount': 3000}, {'category': '2022-01-04', 'Mo_Amount': 4000}, {'category': '2022-01-05', 'Mo_Amount': 5000}, {'category': '2022-01-06', 'Mo_Amount': 6000}, {'category': '2022-01-07', 'Mo_Amount': 7000}]}
+2024-11-02 17:29:56,253 - INFO - category: {'num': 7, 'data': [{'category': '2022-01-01', 'Mo_Amount': 1000}, {'category': '2022-01-02', 'Mo_Amount': 2000}, {'category': '2022-01-03', 'Mo_Amount': 3000}, {'category': '2022-01-04', 'Mo_Amount': 4000}, {'category': '2022-01-05', 'Mo_Amount': 5000}, {'category': '2022-01-06', 'Mo_Amount': 6000}, {'category': '2022-01-07', 'Mo_Amount': 7000}]}
+2024-11-02 17:30:37,019 - INFO - log information...
+2024-11-02 17:30:37,332 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 34, in __init__
+    self.ui.setupUi(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_main.py", line 745, in setupUi
+    self.page_widget = main_ui()
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui转换\mian.py", line 192, in __init__
+    self.piechart16 = createpie2()
+NameError: name 'createpie2' is not defined
+2024-11-02 17:30:37,334 - INFO - System info: Windows
+2024-11-02 17:30:37,335 - INFO - System version: 10
+2024-11-02 17:30:37,336 - INFO - Python version: 3.6.15
+2024-11-02 17:30:37,343 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 102, in __init__
+    UIFunctions.uiDefinitions(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 250, in uiDefinitions
+    self.sizegrip = QSizeGrip(self.ui.frame_size_grip)
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_size_grip'
+2024-11-02 17:30:37,409 - INFO - 数据库连接成功
+2024-11-02 17:30:37,435 - INFO - 查询到 3 条数据
+2024-11-02 17:30:46,591 - INFO - log information...
+2024-11-02 17:30:46,965 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 34, in __init__
+    self.ui.setupUi(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_main.py", line 745, in setupUi
+    self.page_widget = main_ui()
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui转换\mian.py", line 192, in __init__
+    self.piechart16 = createpie2()
+NameError: name 'createpie2' is not defined
+2024-11-02 17:30:46,969 - INFO - System info: Windows
+2024-11-02 17:30:46,969 - INFO - System version: 10
+2024-11-02 17:30:46,970 - INFO - Python version: 3.6.15
+2024-11-02 17:30:46,978 - ERROR - Error occurred:
+Traceback (most recent call last):
+  File "c:/Users/ZJB-24082001/Downloads/Simple_PySide_Base-master/PyQT_Visualization/main.py", line 102, in __init__
+    UIFunctions.uiDefinitions(self)
+  File "c:\Users\ZJB-24082001\Downloads\Simple_PySide_Base-master\PyQT_Visualization\ui_qt\ui_functions.py", line 250, in uiDefinitions
+    self.sizegrip = QSizeGrip(self.ui.frame_size_grip)
+AttributeError: 'Ui_MainWindow' object has no attribute 'frame_size_grip'
+2024-11-02 17:30:47,034 - INFO - 数据库连接成功
+2024-11-02 17:30:47,052 - INFO - 查询到 3 条数据

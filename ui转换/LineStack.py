@@ -317,8 +317,8 @@ class ChartView(QChartView):
 class content_charts(QWidget):
     def __init__(self):
         super().__init__()
-        self.setAttribute(Qt.WA_TranslucentBackground)  # 透明背景
-        self.setWindowFlags(Qt.FramelessWindowHint) 
+        # self.setAttribute(Qt.WA_TranslucentBackground)  # 透明背景
+        # self.setWindowFlags(Qt.FramelessWindowHint) 
 
         
         
@@ -363,7 +363,7 @@ class content_charts(QWidget):
         logging.info("category: %s", datas)
         self.dataTable = [
             ["tip", [data["Mo_Amount"] for data in datas["data"]]],    
-            ["tip2", [1522,4844,1566,3546,4565,2225,5922]],
+            ["tip2", [1522,4844,1566,3546,4565,2225,5922,5468]],
         ]
         
         self.chart1.category = self.category
@@ -431,11 +431,73 @@ class linecharts(QWidget):
         
         # 如果你的ChartView类有更新方法，可以调用这个方法
         self.chart1.initChart()
+        axisX, axisY = self.chart1._chart.axisX(), self.chart1._chart.axisY()
+        self.chart1.min_x, self.chart1.max_x = axisX.min(), axisX.max()
+        self.chart1.min_y, self.chart1.max_y = axisY.min(), axisY.max()
+
+        self.data_fetch_thread.quit()
+        self.data_fetch_thread.wait()
+
+
+
+class linecharts2(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.setAttribute(Qt.WA_TranslucentBackground)  # 透明背景
+        self.setWindowFlags(Qt.FramelessWindowHint) 
+  
+        self.QV_layout = QVBoxLayout(self) 
+
+
+#创建数据获取线程 这里是DataFetchThread实例
+        self.data_fetch_thread = DataFetchThread()
+# 当数据被获取时，调用update_labels方法
+        self.data_fetch_thread.data_fetched.connect(self.update_labels)
+        self.timer = QtCore.QTimer(self)
+        self.timer.timeout.connect(self.start_data_fetch)
+# 启动定时器，每隔60秒执行一次
+        self.timer.start(6 * 1000)
+        # 初始化图表
+        #TODO: x轴暂时未定
+        self.category = ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
+        self.dataTable = [
+            ["", [120, 132, 101, 134, 90, 230, 210]],
+            ["2", [140, 532, 701, 634, 90, 830, 310]],
+ ]       
+        # 创建ChartView实例并添加到布局
+        self.chart1 = ChartView(self.category, self.dataTable)
+        self.QV_layout.addWidget(self.chart1)
+        self.setLayout(self.QV_layout)
+       
+    def start_data_fetch(self):
+    # 开始数据获取线程
+        self.data_fetch_thread.start()
+
+    def update_labels(self, datas):
+         # test = ["当前销售额：", [data["Mo_Amount"] for data in self.data2["data"]]]
+        # self.chart.category = [data["category"] for data in self.data2["data"]]
+        if datas["num"]<7:
+            logging.error("数据不足")
+        self.category = [data["category"] for data in datas["data"]]
+        logging.info("category: %s", datas)
+        self.dataTable = [
+            ["tip", [data["Mo_Amount"] for data in datas["data"]]],    
+        ]
+        
+        self.chart1.category = self.category
+        self.chart1.dataTable = self.dataTable
+        
+        # 如果你的ChartView类有更新方法，可以调用这个方法
+        self.chart1.initChart()
+        axisX, axisY = self.chart1._chart.axisX(), self.chart1._chart.axisY()
+        self.chart1.min_x, self.chart1.max_x = axisX.min(), axisX.max()
+        self.chart1.min_y, self.chart1.max_y = axisY.min(), axisY.max()
+
+        self.data_fetch_thread.quit()
+        self.data_fetch_thread.wait()
+
 
         
-        
-
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
