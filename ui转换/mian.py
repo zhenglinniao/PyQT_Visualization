@@ -5,12 +5,15 @@ from PySide2 import QtCore, QtGui, QtWidgets
 from PySide2.QtWidgets import QApplication, QWidget, QMainWindow,QTableWidget,QTableWidgetItem,QHeaderView
 from PySide2.QtGui import QPalette, QBrush, QPixmap
 from PySide2.QtCore import Qt,QSize
-from LineStack import *
+
 import os
 from PySide2.QtCore import QTimer
-from SQLbase.SQLAlchemy import *
+try:
+    from SQLbase.SQLAlchemy import *
+except:
+    from SQLAlchemy import *
 from ChartThemes import *
-
+from LineStack import *
 # main
 class main_ui(QWidget):
     def __init__(self):
@@ -75,12 +78,12 @@ class main_ui(QWidget):
 #TODO: 添加其他内容 verticalLayout一号布局 verticalLayout_3左边布局
         layout0 = QtWidgets.QHBoxLayout()
         layout0.setSpacing(0)
-        self.QWidget0.setMaximumSize(636,300)
+        self.QWidget0.setMaximumSize(636,250)
 
         
         self.chart = content_charts()
 
-        self.chart.setMaximumSize(400,400)
+        # self.chart.setMaximumSize(400,400)
         self.chart.setStyleSheet("background-color: transparent;")
     
         self.QWidget0_right = QtWidgets.QVBoxLayout()
@@ -185,18 +188,17 @@ class main_ui(QWidget):
         
 ############################
         self.verticalLayout_16 = QtWidgets.QVBoxLayout()
-        self.QWidget16 = self.SetQWidget("QWidget16", "./ui转换/border.png")
+        self.QWidget16 = self.SetQWidget("QWidget16", "./ui转换/border.png")  
         self.verticalLayout_16.addWidget(self.QWidget16)
         self.verticalLayout_3.addLayout(self.verticalLayout_16)
         self.layout16 = QtWidgets.QHBoxLayout(self.QWidget16)
-        self.piechart16 = createpie2()
+        self.piechart16 = createpie5()
         self.piechart16.setStyleSheet("background-color: transparent;")
         self.layout16.addWidget(self.piechart16)
 
-
-
         self.verticalLayout_17 = QtWidgets.QVBoxLayout()
         self.QWidget17 = self.SetQWidget("QWidget17", "./ui转换/border.png")
+        self.QWidget17.setFixedHeight(300)
         self.verticalLayout_17.addWidget(self.QWidget17)
         self.verticalLayout_3.addLayout(self.verticalLayout_17)
         self.horizontalLayout_3.addWidget(self.verticalFrame1)
@@ -204,7 +206,6 @@ class main_ui(QWidget):
         self.layout17.setSpacing(0)
         self.linchart17 = content_charts()
         self.linchart17.setStyleSheet("background-color: transparent;")
-        self.linchart17.setMaximumHeight(300)
         self.layout17.addWidget(self.linchart17)
 
 
@@ -306,10 +307,11 @@ class main_ui(QWidget):
         self.verticalFrame_3.setMaximumSize(QSize(636,1000))
         self.verticalLayout_9 = QtWidgets.QVBoxLayout()
         self.QWidget9 = self.SetQWidget("QWidget9", "./ui转换/border.png")
+        self.QWidget9.setMaximumHeight(120)
         self.verticalLayout_9.addWidget(self.QWidget9)
         self.verticalLayout_6.addLayout(self.verticalLayout_9)
         self.layout9 = QtWidgets.QVBoxLayout(self.QWidget9)
-        self.layout9.setSpacing(20)
+        self.layout9.setSpacing(10)
         self.layout9_top = QtWidgets.QHBoxLayout()
         self.layout9_top.setContentsMargins(20,10,0,0)
         self.layout9.setAlignment(Qt.AlignTop)
@@ -397,15 +399,15 @@ class main_ui(QWidget):
         self.QWidget10 = self.SetQWidget("QWidget10", "./ui转换/border.png")
         self.verticalLayout_10.addWidget(self.QWidget10)
         self.verticalLayout_6.addLayout(self.verticalLayout_10)
-        self.QWidget10.setMaximumHeight(350)
+        self.QWidget10.setMaximumHeight(300)
 
         self.layout10 = QtWidgets.QVBoxLayout(self.QWidget10)
         self.layout10.setSpacing(0)
-
+        
         self.layout10_1 = QtWidgets.QHBoxLayout()
         self.layout10_1.setAlignment(Qt.AlignTop)
         self.layout10_1.setSpacing(10)
-        self.layout10_1.setContentsMargins(30, 20, 0, 0)
+        self.layout10_1.setContentsMargins(30, 0, 0, 0)
         self.title10 = QtWidgets.QLabel("销售额统计")
         self.txt10 = QtWidgets.QLabel("|  ")
         self.txt10.setStyleSheet("color:#3399FF;font: 15pt \"微软雅黑\";background-color: transparent;")
@@ -451,17 +453,17 @@ class main_ui(QWidget):
         self.layout10_1.addStretch()
         self.layout10.addLayout(self.layout10_1)
         self.char10 = createBar()
-        self.char10.setFixedSize(QSize(636, 300))
+        self.char10.setFixedSize(QSize(610, 300))
         self.char10.setStyleSheet("background-color: transparent;border: 0px;border-radius: 20px;")
         self.layout10.addWidget(self.char10)
-        self.layout10.addStretch()
+        # self.layout10.addStretch()
         
 
 
         self.horizontalLayout_5 = QtWidgets.QHBoxLayout()
         self.verticalLayout_11 = QtWidgets.QVBoxLayout()
         self.QWidget11 = self.SetQWidget("QWidget11", "./ui转换/border.png")
-        self.QWidget11.setMaximumHeight(200)
+        self.QWidget11.setMaximumHeight(150)
         self.verticalLayout_11.addWidget(self.QWidget11)
         self.horizontalLayout_5.addLayout(self.verticalLayout_11)
         
@@ -531,6 +533,7 @@ class main_ui(QWidget):
 
         self.verticalLayout_13 = QtWidgets.QVBoxLayout()
         self.QWidget13 = self.SetQWidget("QWidget13", "./ui转换/border.png")
+        self.QWidget13.setMaximumHeight(150)
         self.verticalLayout_13.addWidget(self.QWidget13)
         self.horizontalLayout_5.addLayout(self.verticalLayout_13)
         self.verticalLayout_6.addLayout(self.horizontalLayout_5)
@@ -589,6 +592,7 @@ class main_ui(QWidget):
 
         self.verticalLayout_14 = QtWidgets.QVBoxLayout()
         self.QWidget14 = self.SetQWidget("QWidget14", "./ui转换/border.png")
+        self.QWidget14.setMaximumHeight(280)
         self.verticalLayout_14.addWidget(self.QWidget14)
         self.verticalLayout_6.addLayout(self.verticalLayout_14)
         self.layout14 = QtWidgets.QHBoxLayout(self.QWidget14)

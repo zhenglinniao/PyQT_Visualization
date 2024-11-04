@@ -731,7 +731,7 @@ class Ui_MainWindow(object):
         self.stackedWidget.setObjectName(u"stackedWidget")
         self.stackedWidget.setStyleSheet(u"background: transparent;")
         
-        self.page_home = ThemeWidget()
+        self.page_home = createBar_all()
         # 设置page_home的ObjectName
         self.page_home.setObjectName(u"page_home")
 
@@ -742,7 +742,7 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.page_home)
         self.stackedWidget.addWidget(self.page_two_home)
 
-        #TODO: main_ui 地址引用错误会报错
+        #TODO: main_ui 
         self.page_widget = main_ui()
         self.stackedWidget.addWidget(self.page_widget)
 

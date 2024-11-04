@@ -313,7 +313,6 @@ class ThemeWidget(QWidget):
             result1 = parent.m_themeComboBox.currentIndex() if parent.index1 == ""  else parent.index1
         except:
             result1 = parent.m_themeComboBox.currentIndex()
-        print("result1:",result1)
         theme = parent.m_themeComboBox.itemData(int(result1))
         # 如果当前图表的主题与选择的主题不同，则更新所有图表的主题
         for chartView in parent.m_charts:

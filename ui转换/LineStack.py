@@ -202,11 +202,15 @@ class ChartView(QChartView):
 
     def initChart(self):
         self._chart = QChart(title="test_chart")
+        # self._chart = QChart()
+        # self.update_font()
         self._chart.setTitleBrush(Qt.white)
         self._chart.setTitleFont(QFont("微软雅黑", 12))
-        legend = self._chart.legend()
-        legend.setLabelBrush(Qt.white)
-        self._chart.legend().setFont(QFont("微软雅黑", 8))
+        # legend = self._chart.legend()
+        # legend.setLabelBrush(Qt.white)
+   
+        self._chart.legend().hide()
+
 
         
         #TODO:设置背景透明
@@ -267,6 +271,22 @@ class ChartView(QChartView):
     
             
         self.setChart(self._chart)
+
+
+    def resizeEvent(self, event):
+        super().resizeEvent(event)
+        self.update_font()
+
+    def update_font(self):
+        # 根据窗口大小设置字体大小
+# 设置字体大小，取12和宽度除以30的最大值
+        font_size = max(10, self.width() // 30)
+        title_font = QFont("微软雅黑", font_size, QFont.Bold)
+        legend_font = QFont("微软雅黑", font_size - 2)
+        
+        self._chart.setTitleFont(title_font)
+        self._chart.legend().setFont(legend_font)
+
 
     def mouseMoveEvent(self, event):
         super(ChartView, self).mouseMoveEvent(event)
@@ -356,7 +376,6 @@ class content_charts(QWidget):
         self.data_fetch_thread.start()
 
     def update_labels(self, datas):
-        print(datas)
         if datas["num"]<7:
             logging.error("数据不足")
         self.category = [data["category"] for data in datas["data"]]
